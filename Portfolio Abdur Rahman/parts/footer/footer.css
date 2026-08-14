@@ -1,0 +1,108 @@
+/* Beba */
+@font-face {
+  font-family: 'Beba';
+  src: url('../fonts/BebasNeue-Regular.otf') format('opentype');
+}
+
+/* Light */
+@font-face {
+  font-family: 'Futura Lt';
+  src: url('../fonts/futura\ light\ bt.ttf') format('truetype');
+}
+
+
+:root {
+    --footer-bg: #ffffff; /* Matching the light gray box in your design */
+    --footer-text: #000000;
+    --footer-radius: 40px;
+    --font-family-head: 'Beba', sans-serif; /* Professional, clean font */
+    --font-family-second: 'Futura Lt', sans-serif; /* Professional, clean font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.main-footer {
+    padding: 40px 5%;
+    background-color: #F2F2F2; /* Outside page background */
+}
+
+.main-footer{
+    background-color: var(--offer-bg);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Center vertically */
+    overflow: hidden;   /* Prevent section scroll */
+    min-height: 100vh; /* Changed from height: 100vh */
+    height: auto; 
+    padding: 20px;
+}
+
+.footer-container {
+    border: 1px solid var(--footer-text);
+    background-color: var(--footer-bg);
+    border-radius: var(--footer-radius);
+    width: 99%;
+    color: var(--footer-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaced out to fit height */
+    overflow: hidden;   /* Ensure no internal scroll */
+    height: auto;       /* Allow container to expand with content */ 
+    padding: 20px;
+}
+
+/* --- Massive Name Heading --- */
+.footer-branding h1 {
+    font-size: clamp(60px, 15vw, 190px); /* Scales perfectly with screen width */
+    font-family: 'Beba', sans-serif;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- Bottom Nav Bar --- */
+.footer-bottom {
+    font-family: var(--font-family-second);
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid black; /* Subtle separation line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    color: black;
+    padding-left: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-right: 15px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: var(--footer-text);
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.footer-links .separator {
+    color: #000000;
+}

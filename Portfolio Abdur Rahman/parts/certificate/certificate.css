@@ -1,0 +1,113 @@
+/* Book Bt */
+@font-face {
+  font-family: 'Futura Bk';
+  src: url('../fonts/Futura\ Book\ font.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Futura Lt';
+  src: url('../fonts/futura\ light\ bt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+:root {
+    --cert-bg: #ffffff;
+    --text-dark: #000000;
+    --border-thin: 1px solid #000000; /* The specific black line from your design */
+    --font-family-main: 'Futura Bk', sans-serif; /* Professional, clean font */
+    --font-family-side: 'Futura Lt', sans-serif; /* Professional, clean font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cert-section {
+    background-color: var(--cert-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    overflow: hidden;   /* Prevent section scroll */
+    min-height: 100vh; /* Changed from height: 100vh */
+    height: auto; 
+    padding: 20px;
+}
+
+.cert-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaced out to fit height */
+    overflow: hidden;   /* Ensure no internal scroll */
+    height: auto;       /* Allow container to expand with content */    
+    border: 1px solid black;
+    background-color: var(--cert-bg);
+    border-radius: 40px;
+    padding: 40px;
+    color: var(--text-dark);
+    width: 75%;
+}
+
+.cert-heading {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+/* --- The Grid System --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cert-item {
+    padding: 40px 30px;
+    border-right: var(--border-thin);
+    border-bottom: var(--border-thin);
+}
+
+/* Remove the right border for the 3rd, 6th, etc. items */
+.cert-item:nth-child(3n) {
+    border-right: none;
+}
+
+/* Remove bottom borders for the last row if you want a clean bottom edge */
+.cert-item:nth-child(n+4) { border-bottom: none; }
+
+/* --- Typography --- */
+.cert-meta {
+    font-size: 11px;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.cert-name {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 250px; /* Matches the text wrapping in your design */
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 992px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    .cert-item {
+        border-right: none;
+    }
+    .cert-heading {
+        font-size: 50px;
+    }
+}

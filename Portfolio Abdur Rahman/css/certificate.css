@@ -1,0 +1,63 @@
+
+.cert-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; 
+    height: auto;  
+    border-top: 2px solid black;
+    background-color: var(--bg-white);
+    padding-top: 40px;
+    color: var(--text-black);
+    width: 100%;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cert-item {
+    padding: 40px 30px;
+    border-right:  1px solid var(--text-blackLt);
+    border-bottom: 1px solid var(--text-blackLt);
+}
+
+/* Remove the right border for the 3rd, 6th, etc. items */
+.cert-item:nth-child(3n) {
+    border-right: none;
+}
+
+/* Remove bottom borders for the last row if you want a clean bottom edge */
+.cert-item:nth-child(n+4) { border-bottom: none; }
+
+/* --- Typography --- */
+.cert-meta {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-grey-dim);
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.cert-name {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 250px;
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 992px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    .cert-item {
+        border-right: none;
+    }
+    .cert-heading {
+        font-size: 50px;
+    }
+}

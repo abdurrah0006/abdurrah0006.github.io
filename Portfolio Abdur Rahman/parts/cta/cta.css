@@ -1,0 +1,132 @@
+:root {
+    --cta-bg: #000000;      /* Dark background from image */
+    --cta-text-main: #FFFFFF;
+    --cta-text-dim: #A0A0A0; /* For description text */
+    --cta-accent: #C9C9C9;   /* The light gray for "Get In Touch" */
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.cta-section {
+    background-color: var(--cta-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    overflow: hidden;   /* Prevent section scroll */
+    min-height: 100vh; /* Changed from height: 100vh */
+    height: auto; 
+    padding: 20px;
+}
+
+.cta-container {
+    border: 1px solid white; /* Subtle border to define the section */
+    background-color: black;
+    border-radius: 40px;
+    width: 75%;
+    color: var(--cta-text-main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaced out to fit height */
+    overflow: hidden;   /* Ensure no internal scroll */
+    height: auto;       /* Allow container to expand with content */
+    padding: 40px;
+}
+
+/* --- Typography --- */
+.cta-header .header-small {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 1.5rem; /* Use rem for stability */
+    line-height: 1.2;
+}
+
+.cta-header .header-giant {
+    font-size: clamp(3rem, 12vw, 8rem); /* Scale based on WIDTH (vw), not height */
+    line-height: 0.9; 
+    letter-spacing: -2px;
+    margin: 0;
+}
+
+.cta-description {
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--cta-text-dim);
+    margin-bottom: 30px;
+}
+
+/* --- Buttons --- */
+.cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* This pulls buttons to the center */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #FFFFFF; /* White background from image */
+    color: #000000;
+    font-size: 18px;
+    transition: 0.3s ease;
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid #000000;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #707070; /* Thin border from image */
+    color: var(--cta-text-main);
+    padding: 16px 30px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-primary, .btn-outline {
+    /* Ensures buttons have consistent internal spacing */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    transition: 0.3s;
+}
+
+.btn-primary { background: #ffffff; color: #000000; }
+.btn-outline { background: transparent; border: 1px solid #ffffff; color: #ffffff; }
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Keeps icons white on dark bg */
+}
+
+/* --- Hover States --- */
+.btn-primary:hover { background-color: #ff0000; }
+.btn-outline:hover { border-color: #FFFFFF; background: rgba(226, 3, 3, 0.05); }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .cta-container { padding: 50px 30px; }
+    .cta-header .header-giant { font-size: 80px; }
+    .cta-actions { flex-direction: column; }
+}

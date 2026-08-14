@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,900;1,900&display=swap');
+
+/* Beba */
+@font-face {
+  font-family: 'Beba';
+  src: url('./fonts/BebasNeue-Regular.otf') format('opentype');
+}
+
+/* Light */
+@font-face {
+  font-family: 'Futura Lt';
+  src: url('./fonts/futura\ light\ bt.ttf') format('truetype');
+}
+
+/* Book */
+@font-face {
+  font-family: 'Futura Bk';
+  src: url('./fonts/Futura\ Book\ font.ttf') format('truetype');
+}
+
+/* Heavy */
+@font-face {
+  font-family: '/Futura Hv';
+  src: url('./fonts/Futura\ Heavy\ font.ttf format') ('truetype');
+}
+
+:root {
+
+    /* Background */
+    --bg-black: #000;   /* The black container */
+    --bg-white: #e7e7e7;   /* The white container */
+    --bg-grey: #c7c7c7;   /* The gray pill container */
+    --bg-blackLt: #292929;   /* The Black Light pill container */
+
+    /* Text */
+    --text-white: #fff;   /* The white text */
+    --text-black: #000;   /* The black text */
+    --text-grey: #c7c7c7;   /* The grey text */
+    --text-grey-dim: #7c7c7c;   /* The grey dim text */
+    --text-blackLt: #292929;   /* The Black Light text */
+    
+    /* Border */    
+    --border-white: #fff;   /* The white border */
+    --border-black: #000;   /* The black border */
+
+    /* Fonts */
+    --font-main: 'Futura Bk', sans-serif; /* Futura Book font */
+    --font-side: 'Futura Lt', sans-serif; /* Futura Light font */
+    --font-heavy: 'Futura Hv', sans-serif; /* Futura Heavy font */
+    --font-marquee: 'Beba', sans-serif; /* Beba font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-white);
+    min-height: 100vh;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+section{
+    color: var(--text-black);
+    background-color: var(--offer-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    height: auto; 
+    padding: 20px;
+}
+
+.projects-section, .offer-section, .cta-section{
+    background-color: var(--bg-black);
+    color: var(--text-white);
+}
+
+.projects-container, .offer-container, .cta-container, .tools-container,.about-container, .footer-container{
+    font-family: var(--font-main);
+    border: 1px solid var(--border-black);
+    background-color: var(--bg-white);
+    color: var(--text-black);
+    border-radius: 40px;
+    position: relative;
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 40px;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.projects-container, .offer-container, .cta-container{
+    border: 1px solid var(--border-white);
+    background-color: var(--bg-black);
+    color: var(--text-white);
+}
+
+.heading {
+    margin-bottom: 10px;
+    font-family: var(--font-heavy)
+}
+
+.header-small {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.header-giant {
+    font-size: clamp(3rem, 12vw, 8rem);
+    line-height: 0.9; 
+    letter-spacing: -2px;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}

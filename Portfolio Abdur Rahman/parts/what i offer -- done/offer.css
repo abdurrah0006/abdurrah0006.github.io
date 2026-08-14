@@ -1,0 +1,228 @@
+/* Book Bt */
+@font-face {
+  font-family: 'Futura Bk';
+  src: url('../fonts/Futura\ Book\ font.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Futura Lt';
+  src: url('../fonts/futura\ light\ bt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+:root {
+    --offer-bg: #000000; /* Deep dark gray/black */
+    --offer-text: #E0E0E0;
+    --offer-header: #FFFFFF;
+    --border-color: #ffffff; /* Subtle gray for the grid lines */
+    --font-family-main: 'Futura Bk', sans-serif; /* Professional, clean font */
+    --font-family-side: 'Futura Lt', sans-serif; /* Professional, clean font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.offer-section {
+    background-color: var(--offer-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    overflow: hidden;   /* Prevent section scroll */
+    min-height: 100vh; /* Changed from height: 100vh */
+    height: auto; 
+    padding: 20px;
+}
+
+.offer-container {
+    border: 1px solid var(--border-color);
+    background-color: var(--offer-bg);
+    border-radius: 40px;
+    width: 75%;
+    color: var(--offer-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaced out to fit height */
+    overflow: hidden;   /* Ensure no internal scroll */
+    height: auto;       /* Allow container to expand with content */
+    min-height: 90vh;   
+    padding: 40px;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* --- Header Styling --- */
+.offer-header {
+    margin-bottom: 10px;
+    font-family: 'Futura Bk', sans-serif;
+}
+
+.header-small {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 2.5rem; /* Use rem for stability */
+    line-height: 1.2;
+}
+
+.header-giant {
+    font-size: clamp(3rem, 12vw, 8rem); /* Scale based on WIDTH (vw), not height */
+    line-height: 0.9; 
+    letter-spacing: -2px;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Grid Layout --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+}
+
+.service-card {
+    padding: 5% 10%;    /* Reduced vertical padding */
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth, professional easing */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    background-color: #111111; /* Slightly lighter than the black background */
+}
+
+/* Optional: Add a small accent line that appears on hover */
+.service-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    transition: width 0.3s ease;
+}
+
+.service-card:hover::after {
+    width: 100%;
+}
+
+/* Remove bottom border for the last row */
+.service-card:nth-child(n+4) {
+    border-bottom: none;
+}
+
+/* Add right border for the first two columns */
+.service-card:nth-child(3n+1),
+.service-card:nth-child(3n+2) {
+    border-right: 1px solid var(--border-color);
+}
+
+/* --- Content Styling --- */
+.service-card h3 {
+    font-family: 'Futura Bk', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.service-card p {
+    font-family: 'Futura Lt', sans-serif;
+    font-size: 15px;
+    line-height: 1;
+    color: #A0A0A0;
+}
+
+/* Animate the Title on hover */
+.service-card:hover h3 {
+    color: #FFFFFF;
+    transform: translateX(30px); /* Subtle slide to the right */
+}
+
+/* Animate the Paragraph on hover */
+.service-card:hover p {
+    color: #FFFFFF; /* High contrast white on hover */
+}
+
+/* ---Tiny to Medium Phones (0px - 600px)--- */
+@media (max-width: 600px) {
+    .offer-container {
+        width: 95%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .header-giant {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card {
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+    }
+    .service-card:nth-child(even) {
+        border-bottom: 1px solid var(--border-color);
+    }
+    .service-card:nth-child(odd) {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .service-card:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ---iPad Mini to Tab S10 Ultra (601px - 1024px)--- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .offer-container {
+        width: 90%;
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .service-card:nth-child(even) {
+        border-left: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+    }
+    .service-card:nth-child(odd) {
+        border-right: 1px solid var(--border-color) ;
+    }
+    .service-card:nth-child(n+5) {
+        border-bottom: none;
+    }
+}
+
+/* ---Small to Large Desktops (1025px+)--- */
+@media (min-width: 1025px) {
+    .offer-container {
+        width: 75%;
+        max-width: 1400px; /* Prevents stretching on ultra-wide monitors */
+    }
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

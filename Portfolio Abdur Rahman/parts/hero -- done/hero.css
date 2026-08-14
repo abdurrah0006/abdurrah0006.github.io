@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,900;1,900&display=swap');
+
+/* Beba */
+@font-face {
+  font-family: 'Beba';
+  src: url('../fonts/BebasNeue-Regular.otf') format('opentype');
+}
+
+/* Light */
+@font-face {
+  font-family: 'Futura Lt';
+  src: url('../fonts/futura\ light\ bt.ttf') format('truetype');
+}
+
+/* Book */
+@font-face {
+  font-family: 'Futura bk';
+  src: url('../fonts/Futura\ Book\ font.ttf') format('truetype');
+}
+
+:root {
+    --bg-gray: #E7E7E7;
+    --text-dark: #292929;
+    --bg-dark: #292929;
+    --font-family-head: 'Beba', sans-serif; /* Professional, clean font */
+    --font-family-main: 'Futura bk', sans-serif; /* Professional, clean font */
+    --font-family-second: 'Futura Lt', sans-serif; /* Professional, clean font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default !important;
+}
+
+.btn-work, 
+.btn-touch, 
+.scroll-box, 
+a {
+    cursor: pointer !important;
+}
+
+
+.giant-text,
+.hero-headline,
+.status-text {
+    user-select: none; /* Prevents blue highlight on accidental clicks */
+    -webkit-user-select: none;
+}
+
+body {
+    font-family: var(--font-family-main);
+    background-color: var(--bg-gray);
+    display: flex;
+    justify-content: center; /* Center the nav bar horizontally */
+    align-items: flex-start; /* Place it near the top */
+    min-height: 100vh;
+    padding-top: 10px; /* Adjust top spacing as needed */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-gray);
+    overflow: hidden; /* Keeps the marquee inside */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Bottom aligns the portrait */
+}
+
+/* --- THE GIANT MARQUEE --- */
+.marquee-wrapper {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1; /* Behind portrait */
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+    animation-delay: 1.8s; 
+    animation-fill-mode: backwards; /* Keeps it hidden/static until the delay ends */
+}
+
+.giant-text {
+    font-size: 25vw; /* Massive size based on screen width */
+    font-family: var(--font-family-head);
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+    letter-spacing: -2%;
+    color: var(--text-dark);
+    padding-right: 50px;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* --- THE PORTRAIT --- */
+.portrait-wrapper {
+    position: relative;
+    z-index: 2; /* Sits on top of text */
+    height: 95vh;
+    display: flex;
+    align-items: center; /* Vertical centering */
+}
+
+.portrait-img {
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1));
+    animation: portraitEntry 1s ease-out both;
+    transition: transform 0.5s ease; /* For hover effect later */
+    animation: portraitSlideUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) both; 
+    will-change: transform; /* Optimization for smoother movement */
+}
+
+.portrait-wrapper:hover .portrait-img {
+    transform: translateY(-10px) scale(1.02);
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.2));
+}
+
+/* --- UI ELEMENTS (Headline & Status) --- */
+.hero-headline {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    z-index: 3;
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: -5%;
+    font-family: var(--font-family-main);
+    animation: trackingIn 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.status-pill {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 3;
+    height: 10%;
+    width: 15%;
+    background: transparent;
+    border: 1px solid var(--bg-dark);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;animation: fadeInUp 1s ease-out both;
+    animation-delay: 0.5s; /* Staggered entry */
+}
+
+.status-text {
+    font-size: 15px;
+    color: var(--bg-dark);
+    font-weight: 500;
+    letter-spacing: 5%;
+}
+
+.dot-outer {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--bg-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot-inner {
+    width: 20px;
+    height: 20px;
+    background: #c7c7c7;
+    border: 1px solid var(--bg-dark);
+    border-radius: 50%;
+    position: relative;
+}
+
+.dot-inner::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* --- BUTTONS --- */
+.hero-actions {
+    position: absolute;
+    font-size: 20px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 50px;
+    animation-delay: 0.5s; /* Staggered entry */
+}
+
+.btn-work, .btn-touch {
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid #c7c7c7;
+    transition: 0.3s;
+    animation: fadeInUp 1s ease-out both;
+}
+
+.btn-work { background: var(--bg-dark); color: #c7c7c7; animation-delay: 0.8s; }
+.btn-touch { color: #c7c7c7; animation-delay: 1s; }
+
+/* Button Hover: Work (Primary) */
+.btn-work:hover {
+    background-color: var(--bg-gray);
+    color: var(--bg-dark);
+    border-color: var(--bg-gray);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Button Hover: Get in Touch (Ghost) */
+.btn-touch:hover {
+    background-color: var(--bg-dark);
+    color: var(--bg-gray);
+    transform: translateY(-5px);
+}
+
+/* --- SCROLL INDICATOR --- */
+.scroll-box {
+    height: 25%;
+    left: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.scroll-text{
+    font-size: 15px;
+    color: var(--bg-dark);
+    margin-bottom: 5px;
+}
+
+.line {
+    position: relative;
+    width: 2px;
+    height: 50%;
+    background: var(--bg-dark);
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.circle {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--bg-dark);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+}
+
+.arrow::before, .arrow::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: var(--bg-dark);
+    bottom: 0;
+    border-radius: 5px;
+}
+
+.arrow::before {
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.arrow::after {
+    right: 0;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Fade and Slide up for UI elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  the Keyframes */
+@keyframes portraitSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%); /* Starts completely below its container */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Slides to its original position */
+    }
+}
+
+/* Tracking/Letter-spacing animation for the headline */
+@keyframes trackingIn {
+    from {
+        letter-spacing: -15px;
+        opacity: 0;
+    }
+    to {
+        letter-spacing: -5%;
+        opacity: 1;
+    }
+}
+
+/* --- RESPONSIVENESS --- */
+
+/* 1. MOBILE: Tiny phone to Medium phone (up to 480px) */
+@media (max-width: 480px) {
+    .giant-text {
+        font-size: 70vw; /* Larger ratio so it's still visible */
+    }
+
+    .portrait-wrapper {
+        height: 60vh; /* Shorter portrait to make room for UI */
+    }
+
+    .hero-headline {
+        top: 30%;
+        left: 5%;
+        font-size: 20px;
+    }
+
+    .status-pill {
+        display: none; /* Hide status pill on mobile to declutter */
+    }
+
+    .hero-actions {
+        bottom: 5%;
+        left: 25%;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+        width: 40%;
+    }
+
+    .btn-work, .btn-touch {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .scroll-box {
+        display: none; /* Hide scroll indicator on mobile */
+    }
+}
+
+/* 2. TABLET: iPad Mini to Tab S10 Ultra (481px to 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .giant-text {
+        font-size: 40vw;
+    }
+
+    .portrait-wrapper {
+        height: 75vh;
+    }
+
+    .hero-headline {
+        top: 30%;
+        font-size: 15px;
+    }
+
+    .status-pill {
+        display: none; /* Hide status pill on tablet to declutter */
+    }
+
+    .hero-actions {
+        gap: 10px;
+        font-size: 15px;
+
+    }
+
+    .scroll-box {
+        left: 5%;
+    }
+}
+
+/* 3. DESKTOP: Small Desktop to Large Desktop (1025px and up) */
+@media (min-width: 1025px) {
+    /* Your original design remains the standard here */
+    .giant-text {
+        font-size: 25vw;
+    }
+
+    .portrait-wrapper {
+        height: 95vh;
+    }
+    
+    /* Ensuring large displays don't stretch the marquee too thin */
+    @media (min-width: 2000px) {
+        .giant-text {
+            font-size: 500px; /* Cap size on ultra-wide screens */
+        }
+    }
+}

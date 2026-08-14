@@ -1,0 +1,207 @@
+
+.about-section .about-container {
+    align-items: center;
+}
+
+.aboutme {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.heading {
+    margin-bottom: 10px;
+    font-family: var(--font-heavy);
+    flex: 1;
+    z-index: 2;
+    position: relative;
+}
+
+.bio-text {
+    max-width: 480px;
+    font-family: var(--font-side);
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--text-blackLt);
+}
+
+.about-image-column {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-32%, -50%);
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none;
+}
+
+.portrait-img-about {
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1));
+    opacity: 0.9;
+}
+
+
+.about-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    align-items: flex-start;
+}
+
+.social-item, .email-item, .resume-button {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.resume-button {
+    padding: 10px 24px;
+    border: 1px solid var(--border-black);
+    color: var(--text-black);
+    border-radius: 12px;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.email-item {
+    text-transform: lowercase;
+    padding: 5px 5px;
+    border: 1px solid var(--border-black);
+    color: var(--text-black);
+    border-radius: 12px;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.resume-button:hover, .email-item:hover {
+    background-color: var(--text-black);
+    color: var(--bg-white);
+    font-weight: 600;
+}
+
+
+/* --- Tablets (iPad Mini to Tab S10 Ultra) --- */
+@media (max-width: 1200px) {
+    .about-section {
+        height: auto; 
+        padding: 40px 20px;
+        overflow: visible; /* Allow content to flow naturally */
+    }
+
+    .about-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column; /* Stack main blocks vertically */
+        align-items: flex-start;
+        text-align: left;
+        padding: 60px 8%;
+    }
+
+    /* 1. Heading First (Big) */
+    .about-heading {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .header-giant {
+        font-size: clamp(80px, 15vw, 150px);
+        margin-bottom: 10px;
+    }
+
+    /* 2. Middle Row: Image and Social Links side-by-side */
+    .tablet-middle-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    /* Move Image here - Left of social links */
+    .about-image-column {
+        position: static; /* Remove desktop absolute positioning */
+        transform: none;
+        display: block;  /* Bring image back */
+        height: 250px;   /* Adjusted height to fit next to links */
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .portrait-img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    /* Links on the Right of the image */
+    .about-links {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+        text-align: left;
+    }
+
+    /* 3. Paragraph Third (Below the Row) */
+    .bio-text {
+        max-width: 100%;
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        order: 3; /* Ensure it stays at the bottom */
+    }
+}
+
+/* --- Mobile (Tiny to Medium Phones) --- */
+@media (max-width: 480px) {
+    .about-container {
+        padding: 40px 25px;
+    }
+
+    .header-giant {
+        font-size: clamp(60px, 18vw, 85px); /* Keep heading big but fitting */
+    }
+
+    .tablet-middle-row {
+        gap: 15px;
+    }
+
+    .about-image-column {
+        height: 150px; /* Smaller image for phone */
+    }
+
+    .bio-text {
+        font-size: 1rem;
+    }
+
+    .resume-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ---Large Desktops (1440px +)--- */
+@media (min-width: 1440px) {
+    .about-container {
+        max-width: 1400px; /* Limits growth on 4K monitors */
+        margin: 0 auto;
+    }
+    .header-giant { font-size: 180px; }
+}

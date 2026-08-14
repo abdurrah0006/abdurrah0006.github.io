@@ -1,0 +1,48 @@
+
+.cta-container .cta-description {
+    font-size: 23px;
+    line-height: 1.2;
+    color: var(--text-grey-dim);
+    margin-bottom: 30px;
+    font-family: var(--font-side);
+}
+
+.cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    color: var(--text-black);
+    border-radius: 12px;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-primary { background: var(--bg-white); color: var(--text-black); }
+.btn-secondary { background: transparent; border: 1px solid var(--border-white); color: var(--text-white); }
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Keeps icons white on dark bg */
+}
+
+/* --- Hover States --- */
+.btn-primary:hover { background-color: var(--text-white); font-weight: 600;}
+.btn-secondary:hover { color: var(--text-black); background: var(--bg-white); font-weight: 600;}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .cta-container { padding: 50px 30px; }
+    .cta-header .header-giant { font-size: 80px; }
+    .cta-actions { flex-direction: column; }
+}

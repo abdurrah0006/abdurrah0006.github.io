@@ -1,0 +1,116 @@
+/* --- Global Resets and Variables --- */
+:root {
+    /* Color Palette from Image */
+    --color-bg-light: #e7e7e7; /* The page background */
+    --color-nav-bg: #c7c7c7;   /* The gray pill container */
+    --color-text-main: #292929; /* Dark gray for links */
+    --color-text-dark: #292929; /* Pure black for logo/button */
+
+    /* Spacing & Sizing */
+    
+    --font-family-main: 'Inter', sans-serif; /* Professional, clean font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-main);
+    background-color: var(--color-bg-light);
+    display: flex;
+    justify-content: center; /* Center the nav bar horizontally */
+    align-items: flex-start; /* Place it near the top */
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+/* --- Main Navigation Container --- */
+.main-header {
+    position: relative;
+    z-index: 10; /* Base layer for the nav */
+    padding-top: 25px;
+    width: 60%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the pill */
+}
+
+.nav-container {
+    height: 100%;
+    background-color: var(--color-nav-bg);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between; /* Pushes Logo left, Links right */
+    align-items: center; /* Vertical centering */
+    padding: 20px; /* Precise internal padding */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Optional subtile shadow for depth */
+}
+
+/* --- Left: Logo Block --- */
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Precise spacing between icon and text */
+}
+
+.logo-icon {
+    display: block;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 600; /* Semibold */
+    color: var(--color-text-dark);
+    letter-spacing: -0.5px; /* Slight tightening like in the design */
+}
+
+/* --- Right: Navigation Links + Button --- */
+.nav-right-block {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Spacing between the list and the resume button */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing around the separators */
+    color: var(--color-text-main);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: var(--color-text-dark); /* Subtle hover effect */
+}
+
+.separator {
+    color: #292929; /* Lighter gray for vertical lines */
+    user-select: none; /* Prevents selection of the separator text */
+}
+
+/* --- Resume Button --- */
+.resume-button {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid #292929; /* Black border from design */
+    border-radius: 12px; /* Precise corner roundness */
+    color: var(--color-text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.resume-button:hover {
+    background-color: var(--color-text-dark); /* Fills on hover */
+    color: #FFFFFF;
+}

@@ -1,0 +1,104 @@
+
+.tools-grid {   
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 20px;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-side);
+    padding: 20% 10%;
+    border-bottom: 1px solid var(--text-blackLt);
+    border-right: 1px solid var(--text-blackLt);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tool-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--border-black);
+    transition: width 0.3s ease;
+}
+
+.tool-card:hover {
+    background-color: var(--text-grey)
+}
+
+.tool-card:hover::after {
+    width: 100%;
+}
+
+.tool-card:nth-child(5n) {
+    border-right: none;
+}
+
+.tool-card:nth-child(n+6) {
+    border-bottom: none;
+}
+
+.tool-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.tool-card .tool-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-blackLt)
+}
+
+/* Progress bar styling stays consistent with previous design */
+.tools-container .progress-container {
+    width: 100%;
+    height: 18px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-black);
+    position: relative;
+    overflow: hidden;
+}
+
+.tools-container .progress-bar {
+    height: 100%;
+    background: var(--bg-blackLt);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tools-container .progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 12px;
+    color: var(--text-white);
+    mix-blend-mode: difference;
+    z-index: 2;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .tool-card:nth-child(3n) { border-right: none; }
+    .tool-card { border-right: 1px solid var(--tools-border); }
+}
+
+@media (max-width: 600px) {
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .tool-card:nth-child(2n) { border-right: none; }
+    .tools-header .header-giant { font-size: 70px; }
+}
