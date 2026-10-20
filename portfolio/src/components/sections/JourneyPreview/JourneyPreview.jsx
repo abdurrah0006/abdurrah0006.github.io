@@ -19,7 +19,7 @@ function JourneyPreview() {
             description="A snapshot of my professional development, education and experience in technology."
           />
 
-          <Link to="/about" className="journey-view-link">
+          <Link to="/experience" className="journey-view-link">
             View Full Journey
             <FiArrowUpRight />
           </Link>

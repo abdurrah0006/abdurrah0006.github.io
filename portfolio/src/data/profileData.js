@@ -9,46 +9,10 @@ const profileData = {
   location: "UAE",
   availability: "Available for opportunities",
   profileImage: "/images/profile.jpg",
-  email: "your.email@example.com",
-  phone: "+971 58 765 4321",
+  email: "abdurrah0006@gmail.com",
 
   resume: {
-    file: "/resume/resume.pdf",
-    summary:
-      "Full-Stack Web Developer and UI/UX Designer focused on building responsive, user-friendly and scalable web applications.",
-    skills: {
-      frontend: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Tailwind CSS"
-      ],
-
-      backend: [
-        "Node.js",
-        "Express.js",
-        "REST APIs"
-      ],
-
-      database: [
-        "MongoDB",
-        "Mongoose",
-        "PostgreSQL"
-      ],
-
-      design: [
-        "UI/UX Design",
-        "Figma",
-        "Responsive Design"
-      ],
-
-      tools: [
-        "Git",
-        "GitHub",
-        "VS Code"
-      ]
-    }
+    file: "/resume/resume.pdf"
   },
   
   stats: [
@@ -63,7 +27,6 @@ const profileData = {
     eyebrow: "About Me",
     title: "Building digital experiences from idea to reality.",
     description: "I'm a Full-Stack Web Developer and UI/UX Designer who enjoys turning ideas into responsive, functional and visually polished digital products.",
-    secondaryDescription: "My approach combines thoughtful interface design with practical development, allowing me to work across both the visual and technical sides of a project.",
     highlights: [
       "Full-Stack Development",
       "UI/UX Design",

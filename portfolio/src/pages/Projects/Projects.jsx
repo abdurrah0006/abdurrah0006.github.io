@@ -143,7 +143,7 @@ function Projects() {
                 onClick={handlePreviousPage}
                 aria-label="Previous page"
               >
-                <ChevronLeft />
+                <FiChevronLeft />
               </button>
 
               <div className="pagination-pages">
@@ -175,7 +175,7 @@ function Projects() {
                 onClick={handleNextPage}
                 aria-label="Next page"
               >
-                <ChevronRight />
+                <FiChevronRight />
               </button>
             </div>
           )}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import experienceData from "../../data/experienceData";
 import "./Experience.css";
@@ -15,29 +15,22 @@ function Experience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="page-eyebrow">
-              Professional Journey
-            </span>
+            <span className="page-eyebrow">PROFESSIONAL EXPERIENCE · 2025</span>
 
             <h1>
-              Experience that
-              <span> shaped me.</span>
+              Practical work.
+              <span> Continuous learning.</span>
             </h1>
 
             <p>
-              A look at the experiences, technologies and
-              lessons that have shaped my development journey.
+              Three remote development internships alongside formal education and continued study. This page focuses on the roles, responsibilities and credentials behind my full-stack work.
             </p>
+            <Link to="/projects" className="experience-cta-primary experience-hero-link">See selected projects <FiArrowUpRight /></Link>
           </motion.div>
-
-          <div className="experience-page-scroll">
-            <span>EXPLORE JOURNEY</span>
-            <FiArrowDown />
-          </div>
         </div>
       </section>
 
-      <section className="experience-timeline section">
+      <section id="experience-timeline" className="experience-timeline section">
         <div className="container">
           <div className="experience-section-heading">
             <div className="experience-section-label">
@@ -46,17 +39,7 @@ function Experience() {
             </div>
 
             <div>
-              <h2>
-                Where I learned to
-                <span> build for real.</span>
-              </h2>
-
-              <p>
-                My professional experience has allowed me to
-                move beyond tutorials and work with real
-                development workflows, technologies and
-                application requirements.
-              </p>
+              <h2>Internship roles and responsibilities.</h2>
             </div>
           </div>
 
@@ -74,62 +57,11 @@ function Experience() {
         </div>
       </section>
 
-      <section className="experience-skills section">
-        <div className="container">
-          <div className="experience-section-heading">
-            <div className="experience-section-label">
-              <span>02</span>
-              <p>TECHNOLOGIES</p>
-            </div>
-
-            <div>
-              <h2>
-                Tools I've worked
-                <span> with.</span>
-              </h2>
-
-              <p>
-                Technologies that have been part of my
-                development journey across different projects
-                and experiences.
-              </p>
-            </div>
-          </div>
-
-          <div className="experience-tech-cloud">
-            {getAllTechnologies().map(
-              (technology, index) => (
-                <motion.span
-                  key={technology}
-                  initial={{
-                    opacity: 0,
-                    y: 15
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0
-                  }}
-                  viewport={{
-                    once: true
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.03
-                  }}
-                >
-                  {technology}
-                </motion.span>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
       <section className="experience-education section">
         <div className="container">
           <div className="experience-section-heading">
             <div className="experience-section-label">
-              <span>03</span>
+              <span>02</span>
               <p>EDUCATION</p>
             </div>
 
@@ -168,7 +100,7 @@ function Experience() {
         <div className="container">
           <div className="experience-section-heading">
             <div className="experience-section-label">
-              <span>04</span>
+              <span>03</span>
               <p>CERTIFICATIONS</p>
             </div>
 
@@ -304,56 +236,17 @@ function ExperienceItem({ experience, index }) {
 
         <div className="experience-detail-grid">
           <div>
-            <h5>Responsibilities</h5>
-
+            <h5>Work Highlights</h5>
             <ul>
-              {experience.responsibilities.map(
-                (responsibility) => (
-                  <li key={responsibility}>
-                    {responsibility}
-                  </li>
-                )
-              )}
+              {experience.responsibilities.map((responsibility) => (
+                <li key={responsibility}>{responsibility}</li>
+              ))}
             </ul>
           </div>
-
-          <div>
-            <h5>Key Outcomes</h5>
-
-            <ul>
-              {experience.achievements.map(
-                (achievement) => (
-                  <li key={achievement}>
-                    {achievement}
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </div>
-
-        <div className="experience-item-technologies">
-          {experience.technologies.map(
-            (technology) => (
-              <span key={technology}>
-                {technology}
-              </span>
-            )
-          )}
         </div>
       </div>
     </motion.article>
   );
-}
-
-function getAllTechnologies() {
-  return [
-    ...new Set(
-      experienceData.experience.flatMap(
-        (experience) => experience.technologies
-      )
-    )
-  ];
 }
 
 export default Experience;

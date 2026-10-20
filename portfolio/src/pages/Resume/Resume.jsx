@@ -1,308 +1,58 @@
 import { motion } from "framer-motion";
-import { FiArrowDown, FiArrowUpRight, FiMail, FiMapPin} from "react-icons/fi";
+import { FiArrowUpRight, FiDownload, FiMapPin, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import profileData from "../../data/profileData";
-import experienceData from "../../data/experienceData";
-import projectsData from "../../data/projectsData";
 import "./Resume.css";
 
 function Resume() {
   const resume = profileData.resume;
+  const sections = [
+    { number: "01", label: "EXPERIENCE", title: "Professional background", description: "Review my roles, responsibilities, outcomes and the technologies used in my work.", to: "/experience" },
+    { number: "02", label: "SELECTED WORK", title: "Projects and case studies", description: "Explore the applications I have built, the problems they address and the tools behind them.", to: "/projects" },
+    { number: "03", label: "ABOUT", title: "How I work", description: "Learn more about my approach to product design, full-stack development and collaboration.", to: "/about" }
+  ];
 
   return (
-    <main className="resume-page">
+    <main className="resume-page resume-compact">
       <section className="resume-hero section">
         <div className="container">
-          <motion.div
-            className="resume-hero-top"
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div className="resume-hero-top" initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div>
-              <span className="resume-eyebrow">
-                PROFESSIONAL RESUME
-              </span>
-
-              <h1>
-                {profileData.name}
-                <span>{profileData.shortTitle}</span>
-              </h1>
-
-              <p>{profileData.resume.summary}</p>
+              <span className="resume-eyebrow">PROFESSIONAL RESUME</span>
+              <h1>{profileData.name}<span>{profileData.shortTitle}</span></h1>
+              <p>{profileData.description}</p>
             </div>
-
-            <a
-              href={profileData.resume}
-              download
-              className="resume-download"
-            >
-              Download Resume
-              <FiArrowDown />
-            </a>
+            <a href={resume.file} download className="resume-download">Download Resume <FiDownload /></a>
           </motion.div>
-
           <div className="resume-contact-bar">
-            <span>
-              <FiMapPin />
-              {profileData.location}
-            </span>
-
-            <span>
-              <FiMail />
-              {profileData.email}
-            </span>
-
-            <span className="resume-availability">
-              {profileData.availability}
-            </span>
+            <span><FiMapPin />{profileData.location}</span>
+            <a href={`mailto:${profileData.email}`}><FiMail />{profileData.email}</a>
+            <span className="resume-availability">{profileData.availability}</span>
           </div>
         </div>
       </section>
 
       <section className="resume-section section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="01"
-            label="PROFILE"
-            title="Professional Summary"
-          />
-
-          <div className="resume-summary">
-            <p>{profileData.resume.summary}</p>
+        <div className="container resume-compact-content">
+          <div className="resume-compact-intro">
+            <span className="resume-eyebrow">A QUICK OVERVIEW</span>
+            <h2>One place to get the full picture.</h2>
+            <p>The PDF is the concise offline version. Use the links for focused details about my work, experience and approach.</p>
           </div>
-        </div>
-      </section>
-
-      <section className="resume-section resume-skills section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="02"
-            label="EXPERTISE"
-            title="Technical Skills"
-          />
-
-          <div className="resume-skills-grid">
-            {Object.entries(profileData.resume.skills).map(
-              ([category, skills]) => (
-                <div
-                  className="resume-skill-group"
-                  key={category}
-                >
-                  <h3>{formatCategory(category)}</h3>
-
-                  <div className="resume-skill-list">
-                    {skills.map((skill) => (
-                      <span key={skill}>{skill}</span>
-                    ))}
-                  </div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="resume-section section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="03"
-            label="EXPERIENCE"
-            title="Professional Experience"
-          />
-
-          <div className="resume-experience-list">
-            {experienceData.experience.map(
-              (experience) => (
-                <article
-                  className="resume-experience"
-                  key={experience.id}
-                >
-                  <div className="resume-experience-meta">
-                    <span>{experience.period}</span>
-                    <small>{experience.location}</small>
-                  </div>
-
-                  <div className="resume-experience-content">
-                    <span>{experience.type}</span>
-
-                    <h3>{experience.role}</h3>
-
-                    <h4>{experience.company}</h4>
-
-                    <p>{experience.description}</p>
-
-                    <ul>
-                      {experience.responsibilities
-                        .slice(0, 4)
-                        .map((responsibility) => (
-                          <li key={responsibility}>
-                            {responsibility}
-                          </li>
-                        ))}
-                    </ul>
-
-                    <div className="resume-inline-tech">
-                      {experience.technologies.map(
-                        (technology) => (
-                          <span key={technology}>
-                            {technology}
-                          </span>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </article>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="resume-section resume-projects section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="04"
-            label="SELECTED WORK"
-            title="Featured Projects"
-          />
-
-          <div className="resume-project-list">
-            {projectsData
-              .filter((project) => project.featured)
-              .slice(0, 4)
-              .map((project, index) => (
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="resume-project"
-                  key={project.id}
-                >
-                  <span>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <div>
-                    <h3>{project.title}</h3>
-                    <p>{project.category}</p>
-                  </div>
-
-                  <FiArrowUpRight />
-                </Link>
-              ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="resume-section section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="05"
-            label="EDUCATION"
-            title="Education"
-          />
-
-          <div className="resume-education-list">
-            {experienceData.education.map((education) => (
-              <article
-                className="resume-education"
-                key={education.id}
-              >
-                <span>{education.period}</span>
-
-                <div>
-                  <h3>{education.qualification}</h3>
-                  <h4>{education.institution}</h4>
-                  <p>{education.description}</p>
-                </div>
-              </article>
+          <div className="resume-compact-links">
+            {sections.map((section) => (
+              <Link to={section.to} className="resume-compact-link" key={section.number}>
+                <span>{section.number} / {section.label}</span>
+                <div><h3>{section.title}</h3><p>{section.description}</p></div>
+                <FiArrowUpRight />
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="resume-section resume-certifications section">
-        <div className="container">
-          <ResumeSectionHeader
-            number="06"
-            label="CERTIFICATIONS"
-            title="Certifications"
-          />
-
-          <div className="resume-certification-list">
-            {experienceData.certifications.map(
-              (certification, index) => (
-                <div
-                  className="resume-certification"
-                  key={certification.id}
-                >
-                  <span>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <div>
-                    <h3>{certification.title}</h3>
-                    <p>{certification.issuer}</p>
-                  </div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="resume-cta section">
-        <div className="container">
-          <div className="resume-cta-card">
-            <span className="resume-eyebrow">
-              LET'S WORK TOGETHER
-            </span>
-
-            <h2>
-              Looking for a developer
-              <span> who can build?</span>
-            </h2>
-
-            <div className="resume-cta-actions">
-              <Link
-                to="/contact"
-                className="resume-cta-primary"
-              >
-                Contact Me
-                <FiArrowUpRight />
-              </Link>
-
-              <Link
-                to="/projects"
-                className="resume-cta-secondary"
-              >
-                Explore Projects
-                <FiArrowUpRight />
-              </Link>
-            </div>
-          </div>
+          <Link to="/contact" className="resume-compact-contact">Get in touch <FiArrowUpRight /></Link>
         </div>
       </section>
     </main>
   );
-}
-
-function ResumeSectionHeader({ number, label, title }) {
-  return (
-    <div className="resume-section-header">
-      <div className="resume-section-label">
-        <span>{number}</span>
-        <p>{label}</p>
-      </div>
-
-      <h2>{title}</h2>
-    </div>
-  );
-}
-
-function formatCategory(category) {
-  return category
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (letter) => letter.toUpperCase());
 }
 
 export default Resume;

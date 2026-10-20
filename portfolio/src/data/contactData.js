@@ -12,13 +12,13 @@ const contactData = {
       id: "github",
       label: "GitHub",
       icon: "github",
-      url: "#"
+      url: "https://github.com/abdurrah0006"
     },
     {
       id: "linkedin",
       label: "LinkedIn",
       icon: "linkedin",
-      url: "#"
+      url: "https://www.linkedin.com/in/abdurrah0006/"
     },
     {
       id: "email",
@@ -46,8 +46,8 @@ const contactData = {
       {
         id: "email",
         label: "Email",
-        value: "abdurrah0006@gmail.com",
-        href: "mailto:abdurrah0006@gmail.com"
+        value: "jhondoe@gmail.com",
+        href: "mailto:jhondoe@gmail.com"
       },
       {
         id: "phone",
