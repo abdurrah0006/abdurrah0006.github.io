@@ -9,6 +9,9 @@ const profileData = {
   location: "UAE",
   availability: "Available for opportunities",
   email: "abdurrah0006@gmail.com",
+  resume: {
+    file: "/resume/resume.pdf"
+  },
 
   about: {
     eyebrow: "About Me",
