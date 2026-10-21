@@ -368,6 +368,14 @@
   font-size: var(--text-sm);
 }
 
+.experience-certification-period {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: monospace;
+  font-size: 10px;
+}
+
 .experience-cta {
   background: var(--color-background-alt);
 }

@@ -1,36 +1,59 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import themeData from "../data/themeData";
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext(null);
 
-const themes = ["purple", "blue", "rose", "dark"];
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be used inside ThemeProvider");
+  return context;
+}
+
+const accents = themeData.map(({ id }) => id);
 
 function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("portfolio-theme") || "rose";
+  const [accent, setAccent] = useState(() => {
+    const savedAccent = localStorage.getItem("portfolio-accent");
+    const legacyTheme = localStorage.getItem("portfolio-theme");
+    const initialAccent = savedAccent || legacyTheme;
+    return accents.includes(initialAccent) ? initialAccent : "rose";
+  });
+  const [mode, setMode] = useState(() => {
+    const savedMode = localStorage.getItem("portfolio-mode");
+    const legacyTheme = localStorage.getItem("portfolio-theme");
+    return savedMode === "dark" || (!savedMode && legacyTheme === "dark")
+      ? "dark"
+      : "light";
   });
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("portfolio-theme", theme);
-  }, [theme]);
+    const root = document.documentElement;
+    root.setAttribute("data-mode", mode);
+    root.setAttribute("data-accent", accent);
+    localStorage.setItem("portfolio-mode", mode);
+    localStorage.setItem("portfolio-accent", accent);
+  }, [accent, mode]);
 
-  const changeTheme = (newTheme) => {
-    if (!themes.includes(newTheme)) return;
-    setTheme(newTheme);
+  const changeAccent = (newAccent) => {
+    if (!accents.includes(newAccent)) return;
+    setAccent(newAccent);
+    document.documentElement.setAttribute("data-accent", newAccent);
+    localStorage.setItem("portfolio-accent", newAccent);
   };
 
   const toggleDarkMode = () => {
-    setTheme((currentTheme) =>
-      currentTheme === "dark" ? "rose" : "dark"
+    setMode((currentMode) =>
+      currentMode === "dark" ? "light" : "dark"
     );
   };
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
-        themes,
-        changeTheme,
+        mode,
+        accent,
+        accents,
+        changeAccent,
         toggleDarkMode
       }}
     >
@@ -39,16 +62,5 @@ function ThemeProvider({ children }) {
   );
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error(
-      "useTheme must be used inside ThemeProvider"
-    );
-  }
-
-  return context;
-}
-
 export default ThemeProvider;
+

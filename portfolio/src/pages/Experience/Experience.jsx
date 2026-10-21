@@ -15,7 +15,7 @@ function Experience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="page-eyebrow">PROFESSIONAL EXPERIENCE · 2025</span>
+            <span className="page-eyebrow">PROFESSIONAL EXPERIENCE · 2026</span>
 
             <h1>
               Practical work.
@@ -23,7 +23,7 @@ function Experience() {
             </h1>
 
             <p>
-              Three remote development internships alongside formal education and continued study. This page focuses on the roles, responsibilities and credentials behind my full-stack work.
+              Four remote internships across full-stack development and UI/UX design, alongside a Bachelor of Computer Science at London South Bank University, Ajman.
             </p>
             <Link to="/projects" className="experience-cta-primary experience-hero-link">See selected projects <FiArrowUpRight /></Link>
           </motion.div>
@@ -62,13 +62,12 @@ function Experience() {
           <div className="experience-section-heading">
             <div className="experience-section-label">
               <span>02</span>
-              <p>EDUCATION</p>
+              <p>COLLEGE EDUCATION</p>
             </div>
 
             <div>
               <h2>
-                Building the
-                <span> foundation.</span>
+                Studying computer science.
               </h2>
             </div>
           </div>
@@ -142,6 +141,11 @@ function Experience() {
                   <h3>{certification.title}</h3>
 
                   <p>{certification.issuer}</p>
+                  {certification.period && (
+                    <small className="experience-certification-period">
+                      {certification.period}
+                    </small>
+                  )}
                 </motion.article>
               )
             )}

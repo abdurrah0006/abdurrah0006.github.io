@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
+import { lazy, Suspense } from "react";
 import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import profileData from "../../../data/profileData";
 import contactData from "../../../data/contactData";
 import Button from "../../common/Button/Button";
-import HeroScene from "../../3D/HeroScene/HeroScene";
+import projectsData from "../../../data/projectsData";
+import experienceData from "../../../data/experienceData";
+import { useTheme } from "../../../context/ThemeContext";
 import "./Hero.css";
+
+const HeroScene = lazy(() => import("../../3d/HeroScene/HeroScene"));
+const socialLinks = Array.isArray(contactData?.socialLinks)
+  ? contactData.socialLinks
+  : [];
+const projectCount = Array.isArray(projectsData) ? projectsData.length : 0;
+const internshipCount = Array.isArray(experienceData?.experience)
+  ? experienceData.experience.length
+  : 0;
+const heroStats = [
+  { value: `${projectCount}`, label: "Projects" },
+  { value: `${internshipCount}`, label: "Internships" }
+];
 
 const socialIcons = {
   github: FiGithub,
@@ -14,6 +30,7 @@ const socialIcons = {
 };
 
 function Hero() {
+  const { accent } = useTheme();
   return (
     <section className="hero">
       <div className="hero-background" aria-hidden="true">
@@ -76,18 +93,26 @@ function Hero() {
             {profileData.heroVisual?.label || "DIGITAL EXPERIENCE"}
           </div>
 
-          <HeroScene
-            skills={profileData.heroSkills}
-            code={profileData.heroVisual?.code || []}
-            technologies={profileData.heroVisual?.technologies || []}
-          />
+          <Suspense
+            fallback={
+              <div
+                className="hero-scene hero-scene-loading"
+                aria-label="Loading 3D portfolio visual"
+              />
+            }
+          >
+            <HeroScene
+              accent={accent}
+              technologies={profileData.heroVisual?.technologies || []}
+            />
+          </Suspense>
         </motion.div>
       </div>
 
       <div className="container hero-bottom">
-{contactData.socialLinks?.length > 0 && (
+        {socialLinks.length > 0 && (
             <div className="hero-socials">
-              {contactData.socialLinks.map((social) => {
+              {socialLinks.map((social) => {
                 const Icon = socialIcons[social.id] || socialIcons[social.icon];
 
                 return (
@@ -107,7 +132,7 @@ function Hero() {
           )}
 
         <div className="hero-stats">
-          {profileData.stats.map((stat) => (
+          {heroStats.map((stat) => (
             <div className="hero-stat" key={stat.label}>
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>

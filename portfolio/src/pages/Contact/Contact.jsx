@@ -2,12 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FiArrowUpRight,
-  FiCheck,
   FiGithub,
   FiLinkedin,
   FiMail,
   FiMapPin,
-  FiPhone,
   FiSend
 } from "react-icons/fi";
 import contactData from "../../data/contactData";
@@ -16,8 +14,6 @@ import "./Contact.css";
 
 const iconMap = {
   email: FiMail,
-  phone: FiPhone,
-  whatsapp: FiSend,
   location: FiMapPin
 };
 
@@ -29,7 +25,7 @@ function Contact() {
     message: ""
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [emailDraftRequested, setEmailDraftRequested] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,20 +39,13 @@ function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Contact form submission:", formData);
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
 
-    setSubmitted(true);
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    window.location.href = `mailto:${contactData.email}?subject=${subject}&body=${body}`;
+    setEmailDraftRequested(true);
   };
 
   return (
@@ -105,24 +94,14 @@ function Contact() {
               <div className="contact-methods">
                 {contactData.contactPage.contactMethods.map(
                   (method) => {
-                    const Icon =
-                      iconMap[method.id] || Mail;
+                    const Icon = iconMap[method.id] || FiMail;
+                    const MethodTag = method.href ? "a" : "div";
 
                     return (
-                      <a
+                      <MethodTag
                         className="contact-method"
-                        href={method.href}
+                        {...(method.href ? { href: method.href } : {})}
                         key={method.id}
-                        target={
-                          method.id === "whatsapp"
-                            ? "_blank"
-                            : undefined
-                        }
-                        rel={
-                          method.id === "whatsapp"
-                            ? "noreferrer"
-                            : undefined
-                        }
                       >
                         <div className="contact-method-icon">
                           <Icon />
@@ -138,8 +117,8 @@ function Contact() {
                           </strong>
                         </div>
 
-                        <FiArrowUpRight />
-                      </a>
+                        {method.href && <FiArrowUpRight />}
+                      </MethodTag>
                     );
                   }
                 )}
@@ -152,7 +131,7 @@ function Contact() {
                   {contactData.contactPage.socialLinks.map(
                     (social) => (
                       <a
-                        href={social.href}
+                        href={social.url}
                         key={social.id}
                         target="_blank"
                         rel="noreferrer"
@@ -292,20 +271,11 @@ function Contact() {
                   type="submit"
                   className="contact-submit"
                 >
-                  {submitted ? (
-                    <>
-                      Message Ready
-                      <FiCheck />
-                    </>
-                  ) : (
-                    <>
-                      {contactData.contactPage.form.submitLabel}
-                      <FiSend />
-                    </>
-                  )}
+                  {contactData.contactPage.form.submitLabel}
+                  <FiSend />
                 </button>
 
-                {submitted && (
+                {emailDraftRequested && (
                   <motion.p
                     className="contact-success"
                     initial={{
@@ -317,9 +287,7 @@ function Contact() {
                       y: 0
                     }}
                   >
-                    Your message has been captured
-                    successfully. The backend/email
-                    service can be connected next.
+                    Your email app should open with a draft. The message is not sent from this website; review and send it in your email app. If it did not open, email me at {contactData.email}.
                   </motion.p>
                 )}
               </form>

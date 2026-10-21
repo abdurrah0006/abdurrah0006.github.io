@@ -8,20 +8,7 @@ const profileData = {
   description: "I'm a passionate developer focused on creating responsive, user-friendly and scalable web applications.",
   location: "UAE",
   availability: "Available for opportunities",
-  profileImage: "/images/profile.jpg",
   email: "abdurrah0006@gmail.com",
-
-  resume: {
-    file: "/resume/resume.pdf"
-  },
-  
-  stats: [
-    { value: "30+", label: "Projects Built" },
-    { value: "1.5+", label: "Years Experience" },
-    { value: "3+", label: "Internships" }
-  ],
-
-  heroSkills: ["React", "Node.js", "MongoDB", "UI/UX"],
 
   about: {
     eyebrow: "About Me",
@@ -31,20 +18,14 @@ const profileData = {
       "Full-Stack Development",
       "UI/UX Design",
       "Responsive Web Applications",
-      "Problem Solving"
+      "Problem Solving",
+      "API & Database Integration",
+      "Interactive Experiences"
     ]
   },
 
   heroVisual: {
     label: "BUILD / DESIGN / CREATE",
-    title: "Turning ideas into digital experiences.",
-    code: [
-      "const developer = {",
-      "  design: true,",
-      "  build: true,",
-      "  create: true",
-      "};"
-    ],
     technologies: ["React", "Node.js", "MongoDB", "Figma"]
   }
 };

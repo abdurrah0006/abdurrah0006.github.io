@@ -2,9 +2,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, OrbitControls, Sparkles, Text } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
+import themeData from "../../../data/themeData";
 import "./HeroScene.css";
 
-function CoreObject() {
+function CoreObject({ primary, secondary }) {
   const meshRef = useRef();
 
   useFrame((state, delta) => {
@@ -34,20 +35,21 @@ function CoreObject() {
       <mesh ref={meshRef}>
         <icosahedronGeometry args={[1.45, 1]} />
         <meshStandardMaterial
-          color="#7c3aed"
-          emissive="#7c3aed"
-          emissiveIntensity={0.35}
-          roughness={0.18}
-          metalness={0.65}
+          color={primary}
+          emissive={primary}
+          emissiveIntensity={0.65}
+          roughness={0.3}
+          metalness={0.25}
+          toneMapped={false}
           transparent
-          opacity={0.88}
+          opacity={0.96}
         />
       </mesh>
 
       <mesh scale={1.18}>
         <icosahedronGeometry args={[1.45, 1]} />
         <meshBasicMaterial
-          color="#ec4899"
+          color={secondary}
           wireframe
           transparent
           opacity={0.28}
@@ -57,24 +59,25 @@ function CoreObject() {
   );
 }
 
-function InnerCore() {
+function InnerCore({ secondary }) {
   return (
     <Float speed={2} rotationIntensity={0.2} floatIntensity={1}>
       <mesh scale={0.62}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshStandardMaterial
-          color="#06b6d4"
-          emissive="#06b6d4"
-          emissiveIntensity={1.5}
+          color={secondary}
+          emissive={secondary}
+          emissiveIntensity={0.8}
           roughness={0.1}
           metalness={0.3}
+          toneMapped={false}
         />
       </mesh>
     </Float>
   );
 }
 
-function OrbitRing({ radius = 2.2, rotation = [0, 0, 0], speed = 0.2 }) {
+function OrbitRing({ radius = 2.2, rotation = [0, 0, 0], speed = 0.2, color }) {
   const ringRef = useRef();
 
   useFrame((_, delta) => {
@@ -86,7 +89,7 @@ function OrbitRing({ radius = 2.2, rotation = [0, 0, 0], speed = 0.2 }) {
     <mesh ref={ringRef} rotation={rotation}>
       <torusGeometry args={[radius, 0.012, 12, 100]} />
       <meshBasicMaterial
-        color="#ec4899"
+        color={color}
         transparent
         opacity={0.5}
       />
@@ -125,7 +128,7 @@ function TechnologyLabel({ children, position }) {
   );
 }
 
-function SceneContent({ technologies = [] }) {
+function SceneContent({ technologies = [], primary, secondary }) {
   const positions = [
     [-2.4, 1.45, 0],
     [2.35, 1.15, 0],
@@ -135,55 +138,60 @@ function SceneContent({ technologies = [] }) {
 
   return (
     <>
-      <ambientLight intensity={1.4} />
+      <ambientLight intensity={0.55} />
 
       <directionalLight
         position={[4, 5, 5]}
-        intensity={3}
+        intensity={1.1}
         color="#ffffff"
       />
 
       <pointLight
         position={[-3, 2, 3]}
-        intensity={3}
-        color="#7c3aed"
+        intensity={1.25}
+        color={primary}
       />
 
       <pointLight
         position={[3, -2, 2]}
-        intensity={2.5}
-        color="#ec4899"
+        intensity={0.85}
+        color={secondary}
       />
 
-      <CoreObject />
-      <InnerCore />
+      <CoreObject primary={primary} secondary={secondary} />
+      <InnerCore secondary={secondary} />
 
       <OrbitRing
         radius={2.15}
         rotation={[Math.PI / 2.7, 0.2, 0]}
         speed={0.25}
+        color={secondary}
       />
 
       <OrbitRing
         radius={2.5}
         rotation={[0.7, Math.PI / 3, 0]}
         speed={-0.18}
+        color={primary}
       />
 
       <OrbitRing
         radius={2.85}
         rotation={[Math.PI / 2, 0, Math.PI / 5]}
         speed={0.12}
+        color={secondary}
       />
 
-      {technologies.slice(0, 4).map((technology, index) => (
-        <TechnologyLabel
-          key={`${technology}-${index}`}
-          position={positions[index]}
-        >
-          {technology}
-        </TechnologyLabel>
-      ))}
+      <Suspense fallback={null}>
+        {technologies.slice(0, 4).map((technology, index) => (
+          <TechnologyLabel
+            key={`${technology}-${index}`}
+            position={positions[index]}
+          >
+            {technology}
+          </TechnologyLabel>
+        ))}
+      </Suspense>
 
       <Sparkles
         count={100}
@@ -191,36 +199,44 @@ function SceneContent({ technologies = [] }) {
         size={2}
         speed={0.3}
         opacity={0.55}
-        color="#c4b5fd"
+        color={primary}
       />
     </>
   );
 }
 
-function HeroScene({ technologies = [] }) {
+function HeroScene({ technologies = [], accent = "purple" }) {
+  const theme = themeData.find((item) => item.id === accent) || themeData[3];
   return (
     <div className="hero-scene">
       <div className="hero-scene-glow" />
 
       <Canvas
-        camera={{ position: [0, 0, 7], fov: 45 }}
-        dpr={[1, 2]}
+        key={accent}
+        camera={{ position: [0, 0, 7], fov: 50 }}
+        // A capped pixel ratio avoids mobile GPU overload while keeping the
+        // scene crisp on high-density screens.
+        dpr={[1, 1.5]}
         gl={{
-          antialias: true,
-          alpha: true
+          antialias: false,
+          alpha: true,
+          powerPreference: "low-power"
         }}
+        fallback={<div className="hero-scene-fallback" aria-hidden="true" />}
       >
-        <Suspense fallback={null}>
-          <SceneContent technologies={technologies} />
+        <SceneContent
+          technologies={technologies}
+          primary={theme.primary}
+          secondary={theme.secondary}
+        />
 
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            enableRotate={false}
-            autoRotate
-            autoRotateSpeed={0.25}
-          />
-        </Suspense>
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableRotate={false}
+          autoRotate
+          autoRotateSpeed={0.25}
+        />
       </Canvas>
     </div>
   );

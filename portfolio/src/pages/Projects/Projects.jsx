@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiArrowUpRight, FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import projectsData from "../../data/projectsData";
 import "./Projects.css";
@@ -8,26 +8,37 @@ import "./Projects.css";
 const PROJECTS_PER_PAGE = 6;
 
 function Projects() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeGroup, setActiveGroup] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const categories = useMemo(() => {
-    const uniqueCategories = [
-      ...new Set(projectsData.map((project) => project.category))
-    ];
-
-    return ["All", ...uniqueCategories];
-  }, []);
+  const groups = [
+    "All",
+    "Web Applications",
+    "Websites & Portfolios",
+    "UI/UX & Design",
+    "Utilities & Games",
+    "Learning Projects"
+  ];
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "All") {
-      return projectsData;
-    }
+    const normalizedQuery = searchQuery.trim().toLowerCase();
 
-    return projectsData.filter(
-      (project) => project.category === activeCategory
-    );
-  }, [activeCategory]);
+    return projectsData.filter((project) => {
+      const matchesGroup =
+        activeGroup === "All" || getProjectGroup(project) === activeGroup;
+      const searchableText = [
+        project.title,
+        project.category,
+        project.preview.description,
+        ...project.features,
+        ...project.technologies
+      ].join(" ").toLowerCase();
+      const matchesSearch = !normalizedQuery || searchableText.includes(normalizedQuery);
+
+      return matchesGroup && matchesSearch;
+    });
+  }, [activeGroup, searchQuery]);
 
   const totalPages = Math.ceil(
     filteredProjects.length / PROJECTS_PER_PAGE
@@ -43,8 +54,13 @@ function Projects() {
     );
   }, [filteredProjects, currentPage]);
 
-  const handleCategoryChange = (category) => {
-    setActiveCategory(category);
+  const handleGroupChange = (group) => {
+    setActiveGroup(group);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
     setCurrentPage(1);
   };
 
@@ -85,26 +101,34 @@ function Projects() {
         </div>
       </section>
 
-      <section className="projects-section section">
+      <section id="projects-section" className="projects-section section">
         <div className="container">
           <div className="projects-toolbar">
-            <div className="projects-filters">
-              {categories.map((category) => (
-                <button
-                  type="button"
-                  key={category}
-                  className={
-                    activeCategory === category
-                      ? "project-filter active"
-                      : "project-filter"
-                  }
-                  onClick={() =>
-                    handleCategoryChange(category)
-                  }
-                >
-                  {category}
-                </button>
-              ))}
+            <div className="projects-toolbar-controls">
+              <div className="projects-filters" role="group" aria-label="Filter projects by type">
+                {groups.map((group) => (
+                  <button
+                    type="button"
+                    key={group}
+                    className={activeGroup === group ? "project-filter active" : "project-filter"}
+                    aria-pressed={activeGroup === group}
+                    onClick={() => handleGroupChange(group)}
+                  >
+                    {group}
+                  </button>
+                ))}
+              </div>
+
+              <label className="projects-search">
+                <FiSearch aria-hidden="true" />
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  placeholder="Search projects or technologies"
+                  aria-label="Search projects or technologies"
+                />
+              </label>
             </div>
 
             <span className="projects-count">
@@ -130,7 +154,7 @@ function Projects() {
             </motion.div>
           ) : (
             <div className="projects-empty">
-              <p>No projects found in this category.</p>
+              <p>No projects match these filters. Try another group or search term.</p>
             </div>
           )}
 
@@ -185,6 +209,32 @@ function Projects() {
   );
 }
 
+function getProjectGroup(project) {
+  const category = project.category.toLowerCase();
+
+  if (category.includes("learning") || category.includes("python application")) {
+    return "Learning Projects";
+  }
+
+  if (category.includes("ui/ux") || category.includes("design")) {
+    return "UI/UX & Design";
+  }
+
+  if (
+    category.includes("utility") ||
+    category.includes("game") ||
+    category.includes("ui component")
+  ) {
+    return "Utilities & Games";
+  }
+
+  if (category.includes("website") || category.includes("portfolio")) {
+    return "Websites & Portfolios";
+  }
+
+  return "Web Applications";
+}
+
 function ProjectCard({ project, index }) {
   return (
     <motion.article
@@ -204,6 +254,10 @@ function ProjectCard({ project, index }) {
         <img
           src={project.image}
           alt={`${project.title} project preview`}
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src = "/images/project-placeholder.svg";
+          }}
         />
 
         <div className="project-page-card-overlay">

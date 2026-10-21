@@ -10,6 +10,8 @@ function ProjectDetails() {
     (item) => item.id === projectId
   );
 
+  const hasLiveDeployment = isWebUrl(project?.links?.live);
+
   if (!project) {
     return (
       <main className="project-not-found">
@@ -42,29 +44,34 @@ function ProjectDetails() {
           </p>
 
           <div className="project-details-links">
-            <a
-              href={project.links.live}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live Project
-              <FiArrowUpRight />
-            </a>
+            {hasLiveDeployment ? (
+              <a href={project.links.live} target="_blank" rel="noreferrer">
+                Live Project
+                <FiArrowUpRight />
+              </a>
+            ) : (
+              <p className="project-deployment-note" role="status">
+                Sorry, this project isn’t deployed yet. I’ll update this page
+                when a live version is available.
+              </p>
+            )}
 
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-              <FiGithub />
-            </a>
+            {project.links.github && (
+              <a href={project.links.github} target="_blank" rel="noreferrer">
+                GitHub
+                <FiGithub />
+              </a>
+            )}
           </div>
 
           <div className="project-details-cover">
             <img
               src={project.image}
               alt={`${project.title} preview`}
+              onError={(event) => {
+                event.currentTarget.onerror = null;
+                event.currentTarget.src = "/images/project-placeholder.svg";
+              }}
             />
           </div>
         </div>
@@ -85,17 +92,17 @@ function ProjectDetails() {
               />
 
               <CaseStudySection
-                title="The Problem"
+                title={project.problem.title}
                 content={project.problem.description}
               />
 
               <CaseStudySection
-                title="The Solution"
+                title={project.solution.title}
                 content={project.solution.description}
               />
 
               <CaseStudySection
-                title="Development Process"
+                title={project.development.title}
                 content={project.development.description}
               />
 
@@ -134,40 +141,45 @@ function ProjectDetails() {
                 </div>
               </section>
 
-              <section className="case-study-section">
-                <span className="case-study-label">
-                  CHALLENGES
-                </span>
+              {project.challenges.length > 0 && (
+                <section className="case-study-section">
+                  <span className="case-study-label">
+                    DESIGN CONSIDERATIONS
+                  </span>
 
-                <h2>Challenges I solved</h2>
+                  <h2>Project considerations</h2>
 
-                <div className="challenge-list">
-                  {project.challenges.map((challenge) => (
-                    <article
-                      className="challenge-card"
-                      key={challenge.title}
-                    >
-                      <h3>{challenge.title}</h3>
-                      <p>{challenge.description}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
+                  <div className="challenge-list">
+                    {project.challenges.map((challenge) => (
+                      <article
+                        className="challenge-card"
+                        key={challenge.title}
+                      >
+                        <h3>{challenge.title}</h3>
+                        <p>{challenge.description}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              )}
 
-              <section className="case-study-section">
-                <span className="case-study-label">
-                  WHAT I LEARNED
-                </span>
+              {project.learnings.length > 0 && (
+                <section className="case-study-section">
+                  <span className="case-study-label">
+                    KEY TAKEAWAYS
+                  </span>
 
-                <h2>Key takeaways</h2>
+                  <h2>Key takeaways</h2>
 
-                <ul className="learning-list">
-                  {project.learnings.map((learning) => (
-                    <li key={learning}>{learning}</li>
-                  ))}
-                </ul>
-              </section>
+                  <ul className="learning-list">
+                    {project.learnings.map((learning) => (
+                      <li key={learning}>{learning}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
+              {project.screenshots.length > 0 && (
               <section className="case-study-section">
                 <span className="case-study-label">
                   PROJECT SCREENSHOTS
@@ -181,10 +193,15 @@ function ProjectDetails() {
                       key={screenshot}
                       src={screenshot}
                       alt={`${project.title} screenshot`}
+                      onError={(event) => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src = "/images/project-placeholder.svg";
+                      }}
                     />
                   ))}
                 </div>
               </section>
+              )}
             </div>
           </div>
         </div>
@@ -205,6 +222,17 @@ function CaseStudySection({ title, content }) {
       <p>{content}</p>
     </section>
   );
+}
+
+function isWebUrl(value) {
+  if (typeof value !== "string") return false;
+
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" || url.protocol === "http:";
+  } catch {
+    return false;
+  }
 }
 
 export default ProjectDetails;

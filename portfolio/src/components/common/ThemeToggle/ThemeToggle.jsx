@@ -1,31 +1,38 @@
 import { useTheme } from "../../../context/ThemeContext";
+import { FiDroplet, FiFeather, FiHeart, FiSun, FiZap } from "react-icons/fi";
 import "./ThemeToggle.css";
 
-const themeOptions = [
-  { id: "purple", label: "Purple", className: "theme-purple" },
-  { id: "blue", label: "Blue", className: "theme-blue" },
-  { id: "rose", label: "Rose", className: "theme-rose" },
-  { id: "dark", label: "Dark", className: "theme-dark" }
+const accentOptions = [
+  { id: "purple", name: "Purple", color: "#7c3aed", Icon: FiZap },
+  { id: "orange", name: "Orange", color: "#ea580c", Icon: FiSun },
+  { id: "rose", name: "Rose", color: "#e11d48", Icon: FiHeart },
+  { id: "green", name: "Green", color: "#16a34a", Icon: FiFeather },
+  { id: "blue", name: "Blue", color: "#2563eb", Icon: FiDroplet }
 ];
 
 function ThemeToggle() {
-  const { theme, changeTheme } = useTheme();
+  const { accent, changeAccent } = useTheme();
 
   return (
-    <div className="theme-toggle">
-      <div className="theme-toggle-options" role="group" aria-label="Choose color theme">
-        {themeOptions.map((option) => (
-          <button
-            key={option.id}
-            type="button"
-            className={`theme-option ${option.className} ${theme === option.id ? "active" : ""}`}
-            onClick={() => changeTheme(option.id)}
-            aria-label={`Use ${option.label} theme`}
-            aria-pressed={theme === option.id}
-            title={option.label}
-          >
-            <span className="theme-option-dot" />
-          </button>
+    <div className="theme-selector">
+      <div
+        className="theme-toggle-options"
+        role="group"
+        aria-label="Choose accent color"
+      >
+        {accentOptions.map(({ id, name, color, Icon }) => (
+            <button
+              key={id}
+              type="button"
+              className={`theme-option theme-option-${id}${accent === id ? " active" : ""}`}
+              style={{ "--theme-swatch": color }}
+              onClick={() => changeAccent(id)}
+              aria-label={`Use ${name.toLowerCase()} accent color`}
+              aria-pressed={accent === id}
+              title={`${name} accent`}
+            >
+              <Icon aria-hidden="true" />
+            </button>
         ))}
       </div>
     </div>

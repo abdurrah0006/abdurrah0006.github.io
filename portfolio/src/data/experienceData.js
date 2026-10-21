@@ -1,120 +1,86 @@
 const experienceData = {
   experience: [
     {
-      id: "codealpha",
-      company: "CodeAlpha",
-      role: "Full-Stack Web Development Intern",
+      id: "future-intern",
+      company: "Future Intern",
+      role: "Full-Stack Development Intern",
       type: "Internship",
-      period: "2025",
-      location: "Remote",
-
+      period: "Jul – Aug 2026",
+      location: "Remote, UAE",
       description:
-        "Worked on full-stack web development projects while gaining practical experience with frontend interfaces, backend development, APIs and database integration.",
-
+        "Contributed to practical full-stack work across MiniCRM, MyPortfolio and MrBean Café. The placement brought together React interface development and backend concepts, with project features built as part of the internship experience.",
       responsibilities: [
-        "Developed responsive web interfaces.",
-        "Worked with frontend and backend technologies.",
-        "Integrated APIs and database functionality.",
-        "Debugged application issues and improved existing features.",
-        "Worked with Git and structured development workflows."
+        "Built and refined features for MiniCRM, MyPortfolio and MrBean Café.",
+        "Applied React to develop user-facing application interfaces.",
+        "Used backend development concepts to support application functionality.",
+        "Received an internship certificate and a letter of recommendation."
       ],
-
-      technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB"
-      ],
-
-      achievements: [
-        "Strengthened full-stack development skills.",
-        "Improved understanding of real-world development workflows.",
-        "Worked on practical application development."
-      ]
+      technologies: ["React", "Node.js", "Express.js", "MongoDB"]
     },
-
     {
       id: "syntecxhub",
       company: "Syntecxhub",
-      role: "Full-Stack Development Intern",
+      role: "UI/UX Design Intern",
       type: "Internship",
-      period: "2025",
-      location: "Remote",
-
+      period: "Jun – Jul 2026",
+      location: "Remote, UAE",
       description:
-        "Gained practical experience developing web applications and working across frontend and backend technologies.",
-
+        "Created interface design work in Figma, including VisionaryLabs, a responsive agency landing page, FoodieGo’s mobile ordering experience and ProjectPulse’s project dashboard. The internship focused on turning product needs into clear screens and connected user flows.",
       responsibilities: [
-        "Built responsive frontend interfaces.",
-        "Worked with JavaScript-based web technologies.",
-        "Integrated frontend applications with backend services.",
-        "Worked with databases and API communication.",
-        "Tested and debugged application functionality."
+        "Designed a responsive landing page for VisionaryLabs.",
+        "Mapped FoodieGo’s mobile food-ordering experience, from browsing to order tracking.",
+        "Designed ProjectPulse dashboard views for project and team information.",
+        "Received an internship certificate."
       ],
-
-      technologies: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB"
-      ],
-
-      achievements: [
-        "Improved understanding of full-stack application architecture.",
-        "Strengthened debugging and problem-solving skills.",
-        "Gained experience working with real application requirements."
-      ]
+      technologies: ["Figma", "Wireframing", "UI Design", "Responsive Design"]
     },
-
     {
       id: "skillfied-mentor",
       company: "Skillfied Mentor",
       role: "MERN Stack Development Intern",
       type: "Internship",
-      period: "2025",
-      location: "Remote",
-
+      period: "Apr – Jun 2026",
+      location: "Remote, UAE",
       description:
-        "Worked with the MERN stack to develop web application functionality and strengthen practical full-stack development skills.",
-
+        "Applied the MERN stack across two practical web development projects. The work covered React interfaces, server-side features and MongoDB data, providing experience with how the parts of a JavaScript application fit together.",
       responsibilities: [
-        "Developed React-based interfaces.",
-        "Created backend functionality using Node.js and Express.",
-        "Worked with MongoDB and Mongoose.",
-        "Implemented API-driven application features.",
-        "Improved application responsiveness and usability."
+        "Worked on two projects spanning frontend, backend and database functionality.",
+        "Built React-based interfaces and Node.js/Express application features.",
+        "Used MongoDB as part of the application data layer.",
+        "Received an internship certificate."
       ],
-
-      technologies: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mongoose"
+      technologies: ["MongoDB", "Express.js", "React", "Node.js"]
+    },
+    {
+      id: "codealpha",
+      company: "CodeAlpha",
+      role: "Full-Stack Web Development Intern",
+      type: "Internship",
+      period: "Apr – May 2026",
+      location: "Remote, UAE",
+      description:
+        "Developed CivilCard, an e-commerce application, as practical full-stack project work. The internship involved shaping frontend features and connecting them with backend functionality, building on the web development responsibilities already listed for this role.",
+      responsibilities: [
+        "Developed CivilCard, an e-commerce application for browsing products and placing orders.",
+        "Applied frontend and backend concepts while implementing application features.",
+        "Worked with API and database functionality as part of the full-stack workflow.",
+        "Received an internship certificate and a letter of recommendation."
       ],
-
-      achievements: [
-        "Strengthened MERN stack development skills.",
-        "Improved understanding of frontend-backend communication.",
-        "Gained more practical experience building complete web applications."
-      ]
+      technologies: ["JavaScript", "Node.js", "Express.js", "MongoDB"]
     }
   ],
 
   education: [
     {
-      id: "school",
-      qualification: "Higher Secondary Education",
-      institution: "CBSE",
-      period: "Completed",
+      id: "london-south-bank-university",
+      qualification: "Bachelor of Computer Science · First Year",
+      institution: "London South Bank University, Ajman",
+      period: "2026 – 2029",
       description:
-        "Completed higher secondary education with a focus on building a strong academic foundation before moving toward software development."
+        "Currently studying for a Bachelor of Computer Science. The program is scheduled to run from 2026 to 2029.",
+      startYear: "2026",
+      endYear: "2029",
+      status: "First year"
     }
   ],
 
@@ -122,17 +88,38 @@ const experienceData = {
     {
       id: "fullstack",
       title: "Full-Stack Web Development",
-      issuer: "Udemy"
+      issuer: "Udemy",
+      period: "Apr – Oct 2025"
     },
     {
       id: "blockchain",
       title: "Blockchain Fundamentals",
-      issuer: "Certification"
+      issuer: "Skillilearn",
+      period: "Dec 2025 – Feb 2026"
     },
     {
       id: "uiux",
       title: "UI/UX Design",
-      issuer: "Certification"
+      issuer: "Skillilearn",
+      period: "Mar 2026"
+    },
+    {
+      id: "figma-ui-design",
+      title: "Figma / UI Design",
+      issuer: "Skillilearn",
+      period: "Apr 2026"
+    },
+    {
+      id: "million-prompter",
+      title: "1 Million Prompter",
+      issuer: "Dubai Future Foundation",
+      period: "Aug 2026"
+    },
+    {
+      id: "ethereum-development",
+      title: "Ethereum Development / Fundamentals",
+      issuer: "Udemy",
+      period: "Ongoing"
     }
   ]
 };

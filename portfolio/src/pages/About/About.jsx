@@ -132,7 +132,13 @@ function getHighlightDescription(highlight) {
       "Creating interfaces that adapt smoothly across desktop, tablet and mobile devices.",
 
     "Problem Solving":
-      "Breaking complex technical problems into practical solutions and continuously improving the implementation."
+      "Breaking a feature into manageable steps, then refining the implementation as the interface and data flow come together.",
+
+    "API & Database Integration":
+      "Connecting React interfaces to REST APIs and data stores, including MongoDB, so application screens can work with real project data.",
+
+    "Interactive Experiences":
+      "Building interfaces around user actions, from searchable content and account flows to interactive 3D product previews."
   };
 
   return (

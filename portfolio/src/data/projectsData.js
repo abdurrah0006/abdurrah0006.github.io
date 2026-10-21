@@ -1,336 +1,336 @@
 const projectsData = [
   {
-    id: "civilcard-deployed",
-    title: "CivilCard",
-    category: "Full-Stack E-commerce",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/poster.jpg",
-    preview: {
-      description: "An Avengers-themed card e-commerce application for browsing character cards and placing orders."
+    "id": "civilcard-deployed",
+    "title": "CivilCard (Alternate Backend Version)",
+    "category": "Full-Stack E-commerce",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/poster.jpg",
+    "preview": {
+      "description": "An Avengers-themed card storefront for browsing character cards, viewing product details and placing orders. This repository uses a backend separate from the CodeAlpha CivilCard project, which is configured for local backend use."
     },
-    overview: {
-      title: "An Avengers card marketplace",
-      description: "CivilCard is a full-stack storefront centered on Avengers character cards. Visitors can browse the catalog, open product details, and continue into a cart and ordering flow. The repository describes separate frontend and backend applications, with JavaScript, Node.js, Express, and MongoDB supporting the experience. Character-card image assets are part of the project as well. The project documents these capabilities: browse character cards."
+    "overview": {
+      "title": "Card storefront with a separate backend",
+      "description": "This CivilCard repository contains the storefront for browsing Avengers character cards, viewing product details and placing orders. It is the separate-backend version, distinct from the CodeAlpha repository, whose backend is configured to run locally. The screenshots show the storefront screens, and the repository link leads to this version’s source."
     },
-    problem: {
-      title: "Project Scope",
-      description: "CivilCard focuses on browse character cards and product detail views as core needs in a full-stack e-commerce. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "An online character-card shop needs to make it easy to move from discovering a card to reviewing its details and placing an order. CivilCard groups those steps into a single storefront, with product browsing, detail views and cart actions forming the main customer journey."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports browse character cards and product detail views in a full-stack e-commerce. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "The storefront brings card browsing, product details and ordering together, so visitors can explore the available collection and continue to the cart. This repository represents the version connected to a separate backend; the CodeAlpha project is maintained as a distinct build with a local backend."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists JavaScript, Node.js, Express, MongoDB. These tools support browse character cards and product detail views within the full-stack e-commerce scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "This version is maintained separately from the CodeAlpha CivilCard repository and uses a different backend setup. The repository lists JavaScript, Node.js, Express and MongoDB; its linked source and screenshots correspond to this storefront version."
     },
-    features: [
+    "features": [
       "Browse character cards",
       "Product detail views",
       "Shopping cart and ordering"
     ],
-    technologies: [
+    "technologies": [
       "JavaScript",
       "Node.js",
       "Express",
       "MongoDB"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping browse character cards, product detail views, and shopping cart and ordering coherent within a full-stack e-commerce. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "This repository represents the CivilCard storefront connected to a separate backend, not the CodeAlpha build configured for local backend use. Its interface centers on moving from character discovery to product details and the cart.",
+        "title": "Helping users find the right information"
       }
     ],
-    learnings: [
-      "The project shows how JavaScript, Node.js, Express, MongoDB can support browse character cards and product detail views. It also illustrates how a full-stack e-commerce can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "This repository is the separate-backend CivilCard version. Its browsing, product-detail and ordering screens should be reviewed independently from the CodeAlpha repository, which is configured for a local backend."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/poster.jpg",
       "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/stark.jpg",
       "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/steve.png",
       "https://raw.githubusercontent.com/abdurrah0006/CivilCard_Deployed/main/frontend/image/thor.jpg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/CivilCard_Deployed"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/CivilCard_Deployed"
     },
-    featured: true
+    "featured": true
   },
   {
-    id: "bootstrap-techstartup",
-    title: "TechStartup",
-    category: "Responsive Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Bootstrap_TechStartup/main/image/TechStartup.png",
-    preview: {
-      description: "A responsive technology startup landing page built with HTML and Bootstrap."
+    "id": "bootstrap-techstartup",
+    "title": "TechStartup",
+    "category": "Responsive Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Bootstrap_TechStartup/main/image/TechStartup.png",
+    "preview": {
+      "description": "A responsive technology startup landing page built with HTML and Bootstrap."
     },
-    overview: {
-      title: "A startup landing page",
-      description: "TechStartup is a responsive landing page created to present a technology startup through a clear business-focused layout. Its sections organize introductory company content into a page that adapts to different screen sizes. The project uses HTML and Bootstrap, relying on Bootstrap's layout and interface components to keep the presentation consistent. The project documents these capabilities: responsive layout, startup landing page sections."
+    "overview": {
+      "title": "A startup landing page",
+      "description": "TechStartup is a Responsive Website. A responsive technology startup landing page built with HTML and Bootstrap. Its main capabilities include Responsive layout, Startup landing page sections. The project uses HTML, Bootstrap to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "TechStartup focuses on responsive layout and startup landing page sections as core needs in a responsive website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for TechStartup is presenting Responsive layout, Startup landing page sections in a way that keeps this responsive website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports responsive layout and startup landing page sections in a responsive website. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "TechStartup brings Responsive layout, Startup landing page sections into one responsive website experience. The feature list describes its main user-facing capabilities, from Responsive layout through Startup landing page sections. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, Bootstrap. These tools support responsive layout and startup landing page sections within the responsive website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, Bootstrap for TechStartup. This stack is the documented technical basis for its responsive website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Responsive layout",
       "Startup landing page sections"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "Bootstrap"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping responsive layout, startup landing page sections, and startup landing page sections coherent within a responsive website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Responsive layout easy to recognize while keeping Startup landing page sections accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the responsive website experience.",
+        "title": "Adapting the experience to screen size"
       }
     ],
-    learnings: [
-      "The project shows how HTML, Bootstrap can support responsive layout and startup landing page sections. It also illustrates how a responsive website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "TechStartup highlights the relationship between Responsive layout and the wider responsive website experience. Its documented stack—HTML, Bootstrap—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Bootstrap_TechStartup/main/image/TechStartup.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Bootstrap_TechStartup"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Bootstrap_TechStartup"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "calculator",
-    title: "Calculator",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Calculator/main/image/Calculator_Light.png",
-    preview: {
-      description: "A browser calculator with keyboard input, error handling and light and dark themes."
+    "id": "calculator",
+    "title": "Calculator",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Calculator/main/image/Calculator_Light.png",
+    "preview": {
+      "description": "A browser calculator with keyboard input, error handling and light and dark themes."
     },
-    overview: {
-      title: "A themed browser calculator",
-      description: "This browser calculator supports both keyboard input and on-screen controls, giving users two ways to enter calculations. It also includes error handling so invalid input can be communicated through the interface, along with light and dark display themes. Built with HTML, CSS, and JavaScript, the project keeps its functionality within a focused utility rather than a larger application. The project documents these capabilities: keyboard input."
+    "overview": {
+      "title": "A themed browser calculator",
+      "description": "Calculator is a Frontend Utility. A browser calculator with keyboard input, error handling and light and dark themes. Its main capabilities include Keyboard input, Error handling, Light and dark themes. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Calculator focuses on keyboard input and error handling as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Calculator is presenting Keyboard input, Error handling, Light and dark themes in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports keyboard input and error handling in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Calculator brings Keyboard input, Error handling, Light and dark themes into one frontend utility experience. The feature list describes its main user-facing capabilities, from Keyboard input through Light and dark themes. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support keyboard input and error handling within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Calculator. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Keyboard input",
       "Error handling",
       "Light and dark themes"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping keyboard input, error handling, and light and dark themes coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Keyboard input easy to recognize while keeping Error handling, Light and dark themes accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Presenting keyboard input clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support keyboard input and error handling. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Calculator highlights the relationship between Keyboard input and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Calculator/main/image/Calculator_Light.png",
       "https://raw.githubusercontent.com/abdurrah0006/Calculator/main/image/Calculator_Dark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Calculator"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Calculator"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "clock-minimalist",
-    title: "Minimalist Clock",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Clock_Minimalist/main/image/Minimalist_Clock.png",
-    preview: {
-      description: "A minimalist analog clock with smooth real-time movement and a light and dark theme toggle."
+    "id": "clock-minimalist",
+    "title": "Minimalist Clock",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Clock_Minimalist/main/image/Minimalist_Clock.png",
+    "preview": {
+      "description": "A minimalist analog clock with smooth real-time movement and a light and dark theme toggle."
     },
-    overview: {
-      title: "Time with a minimal interface",
-      description: "Minimalist Clock presents the current time through an analog clock face with smooth movement. The interface is intentionally restrained, keeping the hands and time display as the main visual elements while also offering light and dark themes. HTML, CSS, and JavaScript provide the page structure, styling, and live behavior. The project documents these capabilities: real-time analog clock, smooth hand movement."
+    "overview": {
+      "title": "Time with a minimal interface",
+      "description": "Minimalist Clock is a Frontend Utility. A minimalist analog clock with smooth real-time movement and a light and dark theme toggle. Its main capabilities include Real-time analog clock, Smooth hand movement, Light and dark themes. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Minimalist Clock focuses on real-time analog clock and smooth hand movement as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Minimalist Clock is presenting Real-time analog clock, Smooth hand movement, Light and dark themes in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports real-time analog clock and smooth hand movement in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Minimalist Clock brings Real-time analog clock, Smooth hand movement, Light and dark themes into one frontend utility experience. The feature list describes its main user-facing capabilities, from Real-time analog clock through Light and dark themes. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support real-time analog clock and smooth hand movement within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Minimalist Clock. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Real-time analog clock",
       "Smooth hand movement",
       "Light and dark themes"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping real-time analog clock, smooth hand movement, and light and dark themes coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Real-time analog clock easy to recognize while keeping Smooth hand movement, Light and dark themes accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Keeping interactions timely"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support real-time analog clock and smooth hand movement. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Minimalist Clock highlights the relationship between Real-time analog clock and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Clock_Minimalist/main/image/Minimalist_Clock.png",
       "https://raw.githubusercontent.com/abdurrah0006/Clock_Minimalist/main/image/Minimalist_Clock_Dark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Clock_Minimalist"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Clock_Minimalist"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "codealpha-civilcard",
-    title: "CivilCard (CodeAlpha)",
-    category: "Full-Stack E-commerce",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Home.png",
-    preview: {
-      description: "An Avengers-themed card marketplace with account access, product browsing, cart and order flows."
+    "id": "codealpha-civilcard",
+    "title": "CivilCard (CodeAlpha · Local Backend)",
+    "category": "Full-Stack E-commerce",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Home.png",
+    "preview": {
+      "description": "The CodeAlpha CivilCard e-commerce project, configured to use a local backend. It includes account access, product search and detail pages, cart management and order placement."
     },
-    overview: {
-      title: "A themed card shop",
-      description: "This CivilCard repository is a CodeAlpha full-stack e-commerce project built around an Avengers-themed product catalog. The documented shopping flow includes category browsing, search, product details, cart quantity management, and order placement. JWT authentication and protected routes provide account access for actions that require a signed-in user. The JavaScript application uses Node.js, Express, and MongoDB for its server and data layer."
+    "overview": {
+      "title": "CodeAlpha build with a local backend",
+      "description": "This is the CodeAlpha CivilCard project, configured around a local backend rather than the separate-backend setup in the other CivilCard repository. Its e-commerce flow includes JWT-protected account access, product categories and search, detail pages, cart quantity controls and order placement."
     },
-    problem: {
-      title: "Project Scope",
-      description: "CivilCard (CodeAlpha) focuses on jWT authentication and protected routes and product categories and search as core needs in a full-stack e-commerce. This keeps the problem statement within the documented project scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "This project needs to connect account access with a clear shopping journey. Customers must be able to browse and search the catalog, inspect a product, manage quantities in the cart and place an order, while protected routes separate account-only actions."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports jWT authentication and protected routes and product categories and search in a full-stack e-commerce. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "The CodeAlpha build combines JWT authentication and protected routes with product categories, search, product details, cart quantity management and ordering. Its backend is configured for local use, distinguishing this repository from the separate-backend CivilCard version."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists JavaScript, Node.js, Express, MongoDB, JWT. These tools support jWT authentication and protected routes and product categories and search within the full-stack e-commerce scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "This CodeAlpha version uses a locally configured backend with JavaScript, Node.js, Express, MongoDB and JWT. Its repository contains the application source and screenshots for this build; the separate CivilCard repository represents the alternate backend setup."
     },
-    features: [
+    "features": [
       "JWT authentication and protected routes",
       "Product categories and search",
       "Product detail pages",
       "Cart quantity management",
       "Order placement"
     ],
-    technologies: [
+    "technologies": [
       "JavaScript",
       "Node.js",
       "Express",
       "MongoDB",
       "JWT"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping jWT authentication and protected routes, product categories and search, and product detail pages coherent within a full-stack e-commerce. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "Because this CodeAlpha repository uses a local backend, the server must be available for the authentication, catalog and ordering flows to work. The separate CivilCard repository uses a different backend setup and should not be treated as the same build.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how JavaScript, Node.js, Express, MongoDB, JWT can support jWT authentication and protected routes and product categories and search. It also illustrates how a full-stack e-commerce can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "This is the CodeAlpha CivilCard source build with a locally configured backend. Its protected account flow, product search, cart and ordering features belong to this repository and are distinct from the separate-backend CivilCard version."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Home.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Authentication.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Collections.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Cart.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_CivilCard/main/image/Order.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/CodeAlpha_CivilCard"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/CodeAlpha_CivilCard"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "codealpha-petconnect",
-    title: "PetConnect",
-    category: "Social Web Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Home.png",
-    preview: {
-      description: "A social platform for pet owners with user profiles, posts and follower relationships."
+    "id": "codealpha-petconnect",
+    "title": "PetConnect",
+    "category": "Social Web Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Home.png",
+    "preview": {
+      "description": "A social platform for pet owners with user profiles, posts and follower relationships."
     },
-    overview: {
-      title: "A community for pet owners",
-      description: "PetConnect is a social web application for pet owners, with account access and profiles that include a bio, handle, and avatar support. Members can publish posts and connect through follower and following relationships. The project uses React for the interface and a Node.js, Express, and MongoDB backend for application data. The project documents these capabilities: user authentication, profiles with bio and handle."
+    "overview": {
+      "title": "A community for pet owners",
+      "description": "PetConnect is a Social Web Application. A social platform for pet owners with user profiles, posts and follower relationships. Its main capabilities include User authentication, Profiles with bio and handle, Avatar support, Posts, Followers and following. The project uses JavaScript, React, Node.js, Express, MongoDB to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "PetConnect focuses on user authentication and profiles with bio and handle as core needs in a social web application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for PetConnect is presenting User authentication, Profiles with bio and handle, Avatar support, Posts, Followers and following in a way that keeps this social web application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports user authentication and profiles with bio and handle in a social web application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "PetConnect brings User authentication, Profiles with bio and handle, Avatar support, Posts, Followers and following into one social web application experience. The feature list describes its main user-facing capabilities, from User authentication through Followers and following. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists JavaScript, React, Node.js, Express, MongoDB. These tools support user authentication and profiles with bio and handle within the social web application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists JavaScript, React, Node.js, Express, MongoDB for PetConnect. This stack is the documented technical basis for its social web application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "User authentication",
       "Profiles with bio and handle",
       "Avatar support",
       "Posts",
       "Followers and following"
     ],
-    technologies: [
+    "technologies": [
       "JavaScript",
       "React",
       "Node.js",
       "Express",
       "MongoDB"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping user authentication, profiles with bio and handle, and avatar support coherent within a social web application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make User authentication easy to recognize while keeping Profiles with bio and handle, Avatar support accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the social web application experience.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how JavaScript, React, Node.js, Express, MongoDB can support user authentication and profiles with bio and handle. It also illustrates how a social web application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "PetConnect highlights the relationship between User authentication and the wider social web application experience. Its documented stack—JavaScript, React, Node.js, Express, MongoDB—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Home.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Feed.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/SignIn.png",
@@ -339,39 +339,39 @@ const projectsData = [
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Post.png",
       "https://raw.githubusercontent.com/abdurrah0006/CodeAlpha_PetConnect/main/image/Posting.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/CodeAlpha_PetConnect"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/CodeAlpha_PetConnect"
     },
-    featured: true
+    "featured": true
   },
   {
-    id: "alarm-clock",
-    title: "Alarm Clock",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/AlarmClock/main/image/Alarm_Light.png",
-    preview: {
-      description: "A browser alarm clock for scheduling, sorting, toggling and deleting alarms, with light and dark themes."
+    "id": "alarm-clock",
+    "title": "Alarm Clock",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/AlarmClock/main/image/Alarm_Light.png",
+    "preview": {
+      "description": "A browser alarm clock for scheduling, sorting, toggling and deleting alarms, with light and dark themes."
     },
-    overview: {
-      title: "A practical browser alarm clock",
-      description: "Alarm Clock combines a live digital clock with tools for managing multiple scheduled alarms. Users can add alarms, toggle them on or off, remove them, and view the list sorted by time. The page also supports light and dark themes and a responsive layout for different screens. Built with HTML, CSS, and JavaScript, it keeps the interaction centered on setting and reviewing alarm times in the browser."
+    "overview": {
+      "title": "A practical browser alarm clock",
+      "description": "Alarm Clock is a Frontend Utility. A browser alarm clock for scheduling, sorting, toggling and deleting alarms, with light and dark themes. Its main capabilities include Live digital clock, Multiple alarms, Toggle and delete alarms, Sort alarms by time, Light and dark themes, Responsive layout. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Alarm Clock focuses on live digital clock and multiple alarms as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Alarm Clock is presenting Live digital clock, Multiple alarms, Toggle and delete alarms, Sort alarms by time, Light and dark themes, Responsive layout in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports live digital clock and multiple alarms in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Alarm Clock brings Live digital clock, Multiple alarms, Toggle and delete alarms, Sort alarms by time, Light and dark themes, Responsive layout into one frontend utility experience. The feature list describes its main user-facing capabilities, from Live digital clock through Responsive layout. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support live digital clock and multiple alarms within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Alarm Clock. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Live digital clock",
       "Multiple alarms",
       "Toggle and delete alarms",
@@ -379,392 +379,392 @@ const projectsData = [
       "Light and dark themes",
       "Responsive layout"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping live digital clock, multiple alarms, and toggle and delete alarms coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Live digital clock easy to recognize while keeping Multiple alarms, Toggle and delete alarms accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Keeping interactions timely"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support live digital clock and multiple alarms. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Alarm Clock highlights the relationship between Live digital clock and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/AlarmClock/main/image/Alarm_Light.png",
       "https://raw.githubusercontent.com/abdurrah0006/AlarmClock/main/image/Alarm_Dark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/AlarmClock"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/AlarmClock"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "countdown-timer",
-    title: "Countdown Timer",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Light.png",
-    preview: {
-      description: "A responsive countdown timer with start, pause, reset, alert notifications and theme support."
+    "id": "countdown-timer",
+    "title": "Countdown Timer",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Light.png",
+    "preview": {
+      "description": "A responsive countdown timer with start, pause, reset, alert notifications and theme support."
     },
-    overview: {
-      title: "A simple countdown timer",
-      description: "Countdown Timer lets users set a duration in hours, minutes, and seconds, then start, pause, or reset the countdown. When the timer reaches its end, the application provides a completion alert. Light and dark themes are included so the interface can be viewed in either appearance. The project is built with HTML, CSS, and JavaScript and focuses on clear controls and readable time feedback."
+    "overview": {
+      "title": "A simple countdown timer",
+      "description": "Countdown Timer is a Frontend Utility. A responsive countdown timer with start, pause, reset, alert notifications and theme support. Its main capabilities include Hours, minutes and seconds, Start, pause and reset, Completion alert, Light and dark themes. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Countdown Timer focuses on hours, minutes and seconds and start, pause and reset as core needs in a frontend utility. This keeps the problem statement within the documented project scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Countdown Timer is presenting Hours, minutes and seconds, Start, pause and reset, Completion alert, Light and dark themes in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports hours, minutes and seconds and start, pause and reset in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Countdown Timer brings Hours, minutes and seconds, Start, pause and reset, Completion alert, Light and dark themes into one frontend utility experience. The feature list describes its main user-facing capabilities, from Hours, minutes and seconds through Light and dark themes. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support hours, minutes and seconds and start, pause and reset within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Countdown Timer. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Hours, minutes and seconds",
       "Start, pause and reset",
       "Completion alert",
       "Light and dark themes"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping hours, minutes and seconds, start, pause and reset, and completion alert coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Hours, minutes and seconds easy to recognize while keeping Start, pause and reset, Completion alert accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Presenting hours, minutes and seconds clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support hours, minutes and seconds and start, pause and reset. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Countdown Timer highlights the relationship between Hours, minutes and seconds and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Light.png",
       "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_None.png",
       "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Start.png",
       "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Start_Light.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Countdown_Timer"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Countdown_Timer"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "dark-light-toggle",
-    title: "Dark-Light Toggle",
-    category: "Frontend UI Component",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Dark-Light_Toggle/main/image/Theme.png",
-    preview: {
-      description: "A responsive light and dark theme toggle with smooth visual transitions."
+    "id": "dark-light-toggle",
+    "title": "Dark-Light Toggle",
+    "category": "Frontend UI Component",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Dark-Light_Toggle/main/image/Theme.png",
+    "preview": {
+      "description": "A responsive light and dark theme toggle with smooth visual transitions."
     },
-    overview: {
-      title: "A small theme-switching app",
-      description: "Dark-Light Toggle is a focused interface for switching a page between light and dark appearances. A single control changes the theme, while smooth transitions make the visual change easier to follow. The layout is responsive, so the example remains usable at different viewport sizes. Built with HTML, CSS, and JavaScript, the project concentrates on theme state and visual feedback rather than a larger feature set."
+    "overview": {
+      "title": "A small theme-switching app",
+      "description": "Dark-Light Toggle is a Frontend UI Component. A responsive light and dark theme toggle with smooth visual transitions. Its main capabilities include One-button theme toggle, Smooth transitions, Responsive layout. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Dark-Light Toggle focuses on one-button theme toggle and smooth transitions as core needs in a frontend ui component. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Dark-Light Toggle is presenting One-button theme toggle, Smooth transitions, Responsive layout in a way that keeps this frontend ui component easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports one-button theme toggle and smooth transitions in a frontend ui component. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Dark-Light Toggle brings One-button theme toggle, Smooth transitions, Responsive layout into one frontend ui component experience. The feature list describes its main user-facing capabilities, from One-button theme toggle through Responsive layout. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support one-button theme toggle and smooth transitions within the frontend ui component scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Dark-Light Toggle. This stack is the documented technical basis for its frontend ui component scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "One-button theme toggle",
       "Smooth transitions",
       "Responsive layout"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping one-button theme toggle, smooth transitions, and responsive layout coherent within a frontend ui component. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make One-button theme toggle easy to recognize while keeping Smooth transitions, Responsive layout accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend ui component experience.",
+        "title": "Presenting one-button theme toggle clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support one-button theme toggle and smooth transitions. It also illustrates how a frontend ui component can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Dark-Light Toggle highlights the relationship between One-button theme toggle and the wider frontend ui component experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Dark-Light_Toggle/main/image/Theme.png",
       "https://raw.githubusercontent.com/abdurrah0006/Dark-Light_Toggle/main/image/Theme_Dark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Dark-Light_Toggle"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Dark-Light_Toggle"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "error404-design",
-    title: "Space 404 Page",
-    category: "Frontend Design",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Error404_Design/main/image/Error404.png",
-    preview: {
-      description: "A space-themed animated 404 page with floating illustrations and smooth transitions."
+    "id": "error404-design",
+    "title": "Space 404 Page",
+    "category": "Frontend Design",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Error404_Design/main/image/Error404.png",
+    "preview": {
+      "description": "A space-themed animated 404 page with floating illustrations and smooth transitions."
     },
-    overview: {
-      title: "A playful page for a missing route",
-      description: "Space 404 Page gives a missing-route state a distinctive space-themed visual treatment. The page pairs its not-found message with illustrated elements and animation, while keeping the layout responsive for smaller screens. HTML, CSS, and JavaScript create the interface, and GSAP is used for the animated visual effects. The project focuses on making an error state clear while giving it a memorable presentation."
+    "overview": {
+      "title": "A playful page for a missing route",
+      "description": "Space 404 Page is a Frontend Design. A space-themed animated 404 page with floating illustrations and smooth transitions. Its main capabilities include Space-themed illustration, Animated visual elements, Responsive design. The project uses HTML, CSS, JavaScript, GSAP to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Space 404 Page focuses on space-themed illustration and animated visual elements as core needs in a frontend design. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Space 404 Page is presenting Space-themed illustration, Animated visual elements, Responsive design in a way that keeps this frontend design easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports space-themed illustration and animated visual elements in a frontend design. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Space 404 Page brings Space-themed illustration, Animated visual elements, Responsive design into one frontend design experience. The feature list describes its main user-facing capabilities, from Space-themed illustration through Responsive design. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript, GSAP. These tools support space-themed illustration and animated visual elements within the frontend design scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript, GSAP for Space 404 Page. This stack is the documented technical basis for its frontend design scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Space-themed illustration",
       "Animated visual elements",
       "Responsive design"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript",
       "GSAP"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping space-themed illustration, animated visual elements, and responsive design coherent within a frontend design. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Space-themed illustration easy to recognize while keeping Animated visual elements, Responsive design accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend design experience.",
+        "title": "Presenting space-themed illustration clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript, GSAP can support space-themed illustration and animated visual elements. It also illustrates how a frontend design can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Space 404 Page highlights the relationship between Space-themed illustration and the wider frontend design experience. Its documented stack—HTML, CSS, JavaScript, GSAP—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Error404_Design/main/image/Error404.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Error404_Design"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Error404_Design"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "html-learning",
-    title: "HTML Learning",
-    category: "Learning Project",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/HTML_Learning/main/puzzle.png",
-    preview: {
-      description: "A collection of introductory HTML learning exercises and pages."
+    "id": "html-learning",
+    "title": "HTML Learning",
+    "category": "Learning Project",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/HTML_Learning/main/puzzle.png",
+    "preview": {
+      "description": "A collection of introductory HTML learning exercises and pages."
     },
-    overview: {
-      title: "HTML practice",
-      description: "HTML Learning is a collection of introductory practice pages created while learning the structure of web documents. The repository focuses on HTML rather than presenting a larger standalone application, so its value is in the examples and exercises it contains. Those pages provide a place to practice organizing content with markup and building the basic structure that browser interfaces rely on."
+    "overview": {
+      "title": "HTML practice",
+      "description": "HTML Learning is a Learning Project. A collection of introductory HTML learning exercises and pages. Its main capabilities include HTML practice pages. The project uses HTML to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "HTML Learning focuses on hTML practice pages and hTML practice pages as core needs in a learning project. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for HTML Learning is presenting HTML practice pages in a way that keeps this learning project easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports hTML practice pages and hTML practice pages in a learning project. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "HTML Learning brings HTML practice pages into one learning project experience. The feature list describes its main user-facing capabilities, from HTML practice pages through HTML practice pages. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML. These tools support hTML practice pages and hTML practice pages within the learning project scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML for HTML Learning. This stack is the documented technical basis for its learning project scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "HTML practice pages"
     ],
-    technologies: [
+    "technologies": [
       "HTML"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping hTML practice pages, hTML practice pages, and hTML practice pages coherent within a learning project. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make HTML practice pages easy to recognize while keeping  accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the learning project experience.",
+        "title": "Presenting html practice pages clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML can support hTML practice pages and hTML practice pages. It also illustrates how a learning project can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "HTML Learning highlights the relationship between HTML practice pages and the wider learning project experience. Its documented stack—HTML—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/HTML_Learning/main/puzzle.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/HTML_Learning"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/HTML_Learning"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "asia-tour",
-    title: "Asia Tour Landing Page",
-    category: "Interactive Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/LandingPage_AsiaTour/main/image/LandingPage.png",
-    preview: {
-      description: "An animated Asia travel landing page with destination details and country information."
+    "id": "asia-tour",
+    "title": "Asia Tour Landing Page",
+    "category": "Interactive Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/LandingPage_AsiaTour/main/image/LandingPage.png",
+    "preview": {
+      "description": "An animated Asia travel landing page with destination details and country information."
     },
-    overview: {
-      title: "Explore destinations across Asia",
-      description: "Asia Tour is an interactive travel landing page that introduces destinations through imagery and country information. Visitors can open a destination detail overlay to read more about a selected place, while animated transitions connect the different views. The page is built with HTML, CSS, and JavaScript and uses local travel imagery as part of its presentation. The project documents these capabilities: destination detail overlay."
+    "overview": {
+      "title": "Explore destinations across Asia",
+      "description": "Asia Tour Landing Page is a Interactive Website. An animated Asia travel landing page with destination details and country information. Its main capabilities include Destination detail overlay, Country information, Animated transitions, Travel imagery. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Asia Tour Landing Page focuses on destination detail overlay and country information as core needs in a interactive website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Asia Tour Landing Page is presenting Destination detail overlay, Country information, Animated transitions, Travel imagery in a way that keeps this interactive website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports destination detail overlay and country information in a interactive website. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Asia Tour Landing Page brings Destination detail overlay, Country information, Animated transitions, Travel imagery into one interactive website experience. The feature list describes its main user-facing capabilities, from Destination detail overlay through Travel imagery. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support destination detail overlay and country information within the interactive website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Asia Tour Landing Page. This stack is the documented technical basis for its interactive website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Destination detail overlay",
       "Country information",
       "Animated transitions",
       "Travel imagery"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping destination detail overlay, country information, and animated transitions coherent within a interactive website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Destination detail overlay easy to recognize while keeping Country information, Animated transitions accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the interactive website experience.",
+        "title": "Presenting destination detail overlay clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support destination detail overlay and country information. It also illustrates how a interactive website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Asia Tour Landing Page highlights the relationship between Destination detail overlay and the wider interactive website experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/LandingPage_AsiaTour/main/image/LandingPage.png",
       "https://raw.githubusercontent.com/abdurrah0006/LandingPage_AsiaTour/main/image/CountryDetail.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/LandingPage_AsiaTour"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/LandingPage_AsiaTour"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "login-registration",
-    title: "Login & Registration",
-    category: "MERN Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/HomeBefore.png",
-    preview: {
-      description: "A MERN authentication project with registration, login, logout and protected routes."
+    "id": "login-registration",
+    "title": "Authentication App (Login & Registration)",
+    "category": "MERN Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/HomeBefore.png",
+    "preview": {
+      "description": "A MERN authentication project with registration, login, logout and protected routes."
     },
-    overview: {
-      title: "Account access with protected pages",
-      description: "Login & Registration is a MERN authentication project that supports account creation, login, logout, and protected routes. After signing in, users can access a personalized home page, while JWT authentication supports the application's account flow. React provides the client interface, with Express and Node.js handling backend requests and MongoDB storing application data. The project documents these capabilities: registration and login."
+    "overview": {
+      "title": "Account access with protected pages",
+      "description": "Login & Registration is a MERN Application. A MERN authentication project with registration, login, logout and protected routes. Its main capabilities include Registration and login, Logout, JWT authentication, Protected routes, Personalized home page. The project uses MongoDB, Express, React, Node.js, JWT to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Login & Registration focuses on registration and login and logout as core needs in a mern application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Login & Registration is presenting Registration and login, Logout, JWT authentication, Protected routes, Personalized home page in a way that keeps this mern application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports registration and login and logout in a mern application. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Login & Registration brings Registration and login, Logout, JWT authentication, Protected routes, Personalized home page into one mern application experience. The feature list describes its main user-facing capabilities, from Registration and login through Personalized home page. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists MongoDB, Express, React, Node.js, JWT. These tools support registration and login and logout within the mern application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists MongoDB, Express, React, Node.js, JWT for Login & Registration. This stack is the documented technical basis for its mern application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Registration and login",
       "Logout",
       "JWT authentication",
       "Protected routes",
       "Personalized home page"
     ],
-    technologies: [
+    "technologies": [
       "MongoDB",
       "Express",
       "React",
       "Node.js",
       "JWT"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping registration and login, logout, and jWT authentication coherent within a mern application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Registration and login easy to recognize while keeping Logout, JWT authentication accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the mern application experience.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how MongoDB, Express, React, Node.js, JWT can support registration and login and logout. It also illustrates how a mern application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Login & Registration highlights the relationship between Registration and login and the wider mern application experience. Its documented stack—MongoDB, Express, React, Node.js, JWT—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/HomeBefore.png",
       "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/Register.png",
       "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/Login.png",
       "https://raw.githubusercontent.com/abdurrah0006/Login_Registration/main/image/HomeAfter.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Login_Registration"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Login_Registration"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "blogify",
-    title: "Blogify",
-    category: "MERN Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "/images/project-placeholder.svg",
-    preview: {
-      description: "A MERN blogging platform for creating, managing and discovering posts."
+    "id": "blogify",
+    "title": "Blogify",
+    "category": "MERN Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "/images/project-placeholder.svg",
+    "preview": {
+      "description": "A MERN blogging platform for creating, managing and discovering posts."
     },
-    overview: {
-      title: "Publish and explore blog posts",
-      description: "Blogify is a full-stack blogging platform for creating, managing, and discovering posts. Users can authenticate, write and edit posts, browse and search published content, and move through results with pagination. Profiles and comments add author and reader interaction, while Cloudinary is used for image uploads. The application separates a React and Vite frontend from a Node.js and Express API backed by MongoDB and Mongoose."
+    "overview": {
+      "title": "Publish and explore blog posts",
+      "description": "Blogify is a MERN Application. A MERN blogging platform for creating, managing and discovering posts. Its main capabilities include User authentication, Create and edit posts, Browse and search posts, Pagination, Profiles and comments, Cloudinary image uploads. The project uses React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Blogify focuses on user authentication and create and edit posts as core needs in a mern application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Blogify is presenting User authentication, Create and edit posts, Browse and search posts, Pagination, Profiles and comments, Cloudinary image uploads in a way that keeps this mern application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports user authentication and create and edit posts in a mern application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Blogify brings User authentication, Create and edit posts, Browse and search posts, Pagination, Profiles and comments, Cloudinary image uploads into one mern application experience. The feature list describes its main user-facing capabilities, from User authentication through Cloudinary image uploads. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary. These tools support user authentication and create and edit posts within the mern application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary for Blogify. This stack is the documented technical basis for its mern application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "User authentication",
       "Create and edit posts",
       "Browse and search posts",
@@ -772,7 +772,7 @@ const projectsData = [
       "Profiles and comments",
       "Cloudinary image uploads"
     ],
-    technologies: [
+    "technologies": [
       "React",
       "Vite",
       "Node.js",
@@ -781,51 +781,51 @@ const projectsData = [
       "Mongoose",
       "Cloudinary"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping user authentication, create and edit posts, and browse and search posts coherent within a mern application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make User authentication easy to recognize while keeping Create and edit posts, Browse and search posts accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the mern application experience.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary can support user authentication and create and edit posts. It also illustrates how a mern application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Blogify highlights the relationship between User authentication and the wider mern application experience. Its documented stack—React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "/images/project-placeholder.svg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/MERN_Blogify"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/MERN_Blogify"
     },
-    featured: true
+    "featured": true
   },
   {
-    id: "task-manager",
-    title: "Task Manager",
-    category: "Real-Time MERN Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "/images/project-placeholder.svg",
-    preview: {
-      description: "A full-stack task management application with task boards, status changes and live collaboration."
+    "id": "task-manager",
+    "title": "Task Manager (Project Management App)",
+    "category": "Real-Time MERN Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "/images/project-placeholder.svg",
+    "preview": {
+      "description": "A full-stack task management application with task boards, status changes and live collaboration."
     },
-    overview: {
-      title: "Organize work and track progress",
-      description: "Task Manager is a full-stack application for organizing projects and tracking work as tasks move through their statuses. Users can add task descriptions, update status with drag-and-drop interactions, and discuss work through comments. JWT authentication protects account-based functionality, while Socket.IO supports live updates across the application. The client uses React and Vite, with a Node.js and Express backend and MongoDB data storage."
+    "overview": {
+      "title": "Organize work and track progress",
+      "description": "Task Manager is a Real-Time MERN Application. A full-stack task management application with task boards, status changes and live collaboration. Its main capabilities include Task and project management, Task descriptions, Drag-and-drop status updates, Comments, Live updates, JWT authentication. The project uses React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Task Manager focuses on task and project management and task descriptions as core needs in a real-time mern application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Task Manager is presenting Task and project management, Task descriptions, Drag-and-drop status updates, Comments, Live updates, JWT authentication in a way that keeps this real-time mern application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports task and project management and task descriptions in a real-time mern application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Task Manager brings Task and project management, Task descriptions, Drag-and-drop status updates, Comments, Live updates, JWT authentication into one real-time mern application experience. The feature list describes its main user-facing capabilities, from Task and project management through JWT authentication. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO. These tools support task and project management and task descriptions within the real-time mern application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO for Task Manager. This stack is the documented technical basis for its real-time mern application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Task and project management",
       "Task descriptions",
       "Drag-and-drop status updates",
@@ -833,7 +833,7 @@ const projectsData = [
       "Live updates",
       "JWT authentication"
     ],
-    technologies: [
+    "technologies": [
       "React",
       "Vite",
       "Node.js",
@@ -842,109 +842,109 @@ const projectsData = [
       "JWT",
       "Socket.IO"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping task and project management, task descriptions, and drag-and-drop status updates coherent within a real-time mern application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Task and project management easy to recognize while keeping Task descriptions, Drag-and-drop status updates accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the real-time mern application experience.",
+        "title": "Making records and progress easy to scan"
       }
     ],
-    learnings: [
-      "The project shows how React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO can support task and project management and task descriptions. It also illustrates how a real-time mern application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Task Manager highlights the relationship between Task and project management and the wider real-time mern application experience. Its documented stack—React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "/images/project-placeholder.svg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/MERN_TaskManager"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/MERN_TaskManager"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "messenger-chat",
-    title: "Messenger Chat",
-    category: "Real-Time MERN Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/ChatApp/frontend/src/assets/hero.png",
-    preview: {
-      description: "A real-time MERN chat application with authentication, group chats and notifications."
+    "id": "messenger-chat",
+    "title": "MERN Chat App (Messenger Chat)",
+    "category": "Real-Time MERN Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/ChatApp/frontend/src/assets/hero.png",
+    "preview": {
+      "description": "A real-time MERN chat application with authentication, group chats and notifications."
     },
-    overview: {
-      title: "Real-time conversations",
-      description: "Messenger Chat is a real-time messaging application with account authentication and support for private and group conversations. The documented interface includes live messages, notifications, typing indicators, and delivery status, giving participants feedback as conversations progress. React powers the client, with MongoDB, Express, and Node.js supporting the full-stack application. Socket.IO handles real-time communication between connected users. The project documents these capabilities: authentication."
+    "overview": {
+      "title": "Real-time conversations",
+      "description": "Messenger Chat is a Real-Time MERN Application. A real-time MERN chat application with authentication, group chats and notifications. Its main capabilities include Authentication, Private and group chats, Real-time messaging, Notifications, Typing and delivery status. The project uses MongoDB, Express, React, Node.js, Socket.IO to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Messenger Chat focuses on authentication and private and group chats as core needs in a real-time mern application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Messenger Chat is presenting Authentication, Private and group chats, Real-time messaging, Notifications, Typing and delivery status in a way that keeps this real-time mern application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports authentication and private and group chats in a real-time mern application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Messenger Chat brings Authentication, Private and group chats, Real-time messaging, Notifications, Typing and delivery status into one real-time mern application experience. The feature list describes its main user-facing capabilities, from Authentication through Typing and delivery status. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists MongoDB, Express, React, Node.js, Socket.IO. These tools support authentication and private and group chats within the real-time mern application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists MongoDB, Express, React, Node.js, Socket.IO for Messenger Chat. This stack is the documented technical basis for its real-time mern application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Authentication",
       "Private and group chats",
       "Real-time messaging",
       "Notifications",
       "Typing and delivery status"
     ],
-    technologies: [
+    "technologies": [
       "MongoDB",
       "Express",
       "React",
       "Node.js",
       "Socket.IO"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping authentication, private and group chats, and real-time messaging coherent within a real-time mern application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Authentication easy to recognize while keeping Private and group chats, Real-time messaging accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the real-time mern application experience.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how MongoDB, Express, React, Node.js, Socket.IO can support authentication and private and group chats. It also illustrates how a real-time mern application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Messenger Chat highlights the relationship between Authentication and the wider real-time mern application experience. Its documented stack—MongoDB, Express, React, Node.js, Socket.IO—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/ChatApp/frontend/src/assets/hero.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Messenger_Chat"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Messenger_Chat"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "minicrm",
-    title: "miniCRM",
-    category: "MERN Application",
-    year: "2026",
-    role: "Full-Stack Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/Login.png",
-    preview: {
-      description: "A lead management system with secure admin access, follow-ups, search and dashboard analytics."
+    "id": "minicrm",
+    "title": "miniCRM",
+    "category": "MERN Application",
+    "year": "2026",
+    "role": "Full-Stack Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/Login.png",
+    "preview": {
+      "description": "A lead management system with secure admin access, follow-ups, search and dashboard analytics."
     },
-    overview: {
-      title: "Track leads from one dashboard",
-      description: "miniCRM is a lead management application that gives administrators a central place to organize client records and follow-up work. Its features include protected admin access, create/read/update/delete operations for leads, status tracking, notes, reminders, search, and filters. A dashboard provides analytics over the managed information. The project uses React with a Node.js and Express backend, MongoDB for records, and JWT for authentication."
+    "overview": {
+      "title": "Track leads from one dashboard",
+      "description": "miniCRM is a MERN Application. A lead management system with secure admin access, follow-ups, search and dashboard analytics. Its main capabilities include Admin authentication, Lead create, read, update and delete, Lead statuses, Notes and follow-ups, Search and filters, Dashboard analytics. The project uses MongoDB, Express, React, Node.js, JWT to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "miniCRM focuses on admin authentication and lead create, read, update and delete as core needs in a mern application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for miniCRM is presenting Admin authentication, Lead create, read, update and delete, Lead statuses, Notes and follow-ups, Search and filters, Dashboard analytics in a way that keeps this mern application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports admin authentication and lead create, read, update and delete in a mern application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "miniCRM brings Admin authentication, Lead create, read, update and delete, Lead statuses, Notes and follow-ups, Search and filters, Dashboard analytics into one mern application experience. The feature list describes its main user-facing capabilities, from Admin authentication through Dashboard analytics. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists MongoDB, Express, React, Node.js, JWT. These tools support admin authentication and lead create, read, update and delete within the mern application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists MongoDB, Express, React, Node.js, JWT for miniCRM. This stack is the documented technical basis for its mern application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Admin authentication",
       "Lead create, read, update and delete",
       "Lead statuses",
@@ -952,84 +952,84 @@ const projectsData = [
       "Search and filters",
       "Dashboard analytics"
     ],
-    technologies: [
+    "technologies": [
       "MongoDB",
       "Express",
       "React",
       "Node.js",
       "JWT"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping admin authentication, lead create, read, update and delete, and lead statuses coherent within a mern application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Admin authentication easy to recognize while keeping Lead create, read, update and delete, Lead statuses accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the mern application experience.",
+        "title": "Handling account access"
       }
     ],
-    learnings: [
-      "The project shows how MongoDB, Express, React, Node.js, JWT can support admin authentication and lead create, read, update and delete. It also illustrates how a mern application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "miniCRM highlights the relationship between Admin authentication and the wider mern application experience. Its documented stack—MongoDB, Express, React, Node.js, JWT—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/Login.png",
       "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/Dashboard.png",
       "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/CreatingLead.png",
       "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/AllLeads.png",
       "https://raw.githubusercontent.com/abdurrah0006/miniCRM/main/image/LeadDetails.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/miniCRM"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/miniCRM"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "mrbean-cafe",
-    title: "MrBean Cafe",
-    category: "React Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Hero.png",
-    preview: {
-      description: "A responsive cafe website with menu, gallery, reviews and contact pages."
+    "id": "mrbean-cafe",
+    "title": "MrBean Cafe",
+    "category": "React Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Hero.png",
+    "preview": {
+      "description": "A responsive cafe website with menu, gallery, reviews and contact pages."
     },
-    overview: {
-      title: "A modern cafe website",
-      description: "MrBean Cafe is a responsive café website built with React and Vite. Its visitor-facing pages cover the menu, gallery, reviews, contact information, and reservations, giving the site a broad overview of the café experience. Framer Motion supports animation, while React Router organizes navigation between sections. The repository describes frontend functionality; backend and admin CMS work is identified as future work rather than an existing feature."
+    "overview": {
+      "title": "A modern cafe website",
+      "description": "MrBean Cafe is a React Website. A responsive cafe website with menu, gallery, reviews and contact pages. Its main capabilities include Menu, Gallery, Reviews, Contact and reservation pages, Responsive layout. The project uses React, Vite, Framer Motion, React Router to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "MrBean Cafe focuses on menu and gallery as core needs in a react website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for MrBean Cafe is presenting Menu, Gallery, Reviews, Contact and reservation pages, Responsive layout in a way that keeps this react website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports menu and gallery in a react website. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "MrBean Cafe brings Menu, Gallery, Reviews, Contact and reservation pages, Responsive layout into one react website experience. The feature list describes its main user-facing capabilities, from Menu through Responsive layout. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists React, Vite, Framer Motion, React Router. These tools support menu and gallery within the react website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists React, Vite, Framer Motion, React Router for MrBean Cafe. This stack is the documented technical basis for its react website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Menu",
       "Gallery",
       "Reviews",
       "Contact and reservation pages",
       "Responsive layout"
     ],
-    technologies: [
+    "technologies": [
       "React",
       "Vite",
       "Framer Motion",
       "React Router"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping menu, gallery, and reviews coherent within a react website. The repository defines the scope; this summary does not claim undocumented implementation challenges. while respecting the documented frontend-only scope."
+        "description": "The interface needs to make Menu easy to recognize while keeping Gallery, Reviews accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the react website experience.",
+        "title": "Presenting menu clearly"
       }
     ],
-    learnings: [
-      "The project shows how React, Vite, Framer Motion, React Router can support menu and gallery. It also illustrates how a react website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "MrBean Cafe highlights the relationship between Menu and the wider react website experience. Its documented stack—React, Vite, Framer Motion, React Router—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Hero.png",
       "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/About.png",
       "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Menu.png",
@@ -1037,504 +1037,504 @@ const projectsData = [
       "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Contact.png",
       "https://raw.githubusercontent.com/abdurrah0006/MrBeanCafe/main/image/Reviews.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/MrBeanCafe"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/MrBeanCafe"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "portfolio-side",
-    title: "PortfolioSide",
-    category: "Portfolio Website",
-    year: "2026",
-    role: "Web Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/image/19051.png",
-    preview: {
-      description: "A personal portfolio website deployed with GitHub Pages."
+    "id": "portfolio-side",
+    "title": "PortfolioSide",
+    "category": "Portfolio Website",
+    "year": "2026",
+    "role": "Web Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/image/19051.png",
+    "preview": {
+      "description": "A personal portfolio website deployed with GitHub Pages."
     },
-    overview: {
-      title: "A published portfolio",
-      description: "PortfolioSide is a personal portfolio website published through GitHub Pages. The repository presents the source for a public-facing portfolio and includes a deployed site that visitors can open independently of the code repository. Its implementation uses HTML, CSS, and JavaScript, keeping the site focused on presenting portfolio content through a browser-based experience. The project documents these capabilities: portfolio website, gitHub Pages deployment."
+    "overview": {
+      "title": "A published portfolio",
+      "description": "PortfolioSide is a Portfolio Website. A personal portfolio website deployed with GitHub Pages. Its main capabilities include Portfolio website, GitHub Pages deployment. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "PortfolioSide focuses on portfolio website and gitHub Pages deployment as core needs in a portfolio website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for PortfolioSide is presenting Portfolio website, GitHub Pages deployment in a way that keeps this portfolio website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports portfolio website and gitHub Pages deployment in a portfolio website. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "PortfolioSide brings Portfolio website, GitHub Pages deployment into one portfolio website experience. The feature list describes its main user-facing capabilities, from Portfolio website through GitHub Pages deployment. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support portfolio website and gitHub Pages deployment within the portfolio website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for PortfolioSide. This stack is the documented technical basis for its portfolio website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Portfolio website",
       "GitHub Pages deployment"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping portfolio website, gitHub Pages deployment, and gitHub Pages deployment coherent within a portfolio website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Portfolio website easy to recognize while keeping GitHub Pages deployment accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the portfolio website experience.",
+        "title": "Presenting portfolio website clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support portfolio website and gitHub Pages deployment. It also illustrates how a portfolio website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "PortfolioSide highlights the relationship between Portfolio website and the wider portfolio website experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/image/19051.png",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/image/profile-me.png",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/image/profile.jpg",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSide/main/Portfolio%20Abdur%20Rahman/parts/projects/19051.png"
     ],
-    links: {
-      live: "https://abdurrah0006.github.io/PortfolioSide/",
-      github: "https://github.com/abdurrah0006/PortfolioSide"
+    "links": {
+      "live": "https://abdurrah0006.github.io/PortfolioSide/",
+      "github": "https://github.com/abdurrah0006/PortfolioSide"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "portfolio-simple",
-    title: "PortfolioSimple",
-    category: "Portfolio Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Home.png",
-    preview: {
-      description: "A personal portfolio site with profile, experience, project and contact sections."
+    "id": "portfolio-simple",
+    "title": "PortfolioSimple",
+    "category": "Portfolio Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Home.png",
+    "preview": {
+      "description": "A personal portfolio site with profile, experience, project and contact sections."
     },
-    overview: {
-      title: "A simple portfolio layout",
-      description: "PortfolioSimple is a lightweight personal portfolio website organized into profile, experience, projects, and contact sections. The structure gives visitors a direct route from an introduction to background and selected work, followed by a way to get in touch. Built with HTML, CSS, and JavaScript, the site keeps its implementation close to the core web platform. The project documents these capabilities: profile section."
+    "overview": {
+      "title": "A simple portfolio layout",
+      "description": "PortfolioSimple is a Portfolio Website. A personal portfolio site with profile, experience, project and contact sections. Its main capabilities include Profile section, Experience section, Projects section, Contact section. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "PortfolioSimple focuses on profile section and experience section as core needs in a portfolio website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for PortfolioSimple is presenting Profile section, Experience section, Projects section, Contact section in a way that keeps this portfolio website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports profile section and experience section in a portfolio website. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "PortfolioSimple brings Profile section, Experience section, Projects section, Contact section into one portfolio website experience. The feature list describes its main user-facing capabilities, from Profile section through Contact section. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support profile section and experience section within the portfolio website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for PortfolioSimple. This stack is the documented technical basis for its portfolio website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Profile section",
       "Experience section",
       "Projects section",
       "Contact section"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping profile section, experience section, and projects section coherent within a portfolio website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Profile section easy to recognize while keeping Experience section, Projects section accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the portfolio website experience.",
+        "title": "Presenting profile section clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support profile section and experience section. It also illustrates how a portfolio website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "PortfolioSimple highlights the relationship between Profile section and the wider portfolio website experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Home.png",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Experience.png",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Projects.png",
       "https://raw.githubusercontent.com/abdurrah0006/PortfolioSimple/main/image/Contact.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/PortfolioSimple"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/PortfolioSimple"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "portfolio-3d",
-    title: "3D Portfolio",
-    category: "3D Portfolio Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "/images/project-placeholder.svg",
-    preview: {
-      description: "A React portfolio project featuring a 3D web experience."
+    "id": "portfolio-3d",
+    "title": "3D Portfolio",
+    "category": "3D Portfolio Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "/images/project-placeholder.svg",
+    "preview": {
+      "description": "A React portfolio project featuring a 3D web experience."
     },
-    overview: {
-      title: "Portfolio with 3D elements",
-      description: "3D Portfolio is a React-based portfolio project that explores how three-dimensional content can be used in a personal website. The repository uses Vite for the frontend development setup and Three.js for 3D elements. Its documented scope is limited, so this summary stays with the confirmed 3D portfolio experience rather than attributing additional pages or interactions that are not described. The project documents these capabilities: 3D portfolio experience."
+    "overview": {
+      "title": "Portfolio with 3D elements",
+      "description": "3D Portfolio is a 3D Portfolio Website. A React portfolio project featuring a 3D web experience. Its main capabilities include 3D portfolio experience. The project uses React, Vite, Three.js to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "3D Portfolio focuses on 3D portfolio experience and 3D portfolio experience as core needs in a 3d portfolio website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for 3D Portfolio is presenting 3D portfolio experience in a way that keeps this 3d portfolio website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports 3D portfolio experience and 3D portfolio experience in a 3d portfolio website. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "3D Portfolio brings 3D portfolio experience into one 3d portfolio website experience. The feature list describes its main user-facing capabilities, from 3D portfolio experience through 3D portfolio experience. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists React, Vite, Three.js. These tools support 3D portfolio experience and 3D portfolio experience within the 3d portfolio website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists React, Vite, Three.js for 3D Portfolio. This stack is the documented technical basis for its 3d portfolio website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "3D portfolio experience"
     ],
-    technologies: [
+    "technologies": [
       "React",
       "Vite",
       "Three.js"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping 3D portfolio experience, 3D portfolio experience, and 3D portfolio experience coherent within a 3d portfolio website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make 3D portfolio experience easy to recognize while keeping  accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the 3d portfolio website experience.",
+        "title": "Making customization easy to follow"
       }
     ],
-    learnings: [
-      "The project shows how React, Vite, Three.js can support 3D portfolio experience and 3D portfolio experience. It also illustrates how a 3d portfolio website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "3D Portfolio highlights the relationship between 3D portfolio experience and the wider 3d portfolio website experience. Its documented stack—React, Vite, Three.js—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "/images/project-placeholder.svg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Portfolio_3D"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Portfolio_3D"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "profile-card",
-    title: "Profile Card",
-    category: "Frontend UI Component",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardLight.png",
-    preview: {
-      description: "An animated profile card with social links and light and dark themes."
+    "id": "profile-card",
+    "title": "Profile Card",
+    "category": "Frontend UI Component",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardLight.png",
+    "preview": {
+      "description": "An animated profile card with social links and light and dark themes."
     },
-    overview: {
-      title: "An interactive profile card",
-      description: "Profile Card is a standalone interface for presenting a person's profile and social links in a compact card. Animation effects give the component movement, while light and dark themes let the presentation adapt to different visual preferences. The project uses HTML, CSS, and JavaScript, keeping the implementation focused on a small interactive component. The project documents these capabilities: social links."
+    "overview": {
+      "title": "An interactive profile card",
+      "description": "Profile Card is a Frontend UI Component. An animated profile card with social links and light and dark themes. Its main capabilities include Social links, Animation effects, Light and dark themes. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Profile Card focuses on social links and animation effects as core needs in a frontend ui component. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Profile Card is presenting Social links, Animation effects, Light and dark themes in a way that keeps this frontend ui component easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports social links and animation effects in a frontend ui component. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Profile Card brings Social links, Animation effects, Light and dark themes into one frontend ui component experience. The feature list describes its main user-facing capabilities, from Social links through Light and dark themes. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support social links and animation effects within the frontend ui component scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Profile Card. This stack is the documented technical basis for its frontend ui component scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Social links",
       "Animation effects",
       "Light and dark themes"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping social links, animation effects, and light and dark themes coherent within a frontend ui component. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Social links easy to recognize while keeping Animation effects, Light and dark themes accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend ui component experience.",
+        "title": "Presenting social links clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support social links and animation effects. It also illustrates how a frontend ui component can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Profile Card highlights the relationship between Social links and the wider frontend ui component experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardLight.png",
       "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardLightAfter.png",
       "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardDarkAfter.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/ProfileCard"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/ProfileCard"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "python-school-project",
-    title: "Python School Projects",
-    category: "Python Applications",
-    year: "2026",
-    role: "Python Developer",
-    image: "/images/project-placeholder.svg",
-    preview: {
-      description: "A collection of Python school projects, including a student management application."
+    "id": "python-school-project",
+    "title": "Python School Projects",
+    "category": "Python Applications",
+    "year": "2026",
+    "role": "Python Developer",
+    "image": "/images/project-placeholder.svg",
+    "preview": {
+      "description": "A collection of Python school projects, including a student management application."
     },
-    overview: {
-      title: "Python learning projects",
-      description: "Python School Projects is a collection of educational Python work, including a student management application. The student manager supports student records and marks, and includes a graph view; the repository also contains additional Python exercises. Tkinter provides the desktop interface and MySQL is used for database functionality in the student management project. The project documents these capabilities: student record management."
+    "overview": {
+      "title": "Python learning projects",
+      "description": "Python School Projects is a Python Applications. A collection of Python school projects, including a student management application. Its main capabilities include Student record management, Marks management, Graph view, Additional Python exercises. The project uses Python, Tkinter, MySQL to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Python School Projects focuses on student record management and marks management as core needs in a python applications. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Python School Projects is presenting Student record management, Marks management, Graph view, Additional Python exercises in a way that keeps this python applications easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports student record management and marks management in a python applications. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Python School Projects brings Student record management, Marks management, Graph view, Additional Python exercises into one python applications experience. The feature list describes its main user-facing capabilities, from Student record management through Additional Python exercises. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists Python, Tkinter, MySQL. These tools support student record management and marks management within the python applications scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists Python, Tkinter, MySQL for Python School Projects. This stack is the documented technical basis for its python applications scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Student record management",
       "Marks management",
       "Graph view",
       "Additional Python exercises"
     ],
-    technologies: [
+    "technologies": [
       "Python",
       "Tkinter",
       "MySQL"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping student record management, marks management, and graph view coherent within a python applications. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Student record management easy to recognize while keeping Marks management, Graph view accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the python applications experience.",
+        "title": "Presenting student record management clearly"
       }
     ],
-    learnings: [
-      "The project shows how Python, Tkinter, MySQL can support student record management and marks management. It also illustrates how a python applications can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Python School Projects highlights the relationship between Student record management and the wider python applications experience. Its documented stack—Python, Tkinter, MySQL—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "/images/project-placeholder.svg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/PythonProjectSchool"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/PythonProjectSchool"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "resume-site",
-    title: "Resume Site",
-    category: "Resume Website",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/ResumeSite/main/image/ResumeSiteLight.png",
-    preview: {
-      description: "A responsive digital resume with theme switching and PDF export."
+    "id": "resume-site",
+    "title": "Resume Site",
+    "category": "Resume Website",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/ResumeSite/main/image/ResumeSiteLight.png",
+    "preview": {
+      "description": "A responsive digital resume with theme switching and PDF export."
     },
-    overview: {
-      title: "A resume designed for the browser",
-      description: "Resume Site presents resume information in a responsive browser layout and supports exporting the document as an A4 PDF. Visitors can switch between light and dark themes, while html2pdf.js handles the export flow. The project uses HTML, CSS, and JavaScript to create a digital resume that can be read on screen or saved for sharing. The project documents these capabilities: responsive resume layout."
+    "overview": {
+      "title": "A resume designed for the browser",
+      "description": "Resume Site is a Resume Website. A responsive digital resume with theme switching and PDF export. Its main capabilities include Responsive resume layout, Light and dark themes, A4 PDF export. The project uses HTML, CSS, JavaScript, html2pdf.js to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Resume Site focuses on responsive resume layout and light and dark themes as core needs in a resume website. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Resume Site is presenting Responsive resume layout, Light and dark themes, A4 PDF export in a way that keeps this resume website easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports responsive resume layout and light and dark themes in a resume website. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Resume Site brings Responsive resume layout, Light and dark themes, A4 PDF export into one resume website experience. The feature list describes its main user-facing capabilities, from Responsive resume layout through A4 PDF export. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript, html2pdf.js. These tools support responsive resume layout and light and dark themes within the resume website scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript, html2pdf.js for Resume Site. This stack is the documented technical basis for its resume website scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Responsive resume layout",
       "Light and dark themes",
       "A4 PDF export"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript",
       "html2pdf.js"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping responsive resume layout, light and dark themes, and a4 PDF export coherent within a resume website. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Responsive resume layout easy to recognize while keeping Light and dark themes, A4 PDF export accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the resume website experience.",
+        "title": "Adapting the experience to screen size"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript, html2pdf.js can support responsive resume layout and light and dark themes. It also illustrates how a resume website can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Resume Site highlights the relationship between Responsive resume layout and the wider resume website experience. Its documented stack—HTML, CSS, JavaScript, html2pdf.js—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/ResumeSite/main/image/ResumeSiteLight.png",
       "https://raw.githubusercontent.com/abdurrah0006/ResumeSite/main/image/ResumeSiteDark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/ResumeSite"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/ResumeSite"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "retro-clock",
-    title: "Retro Clock",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Retro_Clock_Design/main/image/RetroClock.png",
-    preview: {
-      description: "A retro-styled analog clock that displays local time."
+    "id": "retro-clock",
+    "title": "Retro Clock",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Retro_Clock_Design/main/image/RetroClock.png",
+    "preview": {
+      "description": "A retro-styled analog clock that displays local time."
     },
-    overview: {
-      title: "A clock with a retro look",
-      description: "Retro Clock is a browser-based analog clock that displays local time through a retro-inspired visual design. The clock face is the central element, combining a familiar time display with a distinct styling treatment. HTML, CSS, and JavaScript provide the structure, appearance, and time updates. The project documents these capabilities: analog clock face. The project documents these capabilities: analog clock face, local time display."
+    "overview": {
+      "title": "A clock with a retro look",
+      "description": "Retro Clock is a Frontend Utility. A retro-styled analog clock that displays local time. Its main capabilities include Analog clock face, Local time display, Retro visual style. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Retro Clock focuses on analog clock face and local time display as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Retro Clock is presenting Analog clock face, Local time display, Retro visual style in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports analog clock face and local time display in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Retro Clock brings Analog clock face, Local time display, Retro visual style into one frontend utility experience. The feature list describes its main user-facing capabilities, from Analog clock face through Retro visual style. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support analog clock face and local time display within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Retro Clock. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Analog clock face",
       "Local time display",
       "Retro visual style"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping analog clock face, local time display, and retro visual style coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Analog clock face easy to recognize while keeping Local time display, Retro visual style accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Making time controls clear at a glance"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support analog clock face and local time display. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Retro Clock highlights the relationship between Analog clock face and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Retro_Clock_Design/main/image/RetroClock.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Retro_Clock_Design"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Retro_Clock_Design"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "stopwatch",
-    title: "Stopwatch",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Initial_Dark.png",
-    preview: {
-      description: "A responsive stopwatch with lap tracking and light and dark themes."
+    "id": "stopwatch",
+    "title": "Stopwatch",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Initial_Dark.png",
+    "preview": {
+      "description": "A responsive stopwatch with lap tracking and light and dark themes."
     },
-    overview: {
-      title: "Track elapsed time and laps",
-      description: "Stopwatch is a responsive browser utility for measuring elapsed time and recording laps. Users can start and pause the timer, save lap times, and reset the session when needed. Light and dark themes provide two display options, and the layout is intended to work across screen sizes. Built with HTML, CSS, and JavaScript, the project combines timing controls with a clear record of split times."
+    "overview": {
+      "title": "Track elapsed time and laps",
+      "description": "Stopwatch is a Frontend Utility. A responsive stopwatch with lap tracking and light and dark themes. Its main capabilities include Start and pause, Lap tracking, Reset, Light and dark themes, Responsive layout. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Stopwatch focuses on start and pause and lap tracking as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Stopwatch is presenting Start and pause, Lap tracking, Reset, Light and dark themes, Responsive layout in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports start and pause and lap tracking in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Stopwatch brings Start and pause, Lap tracking, Reset, Light and dark themes, Responsive layout into one frontend utility experience. The feature list describes its main user-facing capabilities, from Start and pause through Responsive layout. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support start and pause and lap tracking within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Stopwatch. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Start and pause",
       "Lap tracking",
       "Reset",
       "Light and dark themes",
       "Responsive layout"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping start and pause, lap tracking, and reset coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Start and pause easy to recognize while keeping Lap tracking, Reset accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Presenting start and pause clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support start and pause and lap tracking. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Stopwatch highlights the relationship between Start and pause and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Initial_Dark.png",
       "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Initial_Light.png",
       "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Start_Dark.png",
       "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Start_Light.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Stopwatch"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Stopwatch"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "foodiego",
-    title: "FoodieGo",
-    category: "UI/UX Case Study",
-    year: "2026",
-    role: "UI/UX Designer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/HomePage.png",
-    preview: {
-      description: "A Figma mobile food-delivery case study covering the end-to-end ordering experience."
+    "id": "foodiego",
+    "title": "FoodieGo Mobile App Design",
+    "category": "Mobile App UI/UX Design",
+    "year": "2026",
+    "role": "UI/UX Designer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/HomePage.png",
+    "preview": {
+      "description": "The FoodieGo mobile app design in Figma, covering onboarding, food discovery and customization, checkout, payment and order tracking."
     },
-    overview: {
-      title: "A mobile food ordering flow",
-      description: "FoodieGo is a Figma UI/UX case study for a mobile food-delivery experience. The documented flow begins with onboarding and continues through browsing and customizing food, placing an order, completing payment, and tracking delivery. Reusable components help keep screens consistent across the journey. As a design project, its deliverable is the interface and user flow rather than a separately described production ordering backend."
+    "overview": {
+      "title": "The FoodieGo product design",
+      "description": "This repository contains the FoodieGo mobile interface design: onboarding, food browsing and customization, ordering, payment and order tracking. It focuses on the app screens and reusable Figma components. A separate FoodieGo Case Study repository presents the project overview, final screens and outcome."
     },
-    problem: {
-      title: "Project Scope",
-      description: "FoodieGo focuses on onboarding and browse and customize food as core needs in a ui/ux case study. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "A food-ordering app needs to guide people from exploring dishes to completing payment and following an order. FoodieGo focuses on those mobile screens and their transitions, keeping the shopping tasks together in one app design."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports onboarding and browse and customize food in a ui/ux case study. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "The Figma design lays out the mobile ordering journey through onboarding, food discovery, customization, payment and order tracking. Reusable components support a consistent interface across these screens. This entry is the app design itself, separate from the companion case-study presentation."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists Figma. These tools support onboarding and browse and customize food within the ui/ux case study scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "FoodieGo is a Figma design project rather than a coded application repository. The linked repository contains screen exports for the mobile ordering interface, including home, cart, order, payment, profile and settings views."
     },
-    features: [
+    "features": [
       "Onboarding",
       "Browse and customize food",
       "Ordering and payment",
       "Order tracking",
       "Reusable components"
     ],
-    technologies: [
+    "technologies": [
       "Figma"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping onboarding, browse and customize food, and ordering and payment coherent within a ui/ux case study. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The app design needs to connect food discovery with customization, payment and order tracking in a sequence that makes sense on mobile. This repository contains the screens for that product flow; the companion case-study repo documents and presents the design work.",
+        "title": "Presenting onboarding clearly"
       }
     ],
-    learnings: [
-      "The project shows how Figma can support onboarding and browse and customize food. It also illustrates how a ui/ux case study can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "This repository is the FoodieGo app-screen design: onboarding, food discovery, checkout, payment and tracking. The separate case-study repository presents the project overview, final screens and outcome rather than duplicating this screen collection."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/HomePage.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/Cart.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/Order%20popup.png",
@@ -1542,346 +1542,346 @@ const projectsData = [
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/Profile.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo/main/Image/Setting.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Syntecxhub_FoodieGo"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Syntecxhub_FoodieGo"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "foodiego-case-study",
-    title: "FoodieGo Case Study",
-    category: "UI/UX Case Study",
-    year: "2026",
-    role: "UI/UX Designer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/CaseStudy.png",
-    preview: {
-      description: "A separate FoodieGo design case-study repository documenting a mobile food-ordering experience."
+    "id": "foodiego-case-study",
+    "title": "FoodieGo UX Case Study",
+    "category": "UI/UX Case Study",
+    "year": "2026",
+    "role": "UI/UX Designer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/CaseStudy.png",
+    "preview": {
+      "description": "A case-study presentation for FoodieGo, separate from the repository containing the app screens. It documents the project overview, final screen designs and outcome."
     },
-    overview: {
-      title: "Food delivery, documented as a case study",
-      description: "FoodieGo Case Study is a separate repository documenting a mobile-first food-ordering design. Its focus is the end-to-end journey, presented through interface screens and a reusable design system created in Figma. The case study describes a design artifact, not a separately implemented software service, so the overview concentrates on the interaction flow and visual system. The project documents these capabilities: mobile-first interface."
+    "overview": {
+      "title": "The design process and outcome",
+      "description": "This repository presents the FoodieGo UX case study rather than the app-screen design repository. It includes a project overview, selected final screens and an outcome section, giving context for the separate Figma deliverable and its mobile food-ordering flow."
     },
-    problem: {
-      title: "Project Scope",
-      description: "FoodieGo Case Study focuses on mobile-first interface and end-to-end food ordering flow as core needs in a ui/ux case study. This keeps the problem statement within the documented project scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The app design and its case study serve different purposes: the screens show the proposed food-ordering experience, while this repository explains and presents that work. Keeping the overview, final screens and outcome together makes the design deliverable easier to review."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports mobile-first interface and end-to-end food ordering flow in a ui/ux case study. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "The case-study repository organizes the FoodieGo project overview, mobile-first ordering flow, final screen designs, reusable design system and outcome. It complements the separate app-design repository by presenting the work as a documented design project."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists Figma. These tools support mobile-first interface and end-to-end food ordering flow within the ui/ux case study scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "This is a Figma-based design case-study presentation. Its repository includes the case-study cover, project overview, final-screen images and outcome material; the separate FoodieGo repository contains the app-design screens."
     },
-    features: [
+    "features": [
       "Mobile-first interface",
       "End-to-end food ordering flow",
       "Reusable design system"
     ],
-    technologies: [
+    "technologies": [
       "Figma"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping mobile-first interface, end-to-end food ordering flow, and reusable design system coherent within a ui/ux case study. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The case-study presentation should make the design work easy to review by bringing its overview, final screens and outcome into one narrative. It complements the separate FoodieGo app-design repository instead of serving as another copy of the app screens.",
+        "title": "Adapting the experience to screen size"
       }
     ],
-    learnings: [
-      "The project shows how Figma can support mobile-first interface and end-to-end food ordering flow. It also illustrates how a ui/ux case study can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "This repository documents and presents the FoodieGo design project. Use it to review the project overview, final-screen presentation and outcome; use the separate FoodieGo Mobile App Design repository to inspect the app screens themselves."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/CaseStudy.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/Image/03%20Project%20Overview.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/Image/24%20Final%20Screens.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy/main/Image/29%20Outcome.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Syntecxhub_FoodieGo_CaseStudy"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "project-pulse",
-    title: "ProjectPulse",
-    category: "UI/UX Dashboard Design",
-    year: "2026",
-    role: "UI/UX Designer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_ProjectPulse/main/ProjectPulse/Image/ProjectPulse.png",
-    preview: {
-      description: "A responsive project-management dashboard design for tracking work, teams and productivity."
+    "id": "project-pulse",
+    "title": "ProjectPulse",
+    "category": "UI/UX Dashboard Design",
+    "year": "2026",
+    "role": "UI/UX Designer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_ProjectPulse/main/ProjectPulse/Image/ProjectPulse.png",
+    "preview": {
+      "description": "A responsive project-management dashboard design for tracking work, teams and productivity."
     },
-    overview: {
-      title: "A dashboard for project progress",
-      description: "ProjectPulse is a UI/UX dashboard concept for tracking project work and team productivity. The documented interface brings project status together with collaboration features, analytics, notifications, and productivity insights. Rather than describing a backend or live project-management service, the repository presents a dashboard UI design. Its purpose is to explore how teams might scan progress and related information from one central view."
+    "overview": {
+      "title": "A dashboard for project progress",
+      "description": "ProjectPulse is a UI/UX Dashboard Design. A responsive project-management dashboard design for tracking work, teams and productivity. Its main capabilities include Project tracking, Team collaboration, Analytics, Notifications, Productivity insights. The project uses UI/UX Design to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "ProjectPulse focuses on project tracking and team collaboration as core needs in a ui/ux dashboard design. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for ProjectPulse is presenting Project tracking, Team collaboration, Analytics, Notifications, Productivity insights in a way that keeps this ui/ux dashboard design easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports project tracking and team collaboration in a ui/ux dashboard design. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "ProjectPulse brings Project tracking, Team collaboration, Analytics, Notifications, Productivity insights into one ui/ux dashboard design experience. The feature list describes its main user-facing capabilities, from Project tracking through Productivity insights. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists UI/UX Design. These tools support project tracking and team collaboration within the ui/ux dashboard design scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists UI/UX Design for ProjectPulse. This stack is the documented technical basis for its ui/ux dashboard design scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Project tracking",
       "Team collaboration",
       "Analytics",
       "Notifications",
       "Productivity insights"
     ],
-    technologies: [
+    "technologies": [
       "UI/UX Design"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping project tracking, team collaboration, and analytics coherent within a ui/ux dashboard design. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Project tracking easy to recognize while keeping Team collaboration, Analytics accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the ui/ux dashboard design experience.",
+        "title": "Making records and progress easy to scan"
       }
     ],
-    learnings: [
-      "The project shows how UI/UX Design can support project tracking and team collaboration. It also illustrates how a ui/ux dashboard design can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "ProjectPulse highlights the relationship between Project tracking and the wider ui/ux dashboard design experience. Its documented stack—UI/UX Design—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_ProjectPulse/main/ProjectPulse/Image/ProjectPulse.png",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_ProjectPulse/main/ProjectPulse/Image/pulse.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Syntecxhub_ProjectPulse"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Syntecxhub_ProjectPulse"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "visionary-labs",
-    title: "VisionaryLabs",
-    category: "UI/UX Website Design",
-    year: "2026",
-    role: "UI/UX Designer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_VisionaryLabs/main/Image/Visionary%20Labs%20Desktop.jpg",
-    preview: {
-      description: "A responsive creative-agency landing page design with reusable components and interactive flows."
+    "id": "visionary-labs",
+    "title": "VisionaryLabs",
+    "category": "UI/UX Website Design",
+    "year": "2026",
+    "role": "UI/UX Designer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_VisionaryLabs/main/Image/Visionary%20Labs%20Desktop.jpg",
+    "preview": {
+      "description": "A responsive creative-agency landing page design with reusable components and interactive flows."
     },
-    overview: {
-      title: "A creative agency landing page",
-      description: "VisionaryLabs is a Figma landing-page design for a creative agency working across branding, product design, and web experiences. The interface uses a strong visual hierarchy to present the agency and its services, with reusable components and Auto Layout supporting consistent composition. Interactive flows are part of the design scope, and responsive practices inform how the page adapts to different screen sizes."
+    "overview": {
+      "title": "A creative agency landing page",
+      "description": "VisionaryLabs is a UI/UX Website Design. A responsive creative-agency landing page design with reusable components and interactive flows. Its main capabilities include Agency landing page, Strong visual hierarchy, Reusable components, Auto Layout, Interactive flows. The project uses Figma to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "VisionaryLabs focuses on agency landing page and strong visual hierarchy as core needs in a ui/ux website design. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for VisionaryLabs is presenting Agency landing page, Strong visual hierarchy, Reusable components, Auto Layout, Interactive flows in a way that keeps this ui/ux website design easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports agency landing page and strong visual hierarchy in a ui/ux website design. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "VisionaryLabs brings Agency landing page, Strong visual hierarchy, Reusable components, Auto Layout, Interactive flows into one ui/ux website design experience. The feature list describes its main user-facing capabilities, from Agency landing page through Interactive flows. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists Figma. These tools support agency landing page and strong visual hierarchy within the ui/ux website design scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists Figma for VisionaryLabs. This stack is the documented technical basis for its ui/ux website design scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Agency landing page",
       "Strong visual hierarchy",
       "Reusable components",
       "Auto Layout",
       "Interactive flows"
     ],
-    technologies: [
+    "technologies": [
       "Figma"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping agency landing page, strong visual hierarchy, and reusable components coherent within a ui/ux website design. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Agency landing page easy to recognize while keeping Strong visual hierarchy, Reusable components accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the ui/ux website design experience.",
+        "title": "Presenting agency landing page clearly"
       }
     ],
-    learnings: [
-      "The project shows how Figma can support agency landing page and strong visual hierarchy. It also illustrates how a ui/ux website design can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "VisionaryLabs highlights the relationship between Agency landing page and the wider ui/ux website design experience. Its documented stack—Figma—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_VisionaryLabs/main/Image/Visionary%20Labs%20Desktop.jpg",
       "https://raw.githubusercontent.com/abdurrah0006/Syntecxhub_VisionaryLabs/main/Image/Visionary%20Labs%20Mobile.jpg"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/Syntecxhub_VisionaryLabs"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/Syntecxhub_VisionaryLabs"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "teelab",
-    title: "TeeLab",
-    category: "3D Web Application",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/TeeLab/main/image/HomePage.png",
-    preview: {
-      description: "A 3D T-shirt customizer for changing shirt colors, adding decals and exporting a design."
+    "id": "teelab",
+    "title": "TeeLab",
+    "category": "3D Web Application",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/TeeLab/main/image/HomePage.png",
+    "preview": {
+      "description": "A 3D T-shirt customizer for changing shirt colors, adding decals and exporting a design."
     },
-    overview: {
-      title: "Customize a shirt in 3D",
-      description: "TeeLab is a browser-based T-shirt customizer with an interactive 3D preview. Users can change shirt colors, upload decals, and export an image of their design, allowing them to see a personalized result in the interface. The client uses React and Vite, with Three.js and React Three Fiber for the 3D experience. The AI picker shown in the interface is documented as placeholder UI, not a functioning AI feature."
+    "overview": {
+      "title": "Customize a shirt in 3D",
+      "description": "TeeLab is a 3D Web Application. A 3D T-shirt customizer for changing shirt colors, adding decals and exporting a design. Its main capabilities include Interactive 3D preview, Color selection, Upload decals, Export design image. The project uses React, Vite, Three.js, React Three Fiber to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "TeeLab focuses on interactive 3D preview and color selection as core needs in a 3d web application. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for TeeLab is presenting Interactive 3D preview, Color selection, Upload decals, Export design image in a way that keeps this 3d web application easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports interactive 3D preview and color selection in a 3d web application. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "TeeLab brings Interactive 3D preview, Color selection, Upload decals, Export design image into one 3d web application experience. The feature list describes its main user-facing capabilities, from Interactive 3D preview through Export design image. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists React, Vite, Three.js, React Three Fiber. These tools support interactive 3D preview and color selection within the 3d web application scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists React, Vite, Three.js, React Three Fiber for TeeLab. This stack is the documented technical basis for its 3d web application scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Interactive 3D preview",
       "Color selection",
       "Upload decals",
       "Export design image"
     ],
-    technologies: [
+    "technologies": [
       "React",
       "Vite",
       "Three.js",
       "React Three Fiber"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping interactive 3D preview, color selection, and upload decals coherent within a 3d web application. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Interactive 3D preview easy to recognize while keeping Color selection, Upload decals accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the 3d web application experience.",
+        "title": "Making customization easy to follow"
       }
     ],
-    learnings: [
-      "The project shows how React, Vite, Three.js, React Three Fiber can support interactive 3D preview and color selection. It also illustrates how a 3d web application can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "TeeLab highlights the relationship between Interactive 3D preview and the wider 3d web application experience. Its documented stack—React, Vite, Three.js, React Three Fiber—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/TeeLab/main/image/HomePage.png",
       "https://raw.githubusercontent.com/abdurrah0006/TeeLab/main/image/ProductEdit.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/TeeLab"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/TeeLab"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "tictactoe",
-    title: "Tic Tac Toe",
-    category: "Browser Game",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/TicTacToe/main/image/TicTacToe.png",
-    preview: {
-      description: "A two-player browser Tic Tac Toe game with win and draw detection and reset controls."
+    "id": "tictactoe",
+    "title": "Tic Tac Toe",
+    "category": "Browser Game",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/TicTacToe/main/image/TicTacToe.png",
+    "preview": {
+      "description": "A two-player browser Tic Tac Toe game with win and draw detection and reset controls."
     },
-    overview: {
-      title: "A classic game for two",
-      description: "Tic Tac Toe is a two-player browser game built around alternating X and O turns on a grid. The application checks for a winning line and recognizes a draw, then provides a reset control so another round can begin. HTML, CSS, and JavaScript handle the board, presentation, and game behavior. The project documents these capabilities: two-player turns, win detection, draw detection."
+    "overview": {
+      "title": "A classic game for two",
+      "description": "Tic Tac Toe is a Browser Game. A two-player browser Tic Tac Toe game with win and draw detection and reset controls. Its main capabilities include Two-player turns, Win detection, Draw detection, Reset game. The project uses HTML, CSS, JavaScript to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "Tic Tac Toe focuses on two-player turns and win detection as core needs in a browser game. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for Tic Tac Toe is presenting Two-player turns, Win detection, Draw detection, Reset game in a way that keeps this browser game easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports two-player turns and win detection in a browser game. Its documented features form a focused workflow, using only capabilities described in the README and source. These details follow the documented project scope."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "Tic Tac Toe brings Two-player turns, Win detection, Draw detection, Reset game into one browser game experience. The feature list describes its main user-facing capabilities, from Two-player turns through Reset game. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript. These tools support two-player turns and win detection within the browser game scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript for Tic Tac Toe. This stack is the documented technical basis for its browser game scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Two-player turns",
       "Win detection",
       "Draw detection",
       "Reset game"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping two-player turns, win detection, and draw detection coherent within a browser game. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Two-player turns easy to recognize while keeping Win detection, Draw detection accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the browser game experience.",
+        "title": "Presenting two-player turns clearly"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript can support two-player turns and win detection. It also illustrates how a browser game can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "Tic Tac Toe highlights the relationship between Two-player turns and the wider browser game experience. Its documented stack—HTML, CSS, JavaScript—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/TicTacToe/main/image/TicTacToe.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/TicTacToe"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/TicTacToe"
     },
-    featured: false
+    "featured": false
   },
   {
-    id: "todolist",
-    title: "To-Do List",
-    category: "Frontend Utility",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "https://raw.githubusercontent.com/abdurrah0006/ToDoList/main/image/ToDoList.png",
-    preview: {
-      description: "A task list with add, complete, delete and filter controls, plus theme support."
+    "id": "todolist",
+    "title": "To-Do List",
+    "category": "Frontend Utility",
+    "year": "2026",
+    "role": "Frontend Developer",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/ToDoList/main/image/ToDoList.png",
+    "preview": {
+      "description": "A task list with add, complete, delete and filter controls, plus theme support."
     },
-    overview: {
-      title: "Keep track of everyday tasks",
-      description: "To-Do List is a browser application for recording everyday tasks and tracking their completion. Users can add and delete items, mark tasks complete, and filter the list to review different groups of work. The project stores task state in localStorage so the list persists in the browser between visits, and it includes light and dark themes. The project documents these capabilities: add and delete tasks."
+    "overview": {
+      "title": "Keep track of everyday tasks",
+      "description": "To-Do List is a Frontend Utility. A task list with add, complete, delete and filter controls, plus theme support. Its main capabilities include Add and delete tasks, Mark tasks complete, Filter tasks, Persist tasks in localStorage, Light and dark themes. The project uses HTML, CSS, JavaScript, localStorage to support these functions. Images from the repository offer a view of the interface, and the GitHub link provides access to the available code or design files."
     },
-    problem: {
-      title: "Project Scope",
-      description: "To-Do List focuses on add and delete tasks and mark tasks complete as core needs in a frontend utility. This keeps the problem statement within the documented project scope. This description stays within the repository's documented scope."
+    "problem": {
+      "title": "Project Focus",
+      "description": "The main design task for To-Do List is presenting Add and delete tasks, Mark tasks complete, Filter tasks, Persist tasks in localStorage, Light and dark themes in a way that keeps this frontend utility easy to understand. Visitors should be able to recognize its purpose and find the relevant actions without extra explanation. The listed features define the project’s scope."
     },
-    solution: {
-      title: "Implementation",
-      description: "The project supports add and delete tasks and mark tasks complete in a frontend utility. Its documented features form a focused workflow, using only capabilities described in the README and source."
+    "solution": {
+      "title": "What the Project Provides",
+      "description": "To-Do List brings Add and delete tasks, Mark tasks complete, Filter tasks, Persist tasks in localStorage, Light and dark themes into one frontend utility experience. The feature list describes its main user-facing capabilities, from Add and delete tasks through Light and dark themes. This summary stays close to the functions shown in the project materials and avoids assuming behavior beyond the documented scope."
     },
-    development: {
-      title: "Project Structure",
-      description: "The README lists HTML, CSS, JavaScript, localStorage. These tools support add and delete tasks and mark tasks complete within the frontend utility scope. Implementation details not documented in the repository are not included here."
+    "development": {
+      "title": "Tools and Project Materials",
+      "description": "The repository lists HTML, CSS, JavaScript, localStorage for To-Do List. This stack is the documented technical basis for its frontend utility scope and the features described above. The linked repository contains the source or design files, while the project images show examples of the interface."
     },
-    features: [
+    "features": [
       "Add and delete tasks",
       "Mark tasks complete",
       "Filter tasks",
       "Persist tasks in localStorage",
       "Light and dark themes"
     ],
-    technologies: [
+    "technologies": [
       "HTML",
       "CSS",
       "JavaScript",
       "localStorage"
     ],
-    challenges: [
+    "challenges": [
       {
-        title: "Bringing the project scope together",
-        description: "The central consideration is keeping add and delete tasks, mark tasks complete, and filter tasks coherent within a frontend utility. The repository defines the scope; this summary does not claim undocumented implementation challenges."
+        "description": "The interface needs to make Add and delete tasks easy to recognize while keeping Mark tasks complete, Filter tasks accessible. A clear hierarchy helps users understand the available actions and how each part contributes to the frontend utility experience.",
+        "title": "Making records and progress easy to scan"
       }
     ],
-    learnings: [
-      "The project shows how HTML, CSS, JavaScript, localStorage can support add and delete tasks and mark tasks complete. It also illustrates how a frontend utility can keep these documented capabilities organized in a single experience."
+    "learnings": [
+      "To-Do List highlights the relationship between Add and delete tasks and the wider frontend utility experience. Its documented stack—HTML, CSS, JavaScript, localStorage—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
-    screenshots: [
+    "screenshots": [
       "https://raw.githubusercontent.com/abdurrah0006/ToDoList/main/image/ToDoList.png",
       "https://raw.githubusercontent.com/abdurrah0006/ToDoList/main/image/ToDoList_Dark.png"
     ],
-    links: {
-      live: "Not deployed",
-      github: "https://github.com/abdurrah0006/ToDoList"
+    "links": {
+      "live": "Not deployed",
+      "github": "https://github.com/abdurrah0006/ToDoList"
     },
-    featured: false
+    "featured": false
   }
 ];
 
