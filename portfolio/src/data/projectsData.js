@@ -55,7 +55,7 @@ const projectsData = [
       "live": "Not deployed",
       "github": "https://github.com/abdurrah0006/CivilCard_Deployed"
     },
-    "featured": true
+    "featured": false
   },
   {
     "id": "bootstrap-techstartup",
@@ -279,7 +279,7 @@ const projectsData = [
       "live": "Not deployed",
       "github": "https://github.com/abdurrah0006/CodeAlpha_CivilCard"
     },
-    "featured": false
+    "featured": true
   },
   {
     "id": "codealpha-petconnect",
@@ -797,7 +797,7 @@ const projectsData = [
       "live": "Not deployed",
       "github": "https://github.com/abdurrah0006/MERN_Blogify"
     },
-    "featured": true
+    "featured": false
   },
   {
     "id": "task-manager",
@@ -1041,7 +1041,7 @@ const projectsData = [
       "live": "Not deployed",
       "github": "https://github.com/abdurrah0006/MrBeanCafe"
     },
-    "featured": false
+    "featured": true
   },
   {
     "id": "portfolio-side",
