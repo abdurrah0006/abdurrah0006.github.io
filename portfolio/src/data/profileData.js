@@ -6,7 +6,7 @@ const profileData = {
   shortTitle: "Full-Stack Developer",
   tagline: "I design and build modern digital experiences.",
   description: "I'm a passionate developer focused on creating responsive, user-friendly and scalable web applications.",
-  location: "UAE",
+  location: "Ajman, UAE",
   availability: "Available for opportunities",
   email: "abdurrah0006@gmail.com",
   resume: {
