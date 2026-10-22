@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: var(--space-16);
-  margin-top: var(--space-14);
+  margin-top: var(--space-12);
 }
 
 .journey-column-heading {
@@ -207,7 +207,7 @@
 @media (max-width: 900px) {
   .journey-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-14);
+    gap: var(--space-12);
   }
 
   .education-column {

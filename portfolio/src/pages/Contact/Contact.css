@@ -171,23 +171,31 @@
 }
 
 .contact-socials a {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.65rem 0.8rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  color: var(--color-text-inverse);
-  font-size: 10px;
+     align-items: center;
+    color: var(--color-priamary);
+    font-size: 10px;
+    display: inline-flex;
+    gap: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    padding: 0.65rem 0.8rem;
 }
 
 .contact-socials a svg {
   width: 14px;
+  color: var(--color-primary);
 }
 
 .contact-socials a:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
+  transform: translateY(-2px);
+}
+
+.contact-socials a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .contact-form-wrapper {
