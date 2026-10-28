@@ -5,14 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdur Rahman</title>
-    <script type="module" crossorigin src="/assets/index-RHg5QPi2.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DQE6QO0I.css">
+    <script>
+      // Apply the saved theme before first paint so there is no flash.
+      // Keep the keys and accent list in sync with context/ThemeContext.jsx.
+      (function () {
+        var root = document.documentElement;
+        var accent = "purple";
+        var mode = "light";
+        try {
+          var savedAccent = localStorage.getItem("portfolio-accent");
+          if (["purple", "rose", "orange", "blue", "green"].indexOf(savedAccent) !== -1) accent = savedAccent;
+          if (localStorage.getItem("portfolio-mode") === "dark") mode = "dark";
+        } catch (error) {}
+        root.setAttribute("data-accent", accent);
+        root.setAttribute("data-mode", mode);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-3Uju7WR5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CC-3OCYT.css">
   </head>
   <body>
-    <script>
-      const savedTheme = localStorage.getItem("portfolio-theme") || "purple";
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    </script>
     <div id="root"></div>
   </body>
 </html>
