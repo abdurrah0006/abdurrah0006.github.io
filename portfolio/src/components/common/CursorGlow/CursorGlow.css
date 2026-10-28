@@ -13,7 +13,7 @@
   transition: transform 0.15s ease-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) {
   .cursor-glow {
     display: none;
   }

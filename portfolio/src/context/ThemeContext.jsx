@@ -1,7 +1,41 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from "react";
 import themeData from "../data/themeData";
 
-export const ThemeContext = createContext(null);
+/*
+  Two independent settings, both stored on <html>:
+    data-accent = purple | blue | rose   (brand colour)
+    data-mode   = light | dark           (surfaces and text)
+  index.html applies the saved values before first paint to avoid a flash.
+*/
+
+const ThemeContext = createContext(null);
+
+const ACCENT_KEY = "portfolio-accent";
+const MODE_KEY = "portfolio-mode";
+const accentIds = themeData.map(({ id }) => id);
+
+function readStored(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStored(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Storage can be blocked (private mode); the theme still works for this visit.
+  }
+}
 
 export function useTheme() {
   const context = useContext(ThemeContext);
@@ -9,58 +43,37 @@ export function useTheme() {
   return context;
 }
 
-const accents = themeData.map(({ id }) => id);
-
 function ThemeProvider({ children }) {
   const [accent, setAccent] = useState(() => {
-    const savedAccent = localStorage.getItem("portfolio-accent");
-    const legacyTheme = localStorage.getItem("portfolio-theme");
-    const initialAccent = savedAccent || legacyTheme;
-    return accents.includes(initialAccent) ? initialAccent : "rose";
+    const saved = readStored(ACCENT_KEY);
+    return accentIds.includes(saved) ? saved : accentIds[0];
   });
-  const [mode, setMode] = useState(() => {
-    const savedMode = localStorage.getItem("portfolio-mode");
-    const legacyTheme = localStorage.getItem("portfolio-theme");
-    return savedMode === "dark" || (!savedMode && legacyTheme === "dark")
-      ? "dark"
-      : "light";
-  });
+  const [mode, setMode] = useState(() =>
+    readStored(MODE_KEY) === "dark" ? "dark" : "light"
+  );
 
   useEffect(() => {
     const root = document.documentElement;
-    root.setAttribute("data-mode", mode);
-    root.setAttribute("data-accent", accent);
-    localStorage.setItem("portfolio-mode", mode);
-    localStorage.setItem("portfolio-accent", accent);
+    root.dataset.accent = accent;
+    root.dataset.mode = mode;
+    writeStored(ACCENT_KEY, accent);
+    writeStored(MODE_KEY, mode);
   }, [accent, mode]);
 
-  const changeAccent = (newAccent) => {
-    if (!accents.includes(newAccent)) return;
-    setAccent(newAccent);
-    document.documentElement.setAttribute("data-accent", newAccent);
-    localStorage.setItem("portfolio-accent", newAccent);
-  };
+  const changeAccent = useCallback((id) => {
+    if (accentIds.includes(id)) setAccent(id);
+  }, []);
 
-  const toggleDarkMode = () => {
-    setMode((currentMode) =>
-      currentMode === "dark" ? "light" : "dark"
-    );
-  };
+  const toggleDarkMode = useCallback(() => {
+    setMode((current) => (current === "dark" ? "light" : "dark"));
+  }, []);
 
-  return (
-    <ThemeContext.Provider
-      value={{
-        mode,
-        accent,
-        accents,
-        changeAccent,
-        toggleDarkMode
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
+  const value = useMemo(
+    () => ({ mode, accent, changeAccent, toggleDarkMode }),
+    [mode, accent, changeAccent, toggleDarkMode]
   );
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export default ThemeProvider;
-

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ function Projects() {
   const [activeGroup, setActiveGroup] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const scrollAfterPageChange = useRef(false);
 
   const groups = [
     "All",
@@ -64,15 +65,21 @@ function Projects() {
     setCurrentPage(1);
   };
 
-  const handlePreviousPage = () => {
-    setCurrentPage((page) => Math.max(page - 1, 1));
+  // Pagination only: scroll back to the start of the list so the new page is visible.
+  // Filtering/searching also resets the page but should not move the viewport.
+  const goToPage = (page) => {
+    scrollAfterPageChange.current = true;
+    setCurrentPage(Math.min(Math.max(page, 1), totalPages));
   };
 
-  const handleNextPage = () => {
-    setCurrentPage((page) =>
-      Math.min(page + 1, totalPages)
-    );
-  };
+  useEffect(() => {
+    if (!scrollAfterPageChange.current) return;
+    scrollAfterPageChange.current = false;
+
+    document
+      .getElementById("projects-section")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [currentPage]);
 
   return (
     <div className="projects-page">
@@ -164,7 +171,7 @@ function Projects() {
                 type="button"
                 className="pagination-arrow"
                 disabled={currentPage === 1}
-                onClick={handlePreviousPage}
+                onClick={() => goToPage(currentPage - 1)}
                 aria-label="Previous page"
               >
                 <FiChevronLeft />
@@ -183,9 +190,8 @@ function Projects() {
                         ? "pagination-page active"
                         : "pagination-page"
                     }
-                    onClick={() =>
-                      setCurrentPage(page)
-                    }
+                    onClick={() => goToPage(page)}
+                    aria-current={currentPage === page ? "page" : undefined}
                   >
                     {String(page).padStart(2, "0")}
                   </button>
@@ -196,7 +202,7 @@ function Projects() {
                 type="button"
                 className="pagination-arrow"
                 disabled={currentPage === totalPages}
-                onClick={handleNextPage}
+                onClick={() => goToPage(currentPage + 1)}
                 aria-label="Next page"
               >
                 <FiChevronRight />

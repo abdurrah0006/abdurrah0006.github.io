@@ -26,7 +26,7 @@
 
 .journey-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
   gap: var(--space-16);
   margin-top: var(--space-14);
 }
@@ -54,7 +54,7 @@
 .journey-column-heading > div > span {
   color: var(--color-primary);
   font-family: monospace;
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -116,7 +116,7 @@
 
 .timeline-type {
   color: var(--color-text-muted);
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -154,7 +154,7 @@
   border-radius: var(--radius-full);
   background: var(--color-surface);
   color: var(--color-text-muted);
-  font-size: 10px;
+  font-size: 0.6875rem;
 }
 
 .education-column {
@@ -198,7 +198,7 @@
 
 @media (max-width: 900px) {
   .journey-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-14);
   }
 

@@ -68,7 +68,7 @@
 .about-section-label p {
   color: var(--color-text-muted);
   font-family: monospace;
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -79,7 +79,7 @@
 
 .about-section-heading {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: var(--space-16);
   align-items: start;
 }
@@ -98,7 +98,7 @@
 
 .about-services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   margin-top: var(--space-16);
   overflow: hidden;
@@ -136,136 +136,6 @@
 
 .about-service-card p {
   max-width: 450px;
-  margin-top: var(--space-5);
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  line-height: var(--line-relaxed);
-}
-
-.about-experience {
-  background: var(--color-background-alt);
-}
-
-.about-experience-list {
-  margin-top: var(--space-16);
-  border-top: 1px solid var(--color-border);
-}
-
-.about-experience-item {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: var(--space-16);
-  padding: var(--space-10) 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.about-experience-period {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: var(--text-sm);
-  font-weight: 700;
-}
-
-.about-experience-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6) var(--space-10);
-}
-
-.about-experience-main > div:first-child span {
-  color: var(--color-text-muted);
-  font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.about-experience-main h3 {
-  margin-top: var(--space-3);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-}
-
-.about-experience-main h4 {
-  margin-top: 4px;
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-}
-
-.about-experience-main > p {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  line-height: var(--line-relaxed);
-}
-
-.about-experience-tech {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.about-experience-tech span {
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-full);
-  background: var(--color-surface);
-  color: var(--color-text-muted);
-  font-size: 10px;
-}
-
-.about-education {
-  background: var(--color-background);
-}
-
-.about-credentials-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
-  margin-top: var(--space-16);
-}
-
-.credentials-heading {
-  display: block;
-  margin-bottom: var(--space-5);
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.credential-card {
-  padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  background: var(--color-surface);
-}
-
-.credential-card + .credential-card {
-  margin-top: var(--space-4);
-}
-
-.credential-card > span {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.credential-card h3 {
-  margin-top: var(--space-4);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-}
-
-.credential-card h4 {
-  margin-top: 4px;
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-}
-
-.credential-card p {
   margin-top: var(--space-5);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
@@ -334,18 +204,9 @@
 }
 
 @media (max-width: 900px) {
-  .about-section-heading,
-  .about-experience-item {
-    grid-template-columns: 1fr;
+  .about-section-heading {
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-6);
-  }
-
-  .about-experience-main {
-    grid-template-columns: 1fr;
-  }
-
-  .about-credentials-grid {
-    grid-template-columns: 1fr;
   }
 
   .about-resume-card {
@@ -361,11 +222,11 @@
   }
 
   .about-page-heading h1 {
-    font-size: clamp(3.5rem, 16vw, 6rem);
+    font-size: clamp(2.75rem, 14vw, 6rem);
   }
 
   .about-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .about-service-card {
@@ -375,10 +236,6 @@
 
   .about-service-card h3 {
     margin-top: var(--space-10);
-  }
-
-  .about-experience-item {
-    padding: var(--space-8) 0;
   }
 
   .about-resume-actions {

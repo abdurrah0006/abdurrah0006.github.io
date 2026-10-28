@@ -147,7 +147,11 @@ export function CustomScrollbar() {
       const maxScroll = doc.scrollHeight - viewH;
       const maxThumbTop = viewH - thumbH;
       const delta = e.clientY - dragState.current.startY;
-      window.scrollTo(0, dragState.current.startScroll + (delta / maxThumbTop) * maxScroll);
+      // "instant" so global.css `scroll-behavior: smooth` doesn't make dragging lag
+      window.scrollTo({
+        top: dragState.current.startScroll + (delta / maxThumbTop) * maxScroll,
+        behavior: "instant",
+      });
     };
     const onUp = () => setDragging(false);
 

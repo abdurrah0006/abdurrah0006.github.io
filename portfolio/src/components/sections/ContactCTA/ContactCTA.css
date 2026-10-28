@@ -6,7 +6,7 @@
 .contact-cta-card {
   position: relative;
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
   gap: var(--space-12);
   overflow: hidden;
   padding: clamp(2rem, 6vw, 5rem);
@@ -111,14 +111,14 @@
   transform: translate(3px, -3px);
 }
 
-.contact-socials {
+.contact-cta-card .contact-socials {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
   margin-top: var(--space-8);
 }
 
-.contact-socials a {
+.contact-cta-card .contact-socials a {
   color: white;
   font-size: var(--text-sm);
   font-weight: 600;
@@ -126,7 +126,7 @@
   transition: opacity var(--transition-fast);
 }
 
-.contact-socials a:hover {
+.contact-cta-card .contact-socials a:hover {
   opacity: 1;
 }
 
@@ -152,9 +152,9 @@
   bottom: -200px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .contact-cta-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .contact-cta-side {

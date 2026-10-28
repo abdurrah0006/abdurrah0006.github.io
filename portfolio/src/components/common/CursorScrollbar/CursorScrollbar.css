@@ -1,7 +1,7 @@
 
 :root {
-  --cursor-color: var(--primary, #7c3aed);
-  --scroll-thumb: var(--primary, #7c3aed);
+  --cursor-color: var(--color-primary, #7c3aed);
+  --scroll-thumb: var(--color-primary, #7c3aed);
   --scroll-track: rgba(128, 128, 128, 0.18);
 }
 
@@ -81,6 +81,7 @@ html::-webkit-scrollbar {
   right: 0;
   width: 10px;
   height: 100vh;
+  height: 100dvh;
   z-index: 9998;
   background: transparent;
   opacity: 0;

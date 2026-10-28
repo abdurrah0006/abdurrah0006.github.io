@@ -116,6 +116,10 @@
   transition: transform var(--transition-fast);
 }
 
+.navbar-contact-mobile {
+  display: none;
+}
+
 .navbar-contact:hover {
   transform: translateY(-2px);
 }
@@ -173,6 +177,11 @@
 
   .navbar-link.active::after {
     display: none;
+  }
+
+  .navbar-contact-mobile {
+    display: inline-flex;
+    margin-top: var(--space-2);
   }
 
   .mobile-menu-button {

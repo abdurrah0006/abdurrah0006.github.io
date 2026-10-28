@@ -1,6 +1,6 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Float, OrbitControls, Sparkles, Text } from "@react-three/drei";
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import themeData from "../../../data/themeData";
 import "./HeroScene.css";
@@ -128,7 +128,21 @@ function TechnologyLabel({ children, position }) {
   );
 }
 
-function SceneContent({ technologies = [], primary, secondary }) {
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    const aspect = size.width / Math.max(size.height, 1);
+    const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
+    const neededZ = 3.2 / (Math.tan(halfFov) * aspect);
+    camera.position.z = Math.max(7, neededZ);
+    camera.updateProjectionMatrix();
+  }, [camera, size.width, size.height]);
+
+  return null;
+}
+
+function SceneContent({ technologies = [], primary, secondary, compact }) {
   const positions = [
     [-2.4, 1.45, 0],
     [2.35, 1.15, 0],
@@ -138,6 +152,8 @@ function SceneContent({ technologies = [], primary, secondary }) {
 
   return (
     <>
+      <ResponsiveCamera />
+
       <ambientLight intensity={0.55} />
 
       <directionalLight
@@ -194,7 +210,7 @@ function SceneContent({ technologies = [], primary, secondary }) {
       </Suspense>
 
       <Sparkles
-        count={100}
+        count={compact ? 40 : 100}
         scale={[7, 7, 5]}
         size={2}
         speed={0.3}
@@ -206,21 +222,50 @@ function SceneContent({ technologies = [], primary, secondary }) {
 }
 
 function HeroScene({ technologies = [], accent = "purple" }) {
-  const theme = themeData.find((item) => item.id === accent) || themeData[3];
+  const theme = themeData.find((item) => item.id === accent) || themeData[0];
+  const wrapperRef = useRef(null);
+  const [inView, setInView] = useState(true);
+  const [compact, setCompact] = useState(false);
+
+  // Pause rendering when the hero scrolls out of view (saves battery on phones/iPads)
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Lighter scene on small screens
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 900px)");
+    const update = () => setCompact(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
   return (
-    <div className="hero-scene">
+    <div className="hero-scene" ref={wrapperRef}>
       <div className="hero-scene-glow" />
 
       <Canvas
-        key={accent}
         camera={{ position: [0, 0, 7], fov: 50 }}
-        // A capped pixel ratio avoids mobile GPU overload while keeping the
-        // scene crisp on high-density screens.
-        dpr={[1, 1.5]}
+        dpr={compact ? [1, 1.25] : [1, 1.5]}
+        frameloop={inView ? "always" : "never"}
         gl={{
-          antialias: false,
+          antialias: !compact,
           alpha: true,
           powerPreference: "low-power"
+        }}
+        onCreated={({ gl }) => {
+          // Let the browser restore the context after iOS drops it in the background
+          gl.domElement.addEventListener("webglcontextlost", (e) =>
+            e.preventDefault()
+          );
         }}
         fallback={<div className="hero-scene-fallback" aria-hidden="true" />}
       >
@@ -228,6 +273,7 @@ function HeroScene({ technologies = [], accent = "purple" }) {
           technologies={technologies}
           primary={theme.primary}
           secondary={theme.secondary}
+          compact={compact}
         />
 
         <OrbitControls

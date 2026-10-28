@@ -26,7 +26,7 @@
 
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-6);
   margin-top: var(--space-12);
 }
@@ -99,7 +99,7 @@
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
   color: white;
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -204,14 +204,14 @@
   background: var(--color-background-alt);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .projects-preview-header {
     align-items: flex-start;
     flex-direction: column;
   }
 
   .projects-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .project-card-1 {

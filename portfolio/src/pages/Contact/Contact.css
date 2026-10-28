@@ -16,7 +16,7 @@
 .contact-eyebrow {
   color: var(--color-primary);
   font-family: monospace;
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -48,7 +48,7 @@
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(3rem, 8vw, 8rem);
 }
 
@@ -64,18 +64,16 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.availability-dot {
-  width: 10px;
-  height: 10px;
+.contact-availability .availability-dot {
+  display: inline-flex;
+  align-items: center;
+  width: 7px;
+  height: 7px;
   flex-shrink: 0;
   border-radius: 50%;
-  margin-right: 5px;
-  background: var(--color-primary);
-  box-shadow: 0 0 0 5px color-mix(
-    in srgb,
-    var(--color-primary) 12%,
-    transparent
-  );
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+  margin-right: var(--space-2);
 }
 
 .contact-availability strong {
@@ -98,7 +96,7 @@
 
 .contact-method {
   display: grid;
-  grid-template-columns: 45px 1fr 20px;
+  grid-template-columns: 45px minmax(0, 1fr) 20px;
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-5) 0;
@@ -130,11 +128,12 @@
 .contact-method span {
   color: var(--color-text-muted);
   font-family: monospace;
-  font-size: 9px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
 }
 
 .contact-method strong {
+  overflow-wrap: anywhere;
   color: var(--color-text);
   font-size: var(--text-sm);
 }
@@ -152,48 +151,48 @@
   transform: translate(2px, -2px);
 }
 
-.contact-socials {
+.contact-information .contact-socials {
   margin-top: var(--space-10);
 }
 
-.contact-socials > span {
+.contact-information .contact-socials > span {
   color: var(--color-text-muted);
   font-family: monospace;
-  font-size: 9px;
+  font-size: 0.6875rem;
   letter-spacing: 0.08em;
 }
 
-.contact-socials > div {
+.contact-information .contact-socials > div {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-4);
 }
 
-.contact-socials a {
+.contact-information .contact-socials a {
      align-items: center;
-    color: var(--color-priamary);
-    font-size: 10px;
+    color: var(--color-text-secondary);
+    font-size: 0.6875rem;
     display: inline-flex;
     gap: var(--space-2);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
     padding: 0.65rem 0.8rem;
 }
 
-.contact-socials a svg {
+.contact-information .contact-socials a svg {
   width: 14px;
   color: var(--color-primary);
 }
 
-.contact-socials a:hover {
+.contact-information .contact-socials a:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: color-mix(in srgb, var(--color-primary) 8%, var(--color-surface));
   transform: translateY(-2px);
 }
 
-.contact-socials a:focus-visible {
+.contact-information .contact-socials a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
 }
@@ -207,7 +206,7 @@
 
 .contact-form-heading {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 40px minmax(0, 1fr);
   gap: var(--space-5);
   padding-bottom: var(--space-8);
   border-bottom: 1px solid var(--color-border);
@@ -216,7 +215,7 @@
 .contact-form-heading > span {
   color: var(--color-primary);
   font-family: monospace;
-  font-size: 10px;
+  font-size: 0.6875rem;
   font-weight: 700;
 }
 
@@ -244,7 +243,7 @@
 
 .contact-form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-5);
 }
 
@@ -257,7 +256,7 @@
 .contact-field label {
   color: var(--color-text-secondary);
   font-family: monospace;
-  font-size: 9px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -379,9 +378,9 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .contact-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-12);
   }
 
@@ -410,7 +409,7 @@
   }
 
   .contact-form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .contact-submit {

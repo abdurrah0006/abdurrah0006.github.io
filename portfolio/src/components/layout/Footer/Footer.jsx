@@ -1,12 +1,33 @@
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiDroplet,
+  FiFeather,
+  FiGithub,
+  FiHeart,
+  FiLinkedin,
+  FiMail,
+  FiStar,
+  FiZap
+} from "react-icons/fi";
 import { Link } from "react-router-dom";
 import profileData from "../../../data/profileData";
 import navigationData from "../../../data/navigationData";
+import themeData from "../../../data/themeData";
 import contactData from "../../../data/contactData";
+import { useTheme } from "../../../context/ThemeContext";
 import "./Footer.css";
+
+const accentIcons = {
+  purple: FiStar,
+  rose: FiHeart,
+  orange: FiZap,
+  blue: FiDroplet,
+  green: FiFeather
+};
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { accent, changeAccent } = useTheme();
 
   return (
     <footer className="footer">
@@ -92,6 +113,36 @@ function Footer() {
             >
               {contactData.email}
             </a>
+          </div>
+
+          <div className="footer-column footer-theme">
+            <span className="footer-column-title">
+              Theme
+            </span>
+
+            <div className="accent-picker" role="group" aria-label="Accent colour">
+              {themeData.map((item) => {
+                const Icon = accentIcons[item.id];
+
+                return (
+                <button
+                  type="button"
+                  key={item.id}
+                  className={`accent-swatch ${item.id === accent ? "is-active" : ""}`}
+                  style={{
+                    "--swatch-from": item.primary,
+                    "--swatch-to": item.secondary
+                  }}
+                  onClick={() => changeAccent(item.id)}
+                  aria-pressed={item.id === accent}
+                  aria-label={`${item.name} theme`}
+                  title={item.name}
+                >
+                  <Icon aria-hidden="true" />
+                </button>
+                );
+              })}
+            </div>
           </div>
 
         </div>
