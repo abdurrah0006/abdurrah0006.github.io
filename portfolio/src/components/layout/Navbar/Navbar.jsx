@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
-import { MdPalette } from "react-icons/md";
 import navigationData from "../../../data/navigationData";
-import ThemeToggle from "../../common/ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
 function Navbar() {

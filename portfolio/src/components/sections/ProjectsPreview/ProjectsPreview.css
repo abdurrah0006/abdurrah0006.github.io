@@ -24,14 +24,6 @@
   font-weight: 600;
 }
 
-.projects-view-all svg {
-  transition: transform var(--transition-fast);
-}
-
-.projects-view-all:hover svg {
-  transform: rotate(45deg);
-}
-
 .projects-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -188,7 +180,7 @@
 }
 
 .project-details-link:hover svg {
-  transform: rotate(45deg);
+  transform: translate(3px, -3px);
 }
 
 .project-github-link {

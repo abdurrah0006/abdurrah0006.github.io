@@ -1,0 +1,149 @@
+
+:root {
+  --cursor-color: var(--primary, #7c3aed);
+  --scroll-thumb: var(--primary, #7c3aed);
+  --scroll-track: rgba(128, 128, 128, 0.18);
+}
+
+/* Hide the native scrollbar */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide the native cursor only on devices with a real mouse */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ------------------------------ Cursor ------------------------------ */
+
+.cc-dot,
+.cc-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cc-visible {
+  opacity: 1;
+}
+
+.cc-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--cursor-color);
+}
+
+.cc-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--cursor-color);
+  transition:
+    opacity 0.2s ease,
+    width 0.25s ease,
+    height 0.25s ease,
+    margin 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.cc-ring.cc-hover {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  background: color-mix(in srgb, var(--cursor-color) 15%, transparent);
+}
+
+.cc-ring.cc-down {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+}
+
+/* ----------------------------- Scrollbar ---------------------------- */
+
+.cs-track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100vh;
+  z-index: 9998;
+  background: transparent;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    width 0.2s ease;
+}
+
+.cs-track.cs-active,
+.cs-track:hover {
+  opacity: 1;
+  width: 14px;
+}
+
+.cs-track::before {
+  content: "";
+  position: absolute;
+  inset: 0 4px 0 auto;
+  width: 4px;
+  background: var(--scroll-track);
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.cs-track:hover::before,
+.cs-track.cs-dragging::before {
+  width: 6px;
+}
+
+.cs-thumb {
+  position: absolute;
+  right: 4px;
+  width: 4px;
+  min-height: 40px;
+  background: var(--scroll-thumb);
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+.cs-track:hover .cs-thumb,
+.cs-track.cs-dragging .cs-thumb {
+  width: 6px;
+}
+
+/* Touch devices keep their normal scroll indicator */
+@media (hover: none), (pointer: coarse) {
+  .cs-track,
+  .cc-dot,
+  .cc-ring {
+    display: none;
+  }
+  html {
+    scrollbar-width: auto;
+  }
+  html::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-ring,
+  .cs-track,
+  .cs-thumb {
+    transition: none;
+  }
+}

@@ -75,6 +75,62 @@ ol {
   color: transparent;
 }
 
+:is(
+  .button,
+  .home-intro-link,
+  .about-link,
+  .resume-button,
+  .resume-contact-link,
+  .journey-view-link,
+  .skills-view-link,
+  .projects-view-all,
+  .project-details-link,
+  .project-page-card-overlay,
+  .project-page-card-title,
+  .experience-hero-link,
+  .experience-cta-primary,
+  .experience-cta-secondary,
+  .contact-cta-button,
+  .contact-email,
+  .contact-method,
+  .contact-bottom-link,
+  .resume-compact-link,
+  .resume-compact-contact,
+  .project-details-links a:first-child,
+  .not-found-secondary
+) > svg,
+.footer-socials a > svg:last-child {
+  transition: transform var(--transition-fast);
+}
+
+:is(
+  .button,
+  .home-intro-link,
+  .about-link,
+  .resume-button,
+  .resume-contact-link,
+  .journey-view-link,
+  .skills-view-link,
+  .projects-view-all,
+  .project-details-link,
+  .project-page-card-overlay,
+  .project-page-card-title,
+  .experience-hero-link,
+  .experience-cta-primary,
+  .experience-cta-secondary,
+  .contact-cta-button,
+  .contact-email,
+  .contact-method,
+  .contact-bottom-link,
+  .resume-compact-link,
+  .resume-compact-contact,
+  .project-details-links a:first-child,
+  .not-found-secondary
+):hover > svg,
+.footer-socials a:hover > svg:last-child {
+  transform: rotate(45deg);
+}
+
 @media (max-width: 768px) {
   :root {
     --page-padding: 1.25rem;

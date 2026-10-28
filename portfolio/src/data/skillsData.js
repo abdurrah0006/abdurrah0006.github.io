@@ -35,7 +35,7 @@ const skillsData = {
       id: "programming",
       title: "Programming",
       description: "Programming languages at different stages of study.",
-      skills: ["Python (Basic)", "Java (Learning)"]
+      skills: ["Python (Basic)", "Java (Learning)", "Solidity (Learning)"]
     }
   ]
 };

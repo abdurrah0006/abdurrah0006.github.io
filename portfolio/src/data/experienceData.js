@@ -81,6 +81,16 @@ const experienceData = {
       startYear: "2026",
       endYear: "2029",
       status: "First year"
+    },
+    {
+      id: "new-indian-model-school",
+      qualification: "High School Education",
+      institution: "New Indian Model School, Sharjah",
+      period: "2024",
+      description:
+        "Passed my High school education with a focus on science and Information Technology. ",
+      startYear: "2024",
+      status: "Graduated"
     }
   ],
 

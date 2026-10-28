@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import profileData from "../../../data/profileData";
 import navigationData from "../../../data/navigationData";
 import contactData from "../../../data/contactData";
-import ThemeToggle from "../../common/ThemeToggle/ThemeToggle";
 import "./Footer.css";
 
 function Footer() {
@@ -95,10 +94,6 @@ function Footer() {
             </a>
           </div>
 
-          <div className="footer-theme-column">
-            <span className="footer-column-title">Choose a theme</span>
-            <ThemeToggle />
-          </div>
         </div>
 
         <div className="footer-bottom">

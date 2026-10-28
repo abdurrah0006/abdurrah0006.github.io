@@ -74,7 +74,7 @@
 }
 
 .contact-cta-button:hover svg {
-  transform: rotate(45deg);
+  transform: translate(3px, -3px);
 }
 
 .contact-cta-side {
@@ -108,7 +108,7 @@
 }
 
 .contact-email:hover svg {
-  transform: rotate(45deg);
+  transform: translate(3px, -3px);
 }
 
 .contact-socials {

@@ -78,9 +78,10 @@ function Contact() {
           <div className="contact-layout">
             <div className="contact-information">
               <div className="contact-availability">
-                <span className="availability-dot" />
+                
 
                 <div>
+                  <span className="availability-dot" />
                   <strong>
                     {contactData.contactPage.availability.status}
                   </strong>

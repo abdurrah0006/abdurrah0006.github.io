@@ -19,7 +19,8 @@ const internshipCount = Array.isArray(experienceData?.experience)
   : 0;
 const heroStats = [
   { value: `${projectCount}`, label: "Projects" },
-  { value: `${internshipCount}`, label: "Internships" }
+  { value: `${internshipCount}`, label: "Internships" },
+  { value: "2", label: "Year of Experience" }
 ];
 
 const socialIcons = {

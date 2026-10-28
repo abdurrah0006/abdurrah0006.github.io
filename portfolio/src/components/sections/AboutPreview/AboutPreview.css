@@ -32,14 +32,6 @@
   gap: var(--space-3);
 }
 
-.about-link svg {
-  transition: transform var(--transition-fast);
-}
-
-.about-link:hover svg {
-  transform: rotate(45deg);
-}
-
 .about-preview-content {
   padding-top: var(--space-2);
 }

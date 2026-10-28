@@ -24,14 +24,6 @@
   font-weight: 600;
 }
 
-.skills-view-link svg {
-  transition: transform var(--transition-fast);
-}
-
-.skills-view-link:hover svg {
-  transform: rotate(45deg);
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
