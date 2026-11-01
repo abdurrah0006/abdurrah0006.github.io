@@ -131,7 +131,7 @@ const projectsData = [
     "category": "Real-Time MERN Application",
     "year": "2026",
     "role": "Full-Stack Developer",
-    "image": "/images/project-placeholder.svg",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Task_Manager/main/image/Task_Manager_Overview.png",
     "preview": {
       "description": "A full-stack task management application with task boards, status changes and live collaboration."
     },
@@ -178,7 +178,11 @@ const projectsData = [
       "Task Manager highlights the relationship between Task and project management and the wider real-time mern application experience. Its documented stack—React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
     "screenshots": [
-      "/images/project-placeholder.svg"
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Overview.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Login.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Register.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_CreateTask.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_TaskDetails.png"
     ],
     "links": {
       "live": "Not deployed",
@@ -192,7 +196,7 @@ const projectsData = [
     "category": "Real-Time MERN Application",
     "year": "2026",
     "role": "Full-Stack Developer",
-    "image": "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/ChatApp/frontend/src/assets/hero.png",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Chat_Light.png",
     "preview": {
       "description": "A real-time MERN chat application with authentication, group chats and notifications."
     },
@@ -236,7 +240,13 @@ const projectsData = [
       "Messenger Chat highlights the relationship between Authentication and the wider real-time mern application experience. Its documented stack—MongoDB, Express, React, Node.js, Socket.IO—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
     "screenshots": [
-      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/ChatApp/frontend/src/assets/hero.png"
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Chat_Dark.png",
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Chat_Login.png",
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Chat_Register.png",
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Group_chat.png",
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Message.png",
+      "https://raw.githubusercontent.com/abdurrah0006/Messenger_Chat/main/image/Profile.png"
+
     ],
     "links": {
       "live": "Not deployed",
@@ -250,7 +260,7 @@ const projectsData = [
     "category": "MERN Application",
     "year": "2026",
     "role": "Full-Stack Developer",
-    "image": "/images/project-placeholder.svg",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Blogify.png",
     "preview": {
       "description": "A MERN blogging platform for creating, managing and discovering posts."
     },
@@ -297,7 +307,12 @@ const projectsData = [
       "Blogify highlights the relationship between User authentication and the wider mern application experience. Its documented stack—React, Vite, Node.js, Express, MongoDB, Mongoose, Cloudinary—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
     "screenshots": [
-      "/images/project-placeholder.svg"
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/BlogifyFeed.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Login.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Register.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/BlogifyPost.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Blogify_Profile.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/CreatePost.png"
     ],
     "links": {
       "live": "Not deployed",
@@ -1164,7 +1179,7 @@ const projectsData = [
     "id": "tictactoe",
     "title": "Tic Tac Toe",
     "category": "Browser Game",
-    "year": "2026",
+    "year": "2024",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/TicTacToe/main/image/TicTacToe.png",
     "preview": {
@@ -1219,7 +1234,7 @@ const projectsData = [
     "id": "todolist",
     "title": "To-Do List",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2024",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/ToDoList/main/image/ToDoList.png",
     "preview": {
@@ -1277,7 +1292,7 @@ const projectsData = [
     "id": "calculator",
     "title": "Calculator",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Calculator/main/image/Calculator_Light.png",
     "preview": {
@@ -1332,7 +1347,7 @@ const projectsData = [
     "id": "stopwatch",
     "title": "Stopwatch",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Stopwatch/main/image/Stopwatch_Initial_Dark.png",
     "preview": {
@@ -1391,7 +1406,7 @@ const projectsData = [
     "id": "countdown-timer",
     "title": "Countdown Timer",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Countdown_Timer/main/image/Timer_Light.png",
     "preview": {
@@ -1449,7 +1464,7 @@ const projectsData = [
     "id": "alarm-clock",
     "title": "Alarm Clock",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/AlarmClock/main/image/Alarm_Light.png",
     "preview": {
@@ -1507,7 +1522,7 @@ const projectsData = [
     "id": "clock-minimalist",
     "title": "Minimalist Clock",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2024",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Clock_Minimalist/main/image/Minimalist_Clock.png",
     "preview": {
@@ -1562,7 +1577,7 @@ const projectsData = [
     "id": "retro-clock",
     "title": "Retro Clock",
     "category": "Frontend Utility",
-    "year": "2026",
+    "year": "2024",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Retro_Clock_Design/main/image/RetroClock.png",
     "preview": {
@@ -1616,7 +1631,7 @@ const projectsData = [
     "id": "error404-design",
     "title": "Space 404 Page",
     "category": "Frontend Design",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Error404_Design/main/image/Error404.png",
     "preview": {
@@ -1671,7 +1686,7 @@ const projectsData = [
     "id": "profile-card",
     "title": "Profile Card",
     "category": "Frontend UI Component",
-    "year": "2026",
+    "year": "2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/ProfileCard/main/image/CardLight.png",
     "preview": {
@@ -1727,7 +1742,7 @@ const projectsData = [
     "id": "dark-light-toggle",
     "title": "Dark-Light Toggle",
     "category": "Frontend UI Component",
-    "year": "2026",
+    "year": "2024",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/Dark-Light_Toggle/main/image/Theme.png",
     "preview": {
@@ -1782,7 +1797,7 @@ const projectsData = [
     "id": "python-school-project",
     "title": "Python School Projects",
     "category": "Python Applications",
-    "year": "2026",
+    "year": "2023 - 2024",
     "role": "Python Developer",
     "image": "/images/project-placeholder.svg",
     "preview": {
@@ -1837,7 +1852,7 @@ const projectsData = [
     "id": "html-learning",
     "title": "HTML Learning",
     "category": "Learning Project",
-    "year": "2026",
+    "year": "2024- 2025",
     "role": "Frontend Developer",
     "image": "https://raw.githubusercontent.com/abdurrah0006/HTML_Learning/main/puzzle.png",
     "preview": {
