@@ -311,7 +311,7 @@ const projectsData = [
       "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Login.png",
       "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Register.png",
       "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/BlogifyPost.png",
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Blogify_Profile.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/BlogifyProfile.png",
       "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/CreatePost.png"
     ],
     "links": {
