@@ -104,19 +104,19 @@ const experienceData = {
     {
       id: "blockchain",
       title: "Blockchain Fundamentals",
-      issuer: "Skillilearn",
+      issuer: "Simplilearn",
       period: "Dec 2025 – Feb 2026"
     },
     {
       id: "uiux",
       title: "UI/UX Design",
-      issuer: "Skillilearn",
+      issuer: "Simplilearn",
       period: "Mar 2026"
     },
     {
       id: "figma-ui-design",
       title: "Figma / UI Design",
-      issuer: "Skillilearn",
+      issuer: "Simplilearn",
       period: "Apr 2026"
     },
     {

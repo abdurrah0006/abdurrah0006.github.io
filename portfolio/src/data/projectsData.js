@@ -131,7 +131,7 @@ const projectsData = [
     "category": "Real-Time MERN Application",
     "year": "2026",
     "role": "Full-Stack Developer",
-    "image": "https://raw.githubusercontent.com/abdurrah0006/Task_Manager/main/image/Task_Manager_Overview.png",
+    "image": "https://raw.githubusercontent.com/abdurrah0006/Task_Manager/main/image/Dashboard.png",
     "preview": {
       "description": "A full-stack task management application with task boards, status changes and live collaboration."
     },
@@ -178,11 +178,11 @@ const projectsData = [
       "Task Manager highlights the relationship between Task and project management and the wider real-time mern application experience. Its documented stack—React, Vite, Node.js, Express, MongoDB, JWT, Socket.IO—offers a concrete reference for how this project is organized, while the feature list and screenshots make its intended scope easier to review."
     ],
     "screenshots": [
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Overview.png",
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Login.png",
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_Register.png",
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_CreateTask.png",
-      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/TaskManager_TaskDetails.png"
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Login.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Register.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Tasks.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Profile.png",
+      "https://raw.githubusercontent.com/abdurrah0006/MERN_Blogify/main/image/Notifications.png"
     ],
     "links": {
       "live": "Not deployed",
