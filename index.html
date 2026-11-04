@@ -5,24 +5,56 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdur Rahman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script>
-      // Apply the saved theme before first paint so there is no flash.
-      // Keep the keys and accent list in sync with context/ThemeContext.jsx.
+      // Runs before first paint: applies the saved design, mode and motion
+      // settings, decides whether the intro plays, and starts the right fonts.
+      // Keep the ids and font URLs in sync with data/themeData.js.
       (function () {
         var root = document.documentElement;
-        var accent = "purple";
+        var FONTS = {
+          atelier:
+            "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400..700&display=swap",
+          futuristic:
+            "https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap",
+          retro:
+            "https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400..700&family=Space+Mono:wght@400;700&display=swap"
+        };
+        var design = "atelier";
         var mode = "light";
+        var motion = "full";
+        var seen = false;
         try {
-          var savedAccent = localStorage.getItem("portfolio-accent");
-          if (["purple", "rose", "orange", "blue", "green"].indexOf(savedAccent) !== -1) accent = savedAccent;
+          var savedDesign = localStorage.getItem("portfolio-design");
+          if (FONTS[savedDesign]) design = savedDesign;
           if (localStorage.getItem("portfolio-mode") === "dark") mode = "dark";
+          if (localStorage.getItem("portfolio-motion") === "reduced") motion = "reduced";
+          seen = sessionStorage.getItem("portfolio-intro-seen") === "1";
         } catch (error) {}
-        root.setAttribute("data-accent", accent);
+        if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          motion = "reduced";
+        }
+        root.setAttribute("data-design", design);
         root.setAttribute("data-mode", mode);
+        root.setAttribute("data-motion", motion);
+        root.setAttribute("data-intro", seen || motion === "reduced" ? "done" : "playing");
+
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = FONTS[design];
+        document.head.appendChild(link);
+
+        // Safety net: never leave the page locked if the app fails to start.
+        setTimeout(function () {
+          if (root.getAttribute("data-intro") === "playing" && !window.__introMounted) {
+            root.setAttribute("data-intro", "done");
+          }
+        }, 6000);
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-DoU2LqJy.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CC-3OCYT.css">
+    <script type="module" crossorigin src="/assets/index-DqVUfR5R.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-lOPF2ddV.css">
   </head>
   <body>
     <div id="root"></div>
