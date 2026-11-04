@@ -102,14 +102,6 @@ ol {
   transition: transform var(--transition-fast);
 }
 
-:is(
-  .button,
-  .contact-method,
-  .footer-socials a:hover > svg:last-child
-) {
-  transform: rotate(45deg);
-}
-
 @media (max-width: 768px) {
   :root {
     --page-padding: 1.25rem;
