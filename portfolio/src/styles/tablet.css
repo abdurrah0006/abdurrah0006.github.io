@@ -1,0 +1,239 @@
+/*
+  Large tablets in portrait (iPad Air, iPad Pro 11" and 12.9": 800px to 1100px
+  wide). On these screens the desktop spacing leaves big empty bands, and the
+  hero is forced to fill a very tall screen. The iPad mini (under 800px) and
+  all landscape / desktop sizes are left exactly as they were.
+
+  This file loads after every component stylesheet, so these rules win at equal
+  specificity.
+*/
+@media (min-width: 800px) and (max-width: 1100px) and (orientation: portrait) {
+  /* ---------- Home hero: natural height, desktop arrangement kept ---------- */
+  .hero {
+    min-height: auto;
+    gap: var(--space-8);
+    padding-top: calc(var(--space-20) + var(--space-2));
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-body {
+    align-content: end;
+    gap: 0;
+    min-height: min(46vw, 440px);
+  }
+
+  .hero-emblem {
+    position: absolute;
+    top: -0.5rem;
+    right: -1vw;
+    width: min(44vw, 400px);
+    margin: 0;
+  }
+
+  .hero-name {
+    font-size: clamp(3.4rem, 11.4vw, 9.6rem);
+  }
+
+  [data-design="futuristic"] .hero-name {
+    font-size: clamp(4rem, 16vw, 13rem);
+  }
+
+  .hero-foot {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-8);
+  }
+
+  .hero-cue {
+    display: none;
+  }
+
+  /* ---------- Home sections: tighter vertical rhythm ---------- */
+  .statement {
+    padding: var(--space-14) 0 var(--space-12);
+  }
+
+  .statement .section-index {
+    margin-bottom: var(--space-8);
+  }
+
+  .statement-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: var(--space-8) var(--space-10);
+  }
+
+  .services,
+  .toolkit,
+  .path {
+    padding: var(--space-14) 0;
+  }
+
+  .services-row {
+    margin-top: var(--space-10);
+  }
+
+  .work {
+    padding: var(--space-12) 0 var(--space-14);
+  }
+
+  .feature-list {
+    margin-top: var(--space-10);
+  }
+
+  .work-more {
+    margin-top: var(--space-14);
+  }
+
+  .toolkit-grid {
+    gap: var(--space-8) var(--space-6);
+    margin-top: var(--space-10);
+  }
+
+  .path-head {
+    margin-bottom: var(--space-10);
+  }
+
+  .path-education {
+    margin-top: var(--space-12);
+  }
+
+  .cta {
+    padding-top: var(--space-8);
+  }
+
+  .cta-panel {
+    padding: var(--space-14) 0;
+  }
+
+  .cta-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: var(--space-10);
+    margin-top: var(--space-8);
+  }
+
+  .footer {
+    padding-top: var(--space-14);
+  }
+
+  /* ---------- Inner pages ---------- */
+  .ui-hero {
+    padding: calc(var(--space-20) + var(--space-4)) 0 var(--space-10);
+  }
+
+  .ui-hero-title {
+    margin-top: var(--space-8);
+  }
+
+  .ui-hero-foot {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--space-8) var(--space-10);
+    margin-top: var(--space-10);
+  }
+
+  .ui-page {
+    padding-bottom: var(--space-12);
+  }
+
+  .ui-section {
+    padding: var(--space-12) 0;
+  }
+
+  .ui-section .section-index {
+    margin-bottom: var(--space-8);
+  }
+
+  .ui-section-head {
+    margin-bottom: var(--space-10);
+  }
+
+  .about-stats dl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .about-stat:nth-child(odd) {
+    padding-left: var(--space-6);
+    border-left: var(--line) solid var(--color-border);
+  }
+
+  .about-stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .about-stat:nth-child(n + 3) {
+    border-top: 0;
+  }
+
+  .about-services,
+  .about-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-8);
+  }
+
+  .about-toolkit {
+    margin-top: var(--space-8);
+  }
+
+  .resume-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  }
+
+  .resume-link {
+    grid-template-columns: 190px minmax(0, 1fr) auto;
+    gap: var(--space-6);
+  }
+
+  .resume-link .ui-label {
+    grid-column: auto;
+  }
+
+  .contact-hero {
+    min-height: auto;
+    padding: calc(var(--space-20) + var(--space-4)) 0 var(--space-10);
+  }
+
+  .contact-main,
+  .contact-bottom {
+    padding: var(--space-14) 0;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--space-10);
+  }
+
+  .contact-information {
+    max-width: none;
+  }
+
+  .xp-timeline {
+    margin-top: var(--space-10);
+  }
+
+  .xp-item {
+    padding-bottom: var(--space-10);
+  }
+
+  .projects-section {
+    padding-bottom: var(--space-8);
+  }
+
+  .case-cover-section {
+    padding-bottom: var(--space-10);
+  }
+
+  .case-block {
+    padding-bottom: var(--space-10);
+  }
+
+  .not-found {
+    min-height: auto;
+    padding: calc(var(--space-20) + var(--space-4)) 0 var(--space-12);
+  }
+}
+
+/* The panels only keep a fixed height while they sit side by side (above 860px) */
+@media (min-width: 861px) and (max-width: 1100px) and (orientation: portrait) {
+  .services-row {
+    height: clamp(340px, 34vh, 440px);
+  }
+}

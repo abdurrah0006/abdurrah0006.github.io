@@ -1,11 +1,35 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { FiArrowUpRight, FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { FiArrowUpRight, FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
+import PageHero from "../../components/common/PageHero/PageHero";
 import projectsData from "../../data/projectsData";
+import pagesData from "../../data/pagesData";
 import "./Projects.css";
 
 const PROJECTS_PER_PAGE = 6;
+const page = pagesData.projects;
+
+function getProjectGroup(project) {
+  const category = project.category.toLowerCase();
+
+  if (category.includes("learning") || category.includes("python application")) {
+    return "Learning Projects";
+  }
+  if (category.includes("ui/ux") || category.includes("design")) {
+    return "UI/UX & Design";
+  }
+  if (
+    category.includes("utility") ||
+    category.includes("game") ||
+    category.includes("ui component")
+  ) {
+    return "Utilities & Games";
+  }
+  if (category.includes("website") || category.includes("portfolio")) {
+    return "Websites & Portfolios";
+  }
+  return "Web Applications";
+}
 
 function Projects() {
   const [activeGroup, setActiveGroup] = useState("All");
@@ -13,47 +37,28 @@ function Projects() {
   const [currentPage, setCurrentPage] = useState(1);
   const scrollAfterPageChange = useRef(false);
 
-  const groups = [
-    "All",
-    "Web Applications",
-    "Websites & Portfolios",
-    "UI/UX & Design",
-    "Utilities & Games",
-    "Learning Projects"
-  ];
-
   const filteredProjects = useMemo(() => {
-    const normalizedQuery = searchQuery.trim().toLowerCase();
+    const query = searchQuery.trim().toLowerCase();
 
     return projectsData.filter((project) => {
-      const matchesGroup =
-        activeGroup === "All" || getProjectGroup(project) === activeGroup;
-      const searchableText = [
+      const matchesGroup = activeGroup === "All" || getProjectGroup(project) === activeGroup;
+      const searchable = [
         project.title,
         project.category,
         project.preview.description,
         ...project.features,
         ...project.technologies
-      ].join(" ").toLowerCase();
-      const matchesSearch = !normalizedQuery || searchableText.includes(normalizedQuery);
+      ]
+        .join(" ")
+        .toLowerCase();
 
-      return matchesGroup && matchesSearch;
+      return matchesGroup && (!query || searchable.includes(query));
     });
   }, [activeGroup, searchQuery]);
 
-  const totalPages = Math.ceil(
-    filteredProjects.length / PROJECTS_PER_PAGE
-  );
-
-  const visibleProjects = useMemo(() => {
-    const startIndex =
-      (currentPage - 1) * PROJECTS_PER_PAGE;
-
-    return filteredProjects.slice(
-      startIndex,
-      startIndex + PROJECTS_PER_PAGE
-    );
-  }, [filteredProjects, currentPage]);
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const visibleProjects = filteredProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
 
   const handleGroupChange = (group) => {
     setActiveGroup(group);
@@ -65,11 +70,10 @@ function Projects() {
     setCurrentPage(1);
   };
 
-  // Pagination only: scroll back to the start of the list so the new page is visible.
-  // Filtering/searching also resets the page but should not move the viewport.
-  const goToPage = (page) => {
+  // Pagination scrolls back to the start of the list; filtering does not.
+  const goToPage = (target) => {
     scrollAfterPageChange.current = true;
-    setCurrentPage(Math.min(Math.max(page, 1), totalPages));
+    setCurrentPage(Math.min(Math.max(target, 1), totalPages));
   };
 
   useEffect(() => {
@@ -82,91 +86,64 @@ function Projects() {
   }, [currentPage]);
 
   return (
-    <div className="projects-page">
-      <section className="projects-page-hero">
-        <div className="container">
-          <motion.div
-            className="projects-page-heading"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="page-eyebrow">
-              Selected Work
-            </span>
+    <div className="ui-page projects-page">
+      <PageHero
+        index={page.index}
+        label={page.label}
+        note={page.note}
+        title={page.title}
+        lead={page.lead}
+        meta={[
+          { label: "Total projects", value: String(projectsData.length) },
+          { label: "Showing", value: String(filteredProjects.length) }
+        ]}
+      />
 
-            <h1>
-              Things I've
-              <span> built.</span>
-            </h1>
-
-            <p>
-              A collection of applications, interfaces and
-              digital experiences I've designed and developed.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="projects-section" className="projects-section section">
+      <section id="projects-section" className="projects-section">
         <div className="container">
           <div className="projects-toolbar">
-            <div className="projects-toolbar-controls">
-              <div className="projects-filters" role="group" aria-label="Filter projects by type">
-                {groups.map((group) => (
-                  <button
-                    type="button"
-                    key={group}
-                    className={activeGroup === group ? "project-filter active" : "project-filter"}
-                    aria-pressed={activeGroup === group}
-                    onClick={() => handleGroupChange(group)}
-                  >
-                    {group}
-                  </button>
-                ))}
-              </div>
-
-              <label className="projects-search">
-                <FiSearch aria-hidden="true" />
-                <input
-                  type="search"
-                  value={searchQuery}
-                  onChange={handleSearchChange}
-                  placeholder="Search projects or technologies"
-                  aria-label="Search projects or technologies"
-                />
-              </label>
+            <div className="projects-filters" role="group" aria-label="Filter projects by type">
+              {page.groups.map((group) => (
+                <button
+                  type="button"
+                  key={group}
+                  className={activeGroup === group ? "project-filter active" : "project-filter"}
+                  aria-pressed={activeGroup === group}
+                  onClick={() => handleGroupChange(group)}
+                >
+                  {group}
+                </button>
+              ))}
             </div>
 
-            <span className="projects-count">
-              {filteredProjects.length}{" "}
-              {filteredProjects.length === 1
-                ? "Project"
-                : "Projects"}
-            </span>
+            <label className="projects-search">
+              <FiSearch aria-hidden="true" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder={page.searchPlaceholder}
+                aria-label={page.searchPlaceholder}
+              />
+            </label>
           </div>
 
           {visibleProjects.length > 0 ? (
-            <motion.div
-              className="projects-grid"
-              layout
-            >
+            <div className="projects-grid">
               {visibleProjects.map((project, index) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
-                  index={index}
+                  number={startIndex + index + 1}
                 />
               ))}
-            </motion.div>
-          ) : (
-            <div className="projects-empty">
-              <p>No projects match these filters. Try another group or search term.</p>
             </div>
+          ) : (
+            <p className="projects-empty">{page.emptyText}</p>
           )}
 
           {totalPages > 1 && (
-            <div className="projects-pagination">
+            <nav className="projects-pagination" aria-label="Project pages">
               <button
                 type="button"
                 className="pagination-arrow"
@@ -178,22 +155,15 @@ function Projects() {
               </button>
 
               <div className="pagination-pages">
-                {Array.from(
-                  { length: totalPages },
-                  (_, index) => index + 1
-                ).map((page) => (
+                {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
                   <button
                     type="button"
-                    key={page}
-                    className={
-                      currentPage === page
-                        ? "pagination-page active"
-                        : "pagination-page"
-                    }
-                    onClick={() => goToPage(page)}
-                    aria-current={currentPage === page ? "page" : undefined}
+                    key={number}
+                    className={currentPage === number ? "pagination-page active" : "pagination-page"}
+                    onClick={() => goToPage(number)}
+                    aria-current={currentPage === number ? "page" : undefined}
                   >
-                    {String(page).padStart(2, "0")}
+                    {String(number).padStart(2, "0")}
                   </button>
                 ))}
               </div>
@@ -207,7 +177,7 @@ function Projects() {
               >
                 <FiChevronRight />
               </button>
-            </div>
+            </nav>
           )}
         </div>
       </section>
@@ -215,90 +185,42 @@ function Projects() {
   );
 }
 
-function getProjectGroup(project) {
-  const category = project.category.toLowerCase();
-
-  if (category.includes("learning") || category.includes("python application")) {
-    return "Learning Projects";
-  }
-
-  if (category.includes("ui/ux") || category.includes("design")) {
-    return "UI/UX & Design";
-  }
-
-  if (
-    category.includes("utility") ||
-    category.includes("game") ||
-    category.includes("ui component")
-  ) {
-    return "Utilities & Games";
-  }
-
-  if (category.includes("website") || category.includes("portfolio")) {
-    return "Websites & Portfolios";
-  }
-
-  return "Web Applications";
-}
-
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, number }) {
   return (
-    <motion.article
-      className="project-page-card"
-      layout
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.08
-      }}
-    >
-      <Link
-        to={`/projects/${project.id}`}
-        className="project-page-card-image"
-      >
+    <article className="project-card ui-card">
+      <Link to={`/projects/${project.id}`} className="project-card-media" tabIndex={-1} aria-hidden="true">
         <img
           src={project.image}
-          alt={`${project.title} project preview`}
+          alt=""
+          loading="lazy"
           onError={(event) => {
             event.currentTarget.onerror = null;
-            event.currentTarget.src = "/images/project-placeholder.svg";
+            event.currentTarget.src = page.imageFallback;
           }}
         />
-
-        <div className="project-page-card-overlay">
-          <span>View Project</span>
-          <FiArrowUpRight />
-        </div>
+        <span className="project-card-number">{String(number).padStart(2, "0")}</span>
       </Link>
 
-      <div className="project-page-card-content">
-        <div className="project-page-card-meta">
+      <div className="project-card-body">
+        <div className="project-card-meta ui-label">
           <span>{project.category}</span>
           <span>{project.year}</span>
         </div>
 
-        <Link
-          to={`/projects/${project.id}`}
-          className="project-page-card-title"
-        >
-          <h2>{project.title}</h2>
+        <Link to={`/projects/${project.id}`} className="project-card-title">
+          <h2 className="ui-h3">{project.title}</h2>
           <FiArrowUpRight />
         </Link>
 
         <p>{project.preview.description}</p>
 
-        <div className="project-page-card-tech">
-          {project.technologies
-            .slice(0, 5)
-            .map((technology) => (
-              <span key={technology}>
-                {technology}
-              </span>
-            ))}
-        </div>
+        <ul className="ui-chips">
+          {project.technologies.slice(0, 4).map((technology) => (
+            <li key={technology}>{technology}</li>
+          ))}
+        </ul>
       </div>
-    </motion.article>
+    </article>
   );
 }
 

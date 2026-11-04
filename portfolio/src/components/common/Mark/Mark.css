@@ -1,0 +1,157 @@
+.mark {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  white-space: nowrap;
+  /* extra stroke on top of the bold weight, for a thicker design */
+  -webkit-text-stroke: 0.05em currentColor;
+  paint-order: stroke fill;
+  font-synthesis: weight;
+}
+
+.mark-glow {
+  /* the glow is painted once; only opacity animates (cheap, on the GPU) */
+  text-shadow:
+    0 0 0.1em color-mix(in srgb, var(--color-highlight) 65%, transparent),
+    0 0 0.4em color-mix(in srgb, var(--color-highlight) 36%, transparent);
+  will-change: opacity;
+  animation: mark-breathe 6s ease-in-out infinite;
+}
+
+@keyframes mark-breathe {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+/* Loading screen: the letters rise in one by one */
+.mark-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(45%) scale(0.9);
+  filter: blur(6px);
+  animation: mark-char-in 0.75s var(--ease-out) forwards;
+  animation-delay: calc(0.9s + var(--n) * 0.12s);
+}
+
+@keyframes mark-char-in {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+/* Faint, floating background tags in every design */
+.bg-mark {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.075;
+  pointer-events: none;
+}
+
+[data-mode="dark"] .bg-mark {
+  opacity: 0.11;
+}
+
+.bg-mark-float {
+  position: absolute;
+  color: var(--color-highlight);
+  will-change: transform;
+  animation: mark-float var(--dur) ease-in-out infinite;
+}
+
+@keyframes mark-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot));
+  }
+
+  33% {
+    transform: translate3d(var(--dx), calc(var(--dy) * -0.6), 0) rotate(calc(var(--rot) + var(--drot) * 0.6));
+  }
+
+  66% {
+    transform: translate3d(calc(var(--dx) * -0.7), var(--dy), 0) rotate(calc(var(--rot) - var(--drot) * 0.5));
+  }
+}
+
+.bg-mark-a {
+  --dur: 26s;
+  --rot: -10deg;
+  --drot: 5deg;
+  --dx: 3vw;
+  --dy: 5vh;
+  top: 18vh;
+  right: -4vw;
+  font-size: clamp(9rem, 27vw, 25rem);
+}
+
+.bg-mark-b {
+  --dur: 31s;
+  --rot: 8deg;
+  --drot: 7deg;
+  --dx: -4vw;
+  --dy: 6vh;
+  top: 6vh;
+  left: 2vw;
+  font-size: clamp(4rem, 11vw, 10rem);
+  animation-delay: -9s;
+}
+
+.bg-mark-c {
+  --dur: 23s;
+  --rot: -5deg;
+  --drot: 6deg;
+  --dx: 4vw;
+  --dy: -5vh;
+  right: 6vw;
+  bottom: 4vh;
+  font-size: clamp(3.4rem, 9vw, 8rem);
+  animation-delay: -15s;
+}
+
+html[data-motion="reduced"] .mark-glow,
+html[data-motion="reduced"] .bg-mark-float {
+  animation: none;
+}
+
+html[data-motion="reduced"] .bg-mark-float {
+  transform: rotate(var(--rot));
+}
+
+html[data-motion="reduced"] .mark-char {
+  animation: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (max-width: 860px) {
+  .bg-mark {
+    opacity: 0.06;
+  }
+
+  [data-mode="dark"] .bg-mark {
+    opacity: 0.09;
+  }
+
+  .bg-mark-a {
+    top: 30vh;
+    right: -12vw;
+    font-size: clamp(7rem, 38vw, 16rem);
+  }
+
+  .bg-mark-b {
+    font-size: clamp(3.4rem, 15vw, 7rem);
+  }
+
+  .bg-mark-c {
+    display: none;
+  }
+}

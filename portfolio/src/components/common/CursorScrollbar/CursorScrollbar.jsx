@@ -6,42 +6,82 @@ const HOVER_SELECTOR =
 
 /* ------------------------------ Cursor ------------------------------ */
 
+const clampAngle = (from, to, amount) => {
+  const difference = ((to - from + 540) % 360) - 180;
+  return from + difference * amount;
+};
+
+// A small arrowhead sits on the pointer and turns to face the way you move.
+// A larger outline arrowhead trails behind it.
 export function CustomCursor() {
-  const dotRef = useRef(null);
-  const ringRef = useRef(null);
+  const arrowRef = useRef(null);
+  const trailRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!finePointer) return;
+    if (!finePointer) return undefined;
 
     document.documentElement.classList.add("has-custom-cursor");
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const mouse = { x: -100, y: -100 };
-    const ring = { x: -100, y: -100 };
-    let raf;
+    const mouse = { x: -100, y: -100, previousX: -100, previousY: -100 };
+    const trail = { x: -100, y: -100 };
+    let target = 0;
+    let angle = 0;
+    let trailAngle = 0;
+    let frame = 0;
 
-    const onMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+    const onMove = (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+      wake();
       setVisible(true);
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0)`;
-      }
-      setHovering(!!e.target.closest?.(HOVER_SELECTOR));
+      setHovering(!!event.target.closest?.(HOVER_SELECTOR));
+    };
+
+    // The loop runs only while the pointer moves or the trail is still
+    // catching up, then goes to sleep until the next movement.
+    const wake = () => {
+      if (!frame) frame = requestAnimationFrame(tick);
     };
 
     const tick = () => {
-      const ease = reduceMotion ? 1 : 0.18;
-      ring.x += (mouse.x - ring.x) * ease;
-      ring.y += (mouse.y - ring.y) * ease;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0)`;
+      frame = 0;
+
+      const reduced = document.documentElement.dataset.motion === "reduced";
+      const dx = mouse.x - mouse.previousX;
+      const dy = mouse.y - mouse.previousY;
+      mouse.previousX = mouse.x;
+      mouse.previousY = mouse.y;
+
+      // Only turn when actually moving, so it keeps its heading when you stop.
+      if (Math.hypot(dx, dy) > 1.2) {
+        target = (Math.atan2(dy, dx) * 180) / Math.PI + 90;
       }
-      raf = requestAnimationFrame(tick);
+
+      angle = clampAngle(angle, target, reduced ? 1 : 0.28);
+      trailAngle = clampAngle(trailAngle, target, reduced ? 1 : 0.12);
+
+      const ease = reduced ? 1 : 0.16;
+      trail.x += (mouse.x - trail.x) * ease;
+      trail.y += (mouse.y - trail.y) * ease;
+
+      if (arrowRef.current) {
+        arrowRef.current.style.transform = `translate3d(${mouse.x}px, ${mouse.y}px, 0) rotate(${angle}deg)`;
+      }
+      if (trailRef.current) {
+        trailRef.current.style.transform = `translate3d(${trail.x}px, ${trail.y}px, 0) rotate(${trailAngle}deg)`;
+      }
+
+      const settled =
+        Math.abs(mouse.x - trail.x) < 0.2 &&
+        Math.abs(mouse.y - trail.y) < 0.2 &&
+        Math.abs(((target - trailAngle + 540) % 360) - 180) < 0.3 &&
+        Math.hypot(dx, dy) < 0.05;
+
+      if (!settled) wake();
     };
 
     const onDown = () => setPressed(true);
@@ -54,11 +94,11 @@ export function CustomCursor() {
     window.addEventListener("mouseup", onUp);
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
-    raf = requestAnimationFrame(tick);
+    wake();
 
     return () => {
       document.documentElement.classList.remove("has-custom-cursor");
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(frame);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mousedown", onDown);
       window.removeEventListener("mouseup", onUp);
@@ -67,14 +107,20 @@ export function CustomCursor() {
     };
   }, []);
 
+  const state = `${visible ? "cc-visible" : ""} ${hovering ? "cc-hover" : ""} ${pressed ? "cc-down" : ""}`;
+
   return (
     <>
-      <div
-        ref={ringRef}
-        className={`cc-ring ${visible ? "cc-visible" : ""} ${hovering ? "cc-hover" : ""} ${pressed ? "cc-down" : ""}`}
-        aria-hidden="true"
-      />
-      <div ref={dotRef} className={`cc-dot ${visible ? "cc-visible" : ""}`} aria-hidden="true" />
+      <div ref={trailRef} className={`cc-trail ${state}`} aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2.5 21 21.5 12 17 3 21.5Z" />
+        </svg>
+      </div>
+      <div ref={arrowRef} className={`cc-arrow ${state}`} aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2.5 21 21.5 12 17 3 21.5Z" />
+        </svg>
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   FiArrowUpRight,
   FiGithub,
@@ -8,8 +8,10 @@ import {
   FiMapPin,
   FiSend
 } from "react-icons/fi";
+import { RevealHeading } from "../../components/common/Motion/Motion";
 import contactData from "../../data/contactData";
 import profileData from "../../data/profileData";
+import pagesData from "../../data/pagesData";
 import "./Contact.css";
 
 const iconMap = {
@@ -17,7 +19,13 @@ const iconMap = {
   location: FiMapPin
 };
 
+const page = pagesData.contact;
+
+// The one page with the message form. Other sections link here and pass
+// state.scrollTo = "contact-form" to land on it.
 function Contact() {
+  const { state } = useLocation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,6 +34,18 @@ function Contact() {
   });
 
   const [emailDraftRequested, setEmailDraftRequested] = useState(false);
+
+  useEffect(() => {
+    if (state?.scrollTo !== "contact-form") return undefined;
+
+    const timer = window.setTimeout(() => {
+      document
+        .getElementById("contact-form")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 450);
+
+    return () => window.clearTimeout(timer);
+  }, [state]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,6 +56,7 @@ function Contact() {
     }));
   };
 
+  // The site has no server, so submitting opens a pre-filled email draft.
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -48,278 +69,182 @@ function Contact() {
     setEmailDraftRequested(true);
   };
 
+  const { contactPage } = contactData;
+
+  // Same heading treatment as every other page: last word in the accent style.
+  const heroTitle = contactPage.title.replace(/(\S+)$/, "_$1_");
+
   return (
-    <main className="contact-page">
-      <section className="contact-hero section">
+    <div className="contact-page">
+      <section className="contact-hero" data-reveal-skip>
         <div className="container">
-          <motion.div
-            className="contact-hero-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="contact-eyebrow">
-              {contactData.contactPage.eyebrow}
-            </span>
+          <div className="contact-hero-content">
+            <span className="contact-eyebrow">{contactPage.eyebrow}</span>
 
-            <h1>
-              {contactData.contactPage.title}
-            </h1>
+            <RevealHeading as="h1" className="ui-hero-title" text={heroTitle} />
 
-            <p>
-              {contactData.contactPage.description}
-            </p>
-          </motion.div>
+            <p>{contactPage.description}</p>
+          </div>
         </div>
       </section>
 
-      <section className="contact-main section">
+      <section className="contact-main" data-reveal-skip>
         <div className="container">
           <div className="contact-layout">
             <div className="contact-information">
               <div className="contact-availability">
-                
-
                 <div>
                   <span className="availability-dot" />
-                  <strong>
-                    {contactData.contactPage.availability.status}
-                  </strong>
+                  <strong>{contactPage.availability.status}</strong>
 
-                  <p>
-                    {contactData.contactPage.availability.description}
-                  </p>
+                  <p>{contactPage.availability.description}</p>
                 </div>
               </div>
 
               <div className="contact-methods">
-                {contactData.contactPage.contactMethods.map(
-                  (method) => {
-                    const Icon = iconMap[method.id] || FiMail;
-                    const MethodTag = method.href ? "a" : "div";
+                {contactPage.contactMethods.map((method) => {
+                  const Icon = iconMap[method.id] || FiMail;
+                  const MethodTag = method.href ? "a" : "div";
 
-                    return (
-                      <MethodTag
-                        className="contact-method"
-                        {...(method.href ? { href: method.href } : {})}
-                        key={method.id}
-                      >
-                        <div className="contact-method-icon">
-                          <Icon />
-                        </div>
+                  return (
+                    <MethodTag
+                      className="contact-method"
+                      {...(method.href ? { href: method.href } : {})}
+                      key={method.id}
+                    >
+                      <div className="contact-method-icon">
+                        <Icon />
+                      </div>
 
-                        <div>
-                          <span>
-                            {method.label}
-                          </span>
+                      <div>
+                        <span>{method.label}</span>
 
-                          <strong>
-                            {method.value}
-                          </strong>
-                        </div>
+                        <strong>{method.value}</strong>
+                      </div>
 
-                        {method.href && <FiArrowUpRight />}
-                      </MethodTag>
-                    );
-                  }
-                )}
+                      {method.href && <FiArrowUpRight />}
+                    </MethodTag>
+                  );
+                })}
               </div>
 
               <div className="contact-socials">
-                <span>FIND ME ONLINE</span>
+                <span>{page.socialsLabel}</span>
 
                 <div>
-                  {contactData.contactPage.socialLinks.map(
-                    (social) => (
-                      <a
-                        href={social.url}
-                        key={social.id}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {social.id === "github" && (
-                          <FiGithub />
-                        )}
+                  {contactPage.socialLinks.map((social) => (
+                    <a
+                      href={social.url}
+                      key={social.id}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {social.id === "github" && <FiGithub />}
+                      {social.id === "linkedin" && <FiLinkedin />}
+                      {social.id === "email" && <FiMail />}
 
-                        {social.id === "linkedin" && (
-                          <FiLinkedin />
-                        )}
-
-                        {social.id === "email" && (
-                          <FiMail />
-                        )}
-
-                        <span>{social.label}</span>
-                      </a>
-                    )
-                  )}
+                      <span>{social.label}</span>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <motion.div
-              className="contact-form-wrapper"
-              initial={{
-                opacity: 0,
-                y: 30
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2
-              }}
-              transition={{
-                duration: 0.6
-              }}
-            >
+            <div className="contact-form-wrapper" id="contact-form">
               <div className="contact-form-heading">
                 <span>01</span>
 
                 <div>
-                  <h2>
-                    {contactData.contactPage.form.title}
-                  </h2>
+                  <h2 className="ui-h3">{contactPage.form.title}</h2>
 
-                  <p>
-                    {contactData.contactPage.form.description}
-                  </p>
+                  <p>{contactPage.form.description}</p>
                 </div>
               </div>
 
-              <form
-                className="contact-form"
-                onSubmit={handleSubmit}
-              >
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="contact-form-row">
-                  {contactData.contactPage.form.fields
-                    .slice(0, 2)
-                    .map((field) => (
-                      <div
-                        className="contact-field"
-                        key={field.name}
-                      >
-                        <label htmlFor={field.name}>
-                          {field.label}
-                        </label>
-
-                        <input
-                          id={field.name}
-                          name={field.name}
-                          type={field.type}
-                          placeholder={
-                            field.placeholder
-                          }
-                          value={
-                            formData[field.name]
-                          }
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-                    ))}
-                </div>
-
-                {contactData.contactPage.form.fields
-                  .slice(2)
-                  .map((field) => (
-                    <div
-                      className="contact-field"
-                      key={field.name}
-                    >
-                      <label htmlFor={field.name}>
-                        {field.label}
-                      </label>
+                  {contactPage.form.fields.slice(0, 2).map((field) => (
+                    <div className="contact-field" key={field.name}>
+                      <label htmlFor={field.name}>{field.label}</label>
 
                       <input
                         id={field.name}
                         name={field.name}
                         type={field.type}
-                        placeholder={
-                          field.placeholder
-                        }
-                        value={
-                          formData[field.name]
-                        }
+                        placeholder={field.placeholder}
+                        value={formData[field.name]}
                         onChange={handleChange}
                         required
                       />
                     </div>
                   ))}
+                </div>
+
+                {contactPage.form.fields.slice(2).map((field) => (
+                  <div className="contact-field" key={field.name}>
+                    <label htmlFor={field.name}>{field.label}</label>
+
+                    <input
+                      id={field.name}
+                      name={field.name}
+                      type={field.type}
+                      placeholder={field.placeholder}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                ))}
 
                 <div className="contact-field">
-                  <label htmlFor="message">
-                    {contactData.contactPage.form.message.label}
-                  </label>
+                  <label htmlFor="message">{contactPage.form.message.label}</label>
 
                   <textarea
                     id="message"
                     name="message"
                     rows="7"
-                    placeholder={
-                      contactData.contactPage.form.message
-                        .placeholder
-                    }
+                    placeholder={contactPage.form.message.placeholder}
                     value={formData.message}
                     onChange={handleChange}
                     required
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="contact-submit"
-                >
-                  {contactData.contactPage.form.submitLabel}
+                <button type="submit" className="contact-submit">
+                  {contactPage.form.submitLabel}
                   <FiSend />
                 </button>
 
                 {emailDraftRequested && (
-                  <motion.p
-                    className="contact-success"
-                    initial={{
-                      opacity: 0,
-                      y: 5
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0
-                    }}
-                  >
-                    Your email app should open with a draft. The message is not sent from this website; review and send it in your email app. If it did not open, email me at {contactData.email}.
-                  </motion.p>
+                  <p className="contact-success" role="status">
+                    {page.draftNote} {contactData.email}.
+                  </p>
                 )}
               </form>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="contact-bottom section">
+      <section className="contact-bottom" data-reveal-skip>
         <div className="container">
           <div className="contact-bottom-card">
-            <span className="contact-eyebrow">
-              HAVE AN IDEA?
-            </span>
+            <span className="contact-eyebrow">{page.bottom.eyebrow}</span>
 
-            <h2>
-              Let's turn it into
-              <span> something real.</span>
-            </h2>
+            <RevealHeading
+              as="h2"
+              className="ui-h2 contact-bottom-title"
+              text={`${page.bottom.lead} _${page.bottom.accent}_`}
+            />
 
-            <a
-              href={`mailto:${profileData.email}`}
-              className="contact-bottom-link"
-            >
-              Send Me an Email
+            <a href={`mailto:${profileData.email}`} className="contact-bottom-link">
+              {page.bottom.link}
               <FiArrowUpRight />
             </a>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

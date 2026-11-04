@@ -1,455 +1,179 @@
-.experience-page {
-  background: var(--color-background);
-}
-
-.experience-page-hero {
-  min-height: 100svh;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: 130px 0 var(--space-12);
-}
-
-.experience-page-heading {
-  max-width: 1000px;
-}
-
-.experience-page-heading h1 {
-  margin-top: var(--space-6);
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.88;
-  letter-spacing: -0.06em;
-}
-
-.experience-page-heading h1 span {
-  display: block;
-  color: var(--color-primary);
-}
-
-.experience-page-heading > p {
-  max-width: 650px;
-  margin-top: var(--space-10);
-  color: var(--color-text-secondary);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: var(--line-relaxed);
-}
-
-.experience-hero-link {
-  margin-top: var(--space-8);
-}
-
-.experience-timeline {
-  scroll-margin-top: 100px;
-  background: var(--color-background-alt);
-}
-
-.experience-section-heading {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: var(--space-16);
-}
-
-.experience-section-label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-}
-
-.experience-section-label span {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.experience-section-label p {
-  color: var(--color-text-muted);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.experience-section-heading h2 {
-  max-width: 850px;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-}
-
-.experience-section-heading h2 span {
-  color: var(--color-primary);
-}
-
-.experience-section-heading > div:last-child > p {
-  max-width: 650px;
-  margin-top: var(--space-7);
-  color: var(--color-text-muted);
-  font-size: var(--text-base);
-  line-height: var(--line-relaxed);
-}
-
-.experience-list {
+/* ---------- Timeline ---------- */
+.xp-timeline {
   position: relative;
-  margin-top: var(--space-20);
-  margin-left: 110px;
-  border-left: 1px solid var(--color-border);
+  margin-top: var(--space-14);
 }
 
-.experience-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 140px minmax(0, 1fr);
-  gap: var(--space-10);
-  padding: 0 0 var(--space-20) var(--space-16);
-}
-
-.experience-item + .experience-item {
-  padding-top: var(--space-20);
-  border-top: 1px solid var(--color-border);
-}
-
-.experience-item-marker {
+.xp-timeline::before {
+  content: "";
   position: absolute;
   top: 0;
-  left: -18px;
-  display: flex;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--color-primary);
-  border-radius: 50%;
-  background: var(--color-background-alt);
+  bottom: 0;
+  left: 1.1rem;
+  width: var(--line);
+  background: var(--color-border);
 }
 
-.experience-item-marker span {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-}
-
-.experience-item-period {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding-top: 4px;
-  font-family: monospace;
-}
-
-.experience-item-period span {
-  color: var(--color-primary);
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.experience-item-period small {
-  color: var(--color-text-muted);
-  font-size: 0.6875rem;
-}
-
-.experience-item-content {
-  max-width: 850px;
-}
-
-.experience-type {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.experience-item-content h3 {
-  margin-top: var(--space-3);
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.experience-item-content h4 {
-  margin-top: var(--space-2);
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-}
-
-.experience-item-description {
-  max-width: 700px;
-  margin-top: var(--space-7);
-  color: var(--color-text-muted);
-  font-size: var(--text-base);
-  line-height: var(--line-relaxed);
-}
-
-.experience-detail-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--space-10);
-  margin-top: var(--space-10);
-}
-
-.experience-detail-grid h5 {
-  margin-bottom: var(--space-4);
-  color: var(--color-text);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.experience-detail-grid ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.experience-detail-grid li {
+.xp-item {
   position: relative;
-  padding-left: 18px;
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 2.2rem 200px minmax(0, 1fr);
+  gap: var(--space-8);
+  padding: 0 0 var(--space-14);
 }
 
-.experience-detail-grid li::before {
-  position: absolute;
-  top: 0.65em;
-  left: 0;
-  width: 5px;
-  height: 5px;
+.xp-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: var(--line) solid var(--color-text);
   border-radius: 50%;
-  background: var(--color-primary);
-  content: "";
-}
-
-.experience-education {
-  background: var(--color-background-alt);
-}
-
-.education-list {
-  margin-top: var(--space-16);
-  border-top: 1px solid var(--color-border);
-}
-
-.education-item {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: var(--space-16);
-  padding: var(--space-10) 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.education-period {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.education-item h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-}
-
-.education-item h4 {
-  margin-top: 5px;
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-}
-
-.education-item p {
-  max-width: 700px;
-  margin-top: var(--space-5);
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  line-height: var(--line-relaxed);
-}
-
-.experience-certifications {
   background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
 
-.certifications-grid {
+.xp-when {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-5);
-  margin-top: var(--space-16);
+  align-content: start;
+  gap: var(--space-1);
+  padding-top: 0.4rem;
 }
 
-.experience-certification-card {
-  min-height: 240px;
-  padding: var(--space-8);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  background: var(--color-surface);
+.xp-when strong {
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
-.experience-certification-card > span {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-}
-
-.experience-certification-card h3 {
-  margin-top: var(--space-16);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  line-height: 1.1;
-}
-
-.experience-certification-card p {
-  margin-top: var(--space-4);
+.xp-when span {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
 }
 
-.experience-certification-period {
-  display: block;
+.xp-what > p {
+  max-width: 62ch;
+  margin-top: var(--space-6);
+  color: var(--color-text-secondary);
+}
+
+.xp-role {
   margin-top: var(--space-2);
-  color: var(--color-text-muted);
-  font-family: monospace;
-  font-size: 0.6875rem;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
 }
 
-.experience-cta {
-  background: var(--color-background-alt);
-}
-
-.experience-cta-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-10);
-  padding: clamp(2rem, 5vw, 4rem);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  background: var(--color-surface);
-}
-
-.experience-cta-card h2 {
-  max-width: 700px;
-  margin-top: var(--space-4);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-}
-
-.experience-cta-card h2 span {
-  color: var(--color-primary);
-}
-
-.experience-cta-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  flex-shrink: 0;
-}
-
-.experience-cta-primary,
-.experience-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.85rem 1.1rem;
-  border-radius: var(--radius-full);
-  font-size: var(--text-sm);
+.xp-company {
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--color-highlight);
   font-weight: 600;
 }
 
-.experience-cta-primary {
-  background: var(--color-primary);
-  color: white;
+.xp-sub {
+  margin: var(--space-10) 0 var(--space-4);
 }
 
-.experience-cta-secondary {
-  border: 1px solid var(--color-border);
+.xp-points li {
+  position: relative;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  border-bottom: var(--line) solid var(--color-border);
   color: var(--color-text-secondary);
 }
 
-.experience-cta-primary:hover,
-.experience-cta-secondary:hover {
-  transform: translateY(-2px);
+.xp-points li::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--color-highlight);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(90deg);
 }
 
-@media (max-width: 950px) {
-  .experience-section-heading {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
-  }
+/* ---------- Education ---------- */
+.xp-education {
+  margin-top: var(--space-12);
+}
 
-  .experience-list {
-    margin-left: 30px;
-  }
+.xp-edu-item {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: var(--space-8);
+  padding: var(--space-8) 0;
+  border-top: var(--line) solid var(--color-text);
+}
 
-  .experience-item {
-    grid-template-columns: 100px minmax(0, 1fr);
-    padding-left: var(--space-10);
-  }
+.xp-edu-item p {
+  max-width: 62ch;
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+}
 
-  .certifications-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+/* ---------- Certifications ---------- */
+.xp-certs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-12);
+}
 
-  .experience-cta-card {
-    align-items: flex-start;
-    flex-direction: column;
+.xp-cert {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.xp-cert:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-highlight);
+}
+
+.xp-cert p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.xp-cert small {
+  margin-top: auto;
+}
+
+@media (max-width: 1000px) {
+  .xp-certs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 700px) {
-  .experience-page-hero {
-    min-height: 100svh;
-    padding: 120px 0 var(--space-10);
+@media (max-width: 860px) {
+  .xp-item {
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: var(--space-4) var(--space-5);
   }
 
-  .experience-page-heading h1 {
-    font-size: clamp(2.75rem, 14vw, 6rem);
+  .xp-when {
+    grid-column: 2;
+    padding-top: 0;
   }
 
-  .experience-item {
-    display: block;
-    padding-left: var(--space-8);
+  .xp-what {
+    grid-column: 2;
   }
 
-  .experience-item-period {
-    margin-bottom: var(--space-6);
-  }
-
-  .experience-detail-grid {
+  .xp-edu-item {
     grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-8);
-  }
-
-  .education-item {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-5);
-  }
-
-  .experience-cta-actions {
-    align-items: flex-start;
-    flex-direction: column;
+    gap: var(--space-3);
   }
 }
 
-@media (max-width: 500px) {
-  .experience-list {
-    margin-left: 18px;
-  }
-
-  .experience-item {
-    padding-left: var(--space-6);
-  }
-
-  .experience-item-marker {
-    left: -16px;
-    width: 32px;
-    height: 32px;
+@media (max-width: 600px) {
+  .xp-certs {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

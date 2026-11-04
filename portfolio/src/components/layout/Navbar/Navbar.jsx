@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
+import Mark from "../../common/Mark/Mark";
 import navigationData from "../../../data/navigationData";
 import { useTheme } from "../../../context/ThemeContext";
 import "./Navbar.css";
@@ -35,8 +36,8 @@ function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <span>AR</span>
+        <Link to="/" className="navbar-logo" onClick={closeMenu} aria-label="Home">
+          <Mark className="navbar-logo-mark" />
         </Link>
 
         <nav

@@ -5,6 +5,7 @@
 
   --color-primary: #7c3aed;
   --color-secondary: #ec4899;
+  --color-highlight: #cf4520;
   --color-primary-soft: color-mix(in srgb, var(--color-primary) 14%, transparent);
 
   --color-background: #ffffff;
@@ -34,8 +35,14 @@
      TYPOGRAPHY
   ========================= */
 
-  --font-primary: "Inter", sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
+  /* Fonts, shapes and palettes are set per design in themes.css.
+     These are the Atelier (default) values, used until a design is applied. */
+  --font-primary: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-accent: "Fraunces", Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+  --display-weight: 600;
+  --display-tracking: -0.035em;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -102,6 +109,8 @@
      TRANSITIONS
   ========================= */
 
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
 

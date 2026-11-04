@@ -23,54 +23,65 @@ html::-webkit-scrollbar {
 
 /* ------------------------------ Cursor ------------------------------ */
 
-.cc-dot,
-.cc-ring {
+.cc-arrow,
+.cc-trail {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
   z-index: 9999;
-  border-radius: 50%;
-  will-change: transform;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cc-trail {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
 }
 
 .cc-visible {
   opacity: 1;
 }
 
-.cc-dot {
-  width: 8px;
-  height: 8px;
-  margin: -4px 0 0 -4px;
-  background: var(--cursor-color);
+.cc-arrow svg,
+.cc-trail svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.28s var(--ease-out, ease), fill 0.2s ease;
 }
 
-.cc-ring {
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
-  border: 1.5px solid var(--cursor-color);
-  transition:
-    opacity 0.2s ease,
-    width 0.25s ease,
-    height 0.25s ease,
-    margin 0.25s ease,
-    background-color 0.25s ease;
+.cc-arrow svg {
+  fill: var(--cursor-color);
 }
 
-.cc-ring.cc-hover {
-  width: 64px;
-  height: 64px;
-  margin: -32px 0 0 -32px;
-  background: color-mix(in srgb, var(--cursor-color) 15%, transparent);
+.cc-trail svg {
+  fill: transparent;
+  stroke: var(--cursor-color);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
 }
 
-.cc-ring.cc-down {
-  width: 26px;
-  height: 26px;
-  margin: -13px 0 0 -13px;
+.cc-arrow.cc-hover svg {
+  transform: scale(1.45);
+}
+
+.cc-trail.cc-hover svg {
+  transform: scale(1.5);
+  fill: color-mix(in srgb, var(--cursor-color) 16%, transparent);
+}
+
+.cc-arrow.cc-down svg {
+  transform: scale(0.75);
+}
+
+.cc-trail.cc-down svg {
+  transform: scale(0.8);
 }
 
 /* ----------------------------- Scrollbar ---------------------------- */
@@ -129,8 +140,8 @@ html::-webkit-scrollbar {
 /* Touch devices keep their normal scroll indicator */
 @media (hover: none), (pointer: coarse) {
   .cs-track,
-  .cc-dot,
-  .cc-ring {
+  .cc-arrow,
+  .cc-trail {
     display: none;
   }
   html {
@@ -142,7 +153,8 @@ html::-webkit-scrollbar {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cc-ring,
+  .cc-arrow svg,
+  .cc-trail svg,
   .cs-track,
   .cs-thumb {
     transition: none;

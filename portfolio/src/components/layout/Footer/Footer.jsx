@@ -1,13 +1,11 @@
 import {
   FiArrowUpRight,
-  FiDroplet,
+  FiCoffee,
+  FiCpu,
   FiFeather,
   FiGithub,
-  FiHeart,
   FiLinkedin,
-  FiMail,
-  FiStar,
-  FiZap
+  FiMail
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import profileData from "../../../data/profileData";
@@ -17,17 +15,15 @@ import contactData from "../../../data/contactData";
 import { useTheme } from "../../../context/ThemeContext";
 import "./Footer.css";
 
-const accentIcons = {
-  purple: FiStar,
-  rose: FiHeart,
-  orange: FiZap,
-  blue: FiDroplet,
-  green: FiFeather
+const designIcons = {
+  atelier: FiFeather,
+  futuristic: FiCpu,
+  retro: FiCoffee
 };
 
 function Footer() {
   const currentYear = new Date().getFullYear();
-  const { accent, changeAccent } = useTheme();
+  const { design, changeDesign, motionReduced, toggleMotion, replayIntro } = useTheme();
 
   return (
     <footer className="footer">
@@ -117,31 +113,47 @@ function Footer() {
 
           <div className="footer-column footer-theme">
             <span className="footer-column-title">
-              Theme
+              Design
             </span>
 
-            <div className="accent-picker" role="group" aria-label="Accent colour">
+            <div className="design-picker" role="group" aria-label="Site design">
               {themeData.map((item) => {
-                const Icon = accentIcons[item.id];
+                const Icon = designIcons[item.id];
 
                 return (
-                <button
-                  type="button"
-                  key={item.id}
-                  className={`accent-swatch ${item.id === accent ? "is-active" : ""}`}
-                  style={{
-                    "--swatch-from": item.primary,
-                    "--swatch-to": item.secondary
-                  }}
-                  onClick={() => changeAccent(item.id)}
-                  aria-pressed={item.id === accent}
-                  aria-label={`${item.name} theme`}
-                  title={item.name}
-                >
-                  <Icon aria-hidden="true" />
-                </button>
+                  <button
+                    type="button"
+                    key={item.id}
+                    className={`design-option ${item.id === design ? "is-active" : ""}`}
+                    style={{
+                      "--swatch-from": item.primary,
+                      "--swatch-to": item.secondary
+                    }}
+                    onClick={() => changeDesign(item.id)}
+                    aria-pressed={item.id === design}
+                    title={item.description}
+                  >
+                    <span className="design-swatch">
+                      <Icon aria-hidden="true" />
+                    </span>
+                    {item.name}
+                  </button>
                 );
               })}
+            </div>
+
+            <div className="footer-tools">
+              <button
+                type="button"
+                className="footer-tool"
+                onClick={toggleMotion}
+                aria-pressed={motionReduced}
+              >
+                {motionReduced ? "Enable motion" : "Reduce motion"}
+              </button>
+              <button type="button" className="footer-tool" onClick={replayIntro}>
+                Replay intro
+              </button>
             </div>
           </div>
 

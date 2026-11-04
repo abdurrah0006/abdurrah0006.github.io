@@ -1,245 +1,152 @@
-.about-page {
-  background: var(--color-background);
-}
-
-.about-page-hero {
-  min-height: 100svh;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  padding: 130px 0 var(--space-12);
-}
-
-.about-page-heading {
-  max-width: 1000px;
-}
-
-.page-eyebrow {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.about-page-heading h1 {
-  margin-top: var(--space-6);
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9rem);
-  line-height: 0.88;
-  letter-spacing: -0.06em;
-}
-
-.about-page-heading h1 span {
-  display: block;
-  color: var(--color-primary);
-}
-
-.about-page-heading > p {
-  max-width: 650px;
-  margin-top: var(--space-10);
-  color: var(--color-text-secondary);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: var(--line-relaxed);
-}
-
-.about-hero-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-5);
-  margin-top: var(--space-8);
-}
-
-.about-section-label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-}
-
-.about-section-label span {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.about-section-label p {
-  color: var(--color-text-muted);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
-.about-services {
-  background: var(--color-background);
-}
-
-.about-section-heading {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: var(--space-16);
-  align-items: start;
-}
-
-.about-section-heading > h2 {
-  max-width: 800px;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-}
-
-.about-section-heading > h2 span {
-  color: var(--color-primary);
-}
-
-.about-services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: var(--space-16);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  background: var(--color-border);
-}
-
-.about-service-card {
-  min-height: 300px;
-  padding: var(--space-10);
-  background: var(--color-background);
-  transition:
-    background var(--transition-normal),
-    transform var(--transition-normal);
-}
-
-.about-service-card:hover {
-  background: var(--color-surface);
-}
-
-.about-service-number {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.about-service-card h3 {
-  margin-top: var(--space-16);
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
-  letter-spacing: -0.03em;
-}
-
-.about-service-card p {
-  max-width: 450px;
-  margin-top: var(--space-5);
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  line-height: var(--line-relaxed);
-}
-
-.about-resume {
+/* ---------- Numbers band ---------- */
+.about-stats {
+  border-block: var(--line) solid var(--color-border);
   background: var(--color-background-alt);
 }
 
-.about-resume-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-10);
-  padding: clamp(2rem, 5vw, 4rem);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  background: var(--color-surface);
+.about-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.about-resume-card h2 {
-  max-width: 650px;
+.about-stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2);
+  padding: var(--space-8) var(--space-6);
+  border-left: var(--line) solid var(--color-border);
+}
+
+.about-stat:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.about-stat dt {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-stat dd {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: var(--display-weight);
+  line-height: 1;
+  letter-spacing: var(--display-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- What I do ---------- */
+.about-services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-12);
+  margin-top: var(--space-12);
+}
+
+.about-service {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: var(--space-4) var(--space-4);
+  padding: var(--space-10) 0;
+  border-top: var(--line) solid var(--color-border);
+}
+
+.about-service .ui-label {
+  grid-row: 1 / span 2;
+  padding-top: 0.45rem;
+  color: var(--color-highlight);
+}
+
+.about-service p {
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Toolkit ---------- */
+.about-toolkit {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-12) var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.about-tool-group {
+  padding-top: var(--space-5);
+  border-top: var(--line) solid var(--color-text);
+}
+
+.about-tool-group .ui-chips {
+  margin-top: var(--space-5);
+}
+
+/* ---------- Journey ---------- */
+.about-journey {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12);
+}
+
+.about-journey li {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-5) 0;
+  border-top: var(--line) solid var(--color-border);
+}
+
+.about-journey strong {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+}
+
+.about-journey li > span:last-child {
+  color: var(--color-text-secondary);
+}
+
+.about-cta-title {
+  max-width: 16ch;
   margin-top: var(--space-4);
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  font-weight: var(--display-weight);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--display-tracking);
 }
 
-.about-resume-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  flex-shrink: 0;
-}
-
-.resume-button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.85rem 1.1rem;
-  border-radius: var(--radius-full);
-  background: var(--color-primary);
-  color: white;
-  font-size: var(--text-sm);
-  font-weight: 700;
-}
-
-.resume-button:hover {
-  opacity: 0.9;
-}
-
-.resume-contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: var(--color-text-secondary);
-  font-size: var(--text-sm);
-  font-weight: 600;
-}
-
-.resume-contact-link:hover {
-  color: var(--color-primary);
-}
-
-@media (max-width: 900px) {
-  .about-section-heading {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
-  }
-
-  .about-resume-card {
-    align-items: flex-start;
-    flex-direction: column;
+@media (max-width: 1000px) {
+  .about-toolkit {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 650px) {
-  .about-page-hero {
-    min-height: 100svh;
-    padding: 120px 0 var(--space-10);
+@media (max-width: 860px) {
+  .about-stats dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-page-heading h1 {
-    font-size: clamp(2.75rem, 14vw, 6rem);
+  .about-stat:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
   }
 
-  .about-services-grid {
+  .about-stat:nth-child(n + 3) {
+    border-top: var(--line) solid var(--color-border);
+  }
+
+  .about-services,
+  .about-journey {
     grid-template-columns: minmax(0, 1fr);
   }
+}
 
-  .about-service-card {
-    min-height: auto;
-    padding: var(--space-8);
-  }
-
-  .about-service-card h3 {
-    margin-top: var(--space-10);
-  }
-
-  .about-resume-actions {
-    align-items: flex-start;
-    flex-direction: column;
+@media (max-width: 600px) {
+  .about-toolkit {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

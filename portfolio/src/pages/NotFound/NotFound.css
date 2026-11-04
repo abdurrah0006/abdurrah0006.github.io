@@ -1,141 +1,43 @@
-.not-found-page {
-  min-height: 100vh;
-  background: var(--color-background);
-}
-
-.not-found-section {
-  min-height: 100vh;
-  display: flex;
+.not-found {
+  display: grid;
   align-items: center;
-  padding: 140px 0 80px;
-}
-
-.not-found-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--space-24) + var(--space-8)) 0 var(--space-16);
 }
 
 .not-found-code {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 0.04em;
+  margin-bottom: var(--space-8);
+  color: transparent;
   font-family: var(--font-display);
-  font-size: clamp(8rem, 25vw, 22rem);
-  font-weight: 700;
-  line-height: 0.7;
-  letter-spacing: -0.09em;
-  color: var(--color-text);
-  user-select: none;
+  font-size: clamp(7rem, 30vw, 26rem);
+  font-weight: var(--display-weight);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  -webkit-text-stroke: 2px var(--color-text);
 }
 
-.not-found-zero {
-  color: var(--color-primary);
+.not-found-code span {
+  display: inline-block;
+  animation: not-found-bob 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.35s);
 }
 
-.not-found-copy {
-  max-width: 700px;
-  margin-top: 60px;
+/* the middle digit is solid, like a dial stuck on zero */
+.not-found-code span:nth-child(2) {
+  color: var(--color-highlight);
+  -webkit-text-stroke: 0;
 }
 
-.not-found-eyebrow {
-  color: var(--color-primary);
-  font-family: monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.not-found-copy h1 {
-  margin-top: 18px;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-}
-
-.not-found-copy h1 span {
-  color: var(--color-primary);
-}
-
-.not-found-copy p {
-  max-width: 550px;
-  margin: 24px auto 0;
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.not-found-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 36px;
-}
-
-.not-found-primary,
-.not-found-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 18px;
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 600;
-  transition:
-    transform var(--transition-fast),
-    border-color var(--transition-fast),
-    background var(--transition-fast);
-}
-
-.not-found-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.not-found-secondary {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
-}
-
-.not-found-primary:hover,
-.not-found-secondary:hover {
-  transform: translateY(-3px);
-}
-
-.not-found-primary svg,
-.not-found-secondary svg {
-  width: 15px;
-}
-
-.not-found-secondary:hover {
-  border-color: var(--color-primary);
-}
-
-@media (max-width: 600px) {
-  .not-found-section {
-    padding: 120px 0 60px;
+@keyframes not-found-bob {
+  50% {
+    transform: translateY(-0.06em);
   }
+}
 
-  .not-found-code {
-    font-size: 38vw;
-  }
-
-  .not-found-copy {
-    margin-top: 45px;
-  }
-
-  .not-found-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .not-found-primary,
-  .not-found-secondary {
-    width: 100%;
-    justify-content: center;
-  }
+.not-found-title {
+  max-width: 16ch;
+  margin: var(--space-4) 0 var(--space-6);
 }

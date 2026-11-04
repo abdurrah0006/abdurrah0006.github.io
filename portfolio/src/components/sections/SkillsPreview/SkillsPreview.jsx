@@ -1,51 +1,44 @@
-import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { RevealHeading, RiseIn, SectionIndex } from "../../common/Motion/Motion";
 import skillsData from "../../../data/skillsData";
-import SectionTitle from "../../common/SectionTitle/SectionTitle";
+import profileData from "../../../data/profileData";
 import "./SkillsPreview.css";
 
+const { toolkit } = profileData.home.sections;
+
+// "04 / Toolkit": every skill category as an editorial column.
 function SkillsPreview() {
   return (
-    <section className="skills-preview section">
+    <section className="toolkit" id="toolkit" data-reveal-skip>
       <div className="container">
-        <div className="skills-preview-header">
-          <SectionTitle
-            eyebrow="Skills & Technologies"
-            title="Tools I use to turn ideas into products."
-            description="A combination of development, design and problem-solving skills across the modern web stack."
-          />
+        <SectionIndex number="04" label={toolkit.label} note={toolkit.note} />
 
-          <Link to="/about" className="skills-view-link">
-            View All Skills
+        <div className="toolkit-head">
+          <RevealHeading className="toolkit-title" text={toolkit.title} />
+          <Link to="/about" className="statement-link">
+            View all skills
             <FiArrowUpRight />
           </Link>
         </div>
 
-        <div className="skills-grid">
+        <div className="toolkit-grid">
           {skillsData.categories.map((category, index) => (
-            <motion.article
-              className="skill-card"
+            <RiseIn
+              as="article"
+              className="toolkit-group"
+              delay={(index % 3) * 90}
               key={category.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <div className="skill-card-number">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-
+              <span className="toolkit-number">{String(index + 1).padStart(2, "0")}</span>
               <h3>{category.title}</h3>
-
               <p>{category.description}</p>
-
-              <div className="skill-tags">
+              <ul>
                 {category.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
+                  <li key={skill}>{skill}</li>
                 ))}
-              </div>
-            </motion.article>
+              </ul>
+            </RiseIn>
           ))}
         </div>
       </div>

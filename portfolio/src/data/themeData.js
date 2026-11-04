@@ -1,41 +1,33 @@
-// Accent themes. Light/dark is a separate setting (see ThemeContext).
-// Keep primary/secondary in sync with the [data-accent] blocks in styles/themes.css:
-// they drive the footer swatches and the 3D hero scene.
+// Site designs. Each design has its own fonts, shape language, palettes
+// (light + dark in styles/themes.css) and loading-screen colours.
+// Keep the ids and font URLs in sync with index.html (first-paint font loader).
 const themeData = [
   {
-    id: "purple",
-    name: "Purple",
-    description: "Creative & energetic",
-    primary: "#7c3aed",
-    secondary: "#ec4899"
+    id: "atelier",
+    name: "Atelier",
+    description: "Warm editorial serif",
+    primary: "#cf4520",
+    secondary: "#e8a13a",
+    fonts:
+      "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400..700&display=swap"
   },
   {
-    id: "rose",
-    name: "Rose",
-    description: "Bold & expressive",
-    primary: "#e11d48",
-    secondary: "#f472b6"
+    id: "futuristic",
+    name: "Futuristic",
+    description: "Green, condensed and clean",
+    primary: "#1fb872",
+    secondary: "#0e9f9a",
+    fonts:
+      "https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
   },
   {
-    id: "orange",
-    name: "Orange",
-    description: "Warm & friendly",
-    primary: "#f97316",
-    secondary: "#fbbf24"
-  },
-  {
-    id: "blue",
-    name: "Blue",
-    description: "Professional & focused",
-    primary: "#2563eb",
-    secondary: "#06b6d4"
-  },
-  {
-    id: "green",
-    name: "Green",
-    description: "Fresh & calm",
-    primary: "#16a34a",
-    secondary: "#84cc16"
+    id: "retro",
+    name: "Retro",
+    description: "Brown and cream, typewriter feel",
+    primary: "#8b4a22",
+    secondary: "#c98b3a",
+    fonts:
+      "https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400..700&family=Space+Mono:wght@400;700&display=swap"
   }
 ];
 

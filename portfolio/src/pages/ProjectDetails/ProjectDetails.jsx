@@ -1,228 +1,13 @@
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft, FiArrowUpRight, FiGithub } from "react-icons/fi";
+import PageHero from "../../components/common/PageHero/PageHero";
 import projectsData from "../../data/projectsData";
+import pagesData from "../../data/pagesData";
 import "./ProjectDetails.css";
 
-function ProjectDetails() {
-  const { projectId } = useParams();
-
-  const project = projectsData.find(
-    (item) => item.id === projectId
-  );
-
-  const hasLiveDeployment = isWebUrl(project?.links?.live);
-
-  if (!project) {
-    return (
-      <main className="project-not-found">
-        <h1>Project Not Found</h1>
-        <p>The project you're looking for doesn't exist.</p>
-        <Link to="/projects">Back to Projects</Link>
-      </main>
-    );
-  }
-
-  return (
-    <main className="project-details">
-      <section className="project-details-hero">
-        <div className="container">
-          <Link to="/projects" className="project-back-link">
-            <FiArrowLeft />
-            Back to Projects
-          </Link>
-
-          <div className="project-details-meta">
-            <span>{project.category}</span>
-            <span>{project.year}</span>
-            <span>{project.role}</span>
-          </div>
-
-          <h1>{project.title}</h1>
-
-          <p className="project-details-intro">
-            {project.preview.description}
-          </p>
-
-          <div className="project-details-links">
-            {hasLiveDeployment ? (
-              <a href={project.links.live} target="_blank" rel="noreferrer">
-                Live Project
-                <FiArrowUpRight />
-              </a>
-            ) : (
-              <p className="project-deployment-note" role="status">
-                Sorry, this project isn’t deployed yet. I’ll update this page
-                when a live version is available.
-              </p>
-            )}
-
-            {project.links.github && (
-              <a href={project.links.github} target="_blank" rel="noreferrer">
-                GitHub
-                <FiGithub />
-              </a>
-            )}
-          </div>
-
-          <div className="project-details-cover">
-            <img
-              src={project.image}
-              alt={`${project.title} preview`}
-              onError={(event) => {
-                event.currentTarget.onerror = null;
-                event.currentTarget.src = "/images/project-placeholder.svg";
-              }}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="project-case-study section">
-        <div className="container">
-          <div className="project-case-study-grid">
-            <aside className="project-case-study-sidebar">
-              <span>CASE STUDY</span>
-              <h2>{project.title}</h2>
-            </aside>
-
-            <div className="project-case-study-content">
-              <CaseStudySection
-                title="Overview"
-                content={project.overview.description}
-              />
-
-              <CaseStudySection
-                title={project.problem.title}
-                content={project.problem.description}
-              />
-
-              <CaseStudySection
-                title={project.solution.title}
-                content={project.solution.description}
-              />
-
-              <CaseStudySection
-                title={project.development.title}
-                content={project.development.description}
-              />
-
-              <section className="case-study-section">
-                <span className="case-study-label">
-                  KEY FEATURES
-                </span>
-
-                <h2>What I built</h2>
-
-                <div className="feature-list">
-                  {project.features.map((feature, index) => (
-                    <div className="feature-item" key={feature}>
-                      <span>
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p>{feature}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="case-study-section">
-                <span className="case-study-label">
-                  TECHNOLOGIES
-                </span>
-
-                <h2>Technology Stack</h2>
-
-                <div className="detail-tech-tags">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </section>
-
-              {project.challenges.length > 0 && (
-                <section className="case-study-section">
-                  <span className="case-study-label">
-                    DESIGN CONSIDERATIONS
-                  </span>
-
-                  <h2>Project considerations</h2>
-
-                  <div className="challenge-list">
-                    {project.challenges.map((challenge) => (
-                      <article
-                        className="challenge-card"
-                        key={challenge.title}
-                      >
-                        <h3>{challenge.title}</h3>
-                        <p>{challenge.description}</p>
-                      </article>
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {project.learnings.length > 0 && (
-                <section className="case-study-section">
-                  <span className="case-study-label">
-                    KEY TAKEAWAYS
-                  </span>
-
-                  <h2>Key takeaways</h2>
-
-                  <ul className="learning-list">
-                    {project.learnings.map((learning) => (
-                      <li key={learning}>{learning}</li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-
-              {project.screenshots.length > 0 && (
-              <section className="case-study-section">
-                <span className="case-study-label">
-                  PROJECT SCREENSHOTS
-                </span>
-
-                <h2>Inside the project</h2>
-
-                <div className="project-screenshots">
-                  {project.screenshots.map((screenshot) => (
-                    <img
-                      key={screenshot}
-                      src={screenshot}
-                      alt={`${project.title} screenshot`}
-                      onError={(event) => {
-                        event.currentTarget.onerror = null;
-                        event.currentTarget.src = "/images/project-placeholder.svg";
-                      }}
-                    />
-                  ))}
-                </div>
-              </section>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
-
-function CaseStudySection({ title, content }) {
-  return (
-    <section className="case-study-section">
-      <span className="case-study-label">
-        {title}
-      </span>
-
-      <h2>{title}</h2>
-
-      <p>{content}</p>
-    </section>
-  );
-}
+const copy = pagesData.projectDetails;
+const FALLBACK = pagesData.projects.imageFallback;
 
 function isWebUrl(value) {
   if (typeof value !== "string") return false;
@@ -233,6 +18,239 @@ function isWebUrl(value) {
   } catch {
     return false;
   }
+}
+
+const onImageError = (event) => {
+  event.currentTarget.onerror = null;
+  event.currentTarget.src = FALLBACK;
+};
+
+// The case-study sections that exist for this project, in reading order.
+function buildSections(project) {
+  return [
+    { id: "overview", label: copy.sections.overview },
+    { id: "problem", label: project.problem.title },
+    { id: "solution", label: project.solution.title },
+    { id: "development", label: project.development.title },
+    { id: "features", label: copy.sections.features },
+    { id: "stack", label: copy.sections.stack },
+    project.challenges.length > 0 && { id: "challenges", label: copy.sections.challenges },
+    project.learnings.length > 0 && { id: "takeaways", label: copy.sections.takeaways },
+    project.screenshots.length > 0 && { id: "screenshots", label: copy.sections.screenshots }
+  ].filter(Boolean);
+}
+
+function ProjectDetails() {
+  const { projectId } = useParams();
+  const index = projectsData.findIndex((item) => item.id === projectId);
+  const project = projectsData[index];
+  const next = projectsData[(index + 1) % projectsData.length];
+
+  const sections = useMemo(() => (project ? buildSections(project) : []), [project]);
+  const [activeId, setActiveId] = useState(null);
+  const currentId = sections.some((section) => section.id === activeId)
+    ? activeId
+    : sections[0]?.id;
+
+  // Scroll-spy: highlight the contents entry for the section being read.
+  useEffect(() => {
+    if (!sections.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length) {
+          setActiveId(visible[0].target.id.replace("case-", ""));
+        }
+      },
+      { rootMargin: "-20% 0px -65% 0px" }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(`case-${section.id}`);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [sections]);
+
+  if (!project) {
+    return (
+      <div className="ui-page case-missing">
+        <div className="container">
+          <h1 className="ui-h2">{copy.notFound.title}</h1>
+          <p className="ui-lead">{copy.notFound.text}</p>
+          <Link to="/projects" className="ui-btn">
+            {copy.notFound.back}
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const scrollToSection = (id) => {
+    document
+      .getElementById(`case-${id}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const textBlocks = {
+    overview: project.overview.description,
+    problem: project.problem.description,
+    solution: project.solution.description,
+    development: project.development.description
+  };
+
+  const renderSection = (section) => {
+    switch (section.id) {
+      case "features":
+        return (
+          <ol className="case-features">
+            {project.features.map((feature, featureIndex) => (
+              <li key={feature}>
+                <span className="ui-label">{String(featureIndex + 1).padStart(2, "0")}</span>
+                <p>{feature}</p>
+              </li>
+            ))}
+          </ol>
+        );
+      case "stack":
+        return (
+          <ul className="ui-chips case-stack">
+            {project.technologies.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+        );
+      case "challenges":
+        return (
+          <div className="case-challenges">
+            {project.challenges.map((challenge) => (
+              <article className="ui-card" key={challenge.title}>
+                <h3 className="ui-h3">{challenge.title}</h3>
+                <p>{challenge.description}</p>
+              </article>
+            ))}
+          </div>
+        );
+      case "takeaways":
+        return (
+          <ul className="case-takeaways">
+            {project.learnings.map((learning) => (
+              <li key={learning}>{learning}</li>
+            ))}
+          </ul>
+        );
+      case "screenshots":
+        return (
+          <div className="case-shots">
+            {project.screenshots.map((screenshot) => (
+              <img
+                key={screenshot}
+                src={screenshot}
+                alt={`${project.title} screenshot`}
+                loading="lazy"
+                onError={onImageError}
+              />
+            ))}
+          </div>
+        );
+      default:
+        return <p className="case-text">{textBlocks[section.id]}</p>;
+    }
+  };
+
+  return (
+    <div className="ui-page case-page">
+      <PageHero
+        index="03"
+        label={project.category}
+        note={`${project.year} · ${project.role}`}
+        title={project.title}
+        lead={project.preview.description}
+        meta={[
+          { label: "Role", value: project.role },
+          { label: "Year", value: project.year },
+          { label: "Category", value: project.category },
+          { label: "Stack", value: `${project.technologies.length} technologies` }
+        ]}
+      >
+        {isWebUrl(project.links?.live) ? (
+          <a className="ui-btn" href={project.links.live} target="_blank" rel="noreferrer">
+            {copy.live}
+            <FiArrowUpRight />
+          </a>
+        ) : (
+          <p className="case-note" role="status">
+            {copy.notDeployed}
+          </p>
+        )}
+
+        {project.links?.github ? (
+          <a className="ui-link" href={project.links.github} target="_blank" rel="noreferrer">
+            <FiGithub />
+            {copy.github}
+          </a>
+        ) : null}
+
+        <Link to="/projects" className="ui-link">
+          <FiArrowLeft />
+          {copy.back}
+        </Link>
+      </PageHero>
+
+      <section className="case-cover-section">
+        <div className="container">
+          <figure className="case-cover">
+            <img src={project.image} alt={`${project.title} preview`} onError={onImageError} />
+          </figure>
+        </div>
+      </section>
+
+      <section className="case-body" data-reveal-skip>
+        <div className="container case-layout">
+          <aside className="case-nav" aria-label={copy.contents}>
+            <span className="ui-label">{copy.contents}</span>
+            <ol>
+              {sections.map((section, sectionIndex) => (
+                <li key={section.id}>
+                  <button
+                    type="button"
+                    className={section.id === currentId ? "is-active" : ""}
+                    aria-current={section.id === currentId ? "true" : undefined}
+                    onClick={() => scrollToSection(section.id)}
+                  >
+                    <span>{String(sectionIndex + 1).padStart(2, "0")}</span>
+                    {section.label}
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </aside>
+
+          <div className="case-content">
+            {sections.map((section, sectionIndex) => (
+              <section className="case-block" id={`case-${section.id}`} key={section.id}>
+                <span className="ui-label">{String(sectionIndex + 1).padStart(2, "0")}</span>
+                <h2 className="ui-h2 case-title">{section.label}</h2>
+                {renderSection(section)}
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="case-next" data-reveal-skip>
+        <div className="container">
+          <Link to={`/projects/${next.id}`} className="case-next-link">
+            <span className="ui-label">{copy.nextLabel}</span>
+            <strong>{next.title}</strong>
+            <FiArrowUpRight />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default ProjectDetails;

@@ -1,177 +1,147 @@
-.contact-cta {
-  position: relative;
-  background: var(--color-background);
+.cta {
+  padding: var(--space-12) var(--space-4) 0;
 }
 
-.contact-cta-card {
-  position: relative;
+.cta-panel {
+  padding: clamp(2.5rem, 7vw, 6rem) 0;
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
+.cta .section-index {
+  color: color-mix(in srgb, var(--color-background) 60%, transparent);
+}
+
+.cta .section-index::after {
+  background: color-mix(in srgb, var(--color-background) 25%, transparent);
+}
+
+.cta-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
-  gap: var(--space-12);
-  overflow: hidden;
-  padding: clamp(2rem, 6vw, 5rem);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  background: var(--gradient-primary);
-  color: white;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--space-14) var(--space-12);
+  align-items: start;
+  margin-top: var(--space-12);
 }
 
-.contact-cta-content,
-.contact-cta-side {
-  position: relative;
-  z-index: 2;
-}
-
-.contact-cta-eyebrow {
-  font-family: monospace;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.contact-cta h2 {
-  max-width: 750px;
-  margin-top: var(--space-5);
+.cta-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.6rem, 6.4vw, 6.4rem);
+  font-weight: var(--display-weight);
+  line-height: 0.94;
+  letter-spacing: var(--display-tracking);
 }
 
-.contact-cta-content > p {
-  max-width: 600px;
-  margin-top: var(--space-6);
+.cta .word-accent {
+  color: var(--color-secondary);
+}
+
+.cta-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+}
+
+.cta-body p {
+  max-width: 44ch;
+  color: color-mix(in srgb, var(--color-background) 72%, transparent);
   font-size: var(--text-lg);
-  line-height: var(--line-relaxed);
-  opacity: 0.8;
 }
 
-.contact-cta-button {
+.cta-button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-8);
-  padding: 0.9rem 1.3rem;
+  padding: 1.1rem 1.9rem;
   border-radius: var(--radius-full);
-  background: white;
-  color: var(--color-primary);
-  font-size: var(--text-sm);
-  font-weight: 700;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-weight: 600;
   transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+    transform var(--transition-normal),
+    background var(--transition-fast),
+    color var(--transition-fast);
 }
 
-.contact-cta-button:hover {
+.cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  background: var(--color-secondary);
+  color: #fff;
 }
 
-.contact-cta-button svg {
-  transition: transform var(--transition-fast);
+.cta-links {
+  display: grid;
+  gap: var(--space-10);
+  align-self: end;
+  padding-bottom: var(--space-2);
 }
 
-.contact-cta-button:hover svg {
-  transform: translate(3px, -3px);
+.cta-status {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: color-mix(in srgb, var(--color-background) 60%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.contact-cta-side {
+.cta-email {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 2.2rem);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  overflow-wrap: anywhere;
+  transition: background-size 0.6s var(--ease-out);
+}
+
+.cta-email:hover {
+  background-size: 100% 2px;
+}
+
+.cta-socials {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-6);
 }
 
-.contact-cta-side > span {
-  max-width: 260px;
-  font-size: var(--text-sm);
-  line-height: var(--line-relaxed);
-  opacity: 0.7;
-}
-
-.contact-email {
+.cta-socials a {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  margin-top: var(--space-6);
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  font-size: var(--text-sm);
-  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-background) 40%, transparent);
+  transition:
+    border-color var(--transition-fast),
+    gap var(--transition-fast);
 }
 
-.contact-email svg {
-  transition: transform var(--transition-fast);
+.cta-socials a:hover {
+  gap: var(--space-3);
+  border-color: var(--color-background);
 }
 
-.contact-email:hover svg {
-  transform: translate(3px, -3px);
-}
-
-.contact-cta-card .contact-socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-top: var(--space-8);
-}
-
-.contact-cta-card .contact-socials a {
-  color: white;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  opacity: 0.75;
-  transition: opacity var(--transition-fast);
-}
-
-.contact-cta-card .contact-socials a:hover {
-  opacity: 1;
-}
-
-.contact-decoration {
-  position: absolute;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.contact-decoration-one {
-  width: 450px;
-  height: 450px;
-  right: -150px;
-  top: -180px;
-}
-
-.contact-decoration-two {
-  width: 300px;
-  height: 300px;
-  right: 40px;
-  bottom: -200px;
-}
-
-@media (max-width: 860px) {
-  .contact-cta-card {
+@media (max-width: 960px) {
+  .cta-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+}
 
-  .contact-cta-side {
-    justify-content: flex-start;
+@media (max-width: 640px) {
+  .cta {
+    padding-inline: 0;
   }
 }
 
-@media (max-width: 500px) {
-  .contact-cta-card {
-    padding: var(--space-8) var(--space-6);
-  }
+[data-design="futuristic"] .cta-title {
+  text-transform: var(--display-case);
+  font-size: clamp(3.2rem, 10vw, 9rem);
+}
 
-  .contact-cta h2 {
-    font-size: clamp(2.5rem, 13vw, 4rem);
-  }
-
-  .contact-cta-content > p {
-    font-size: var(--text-base);
-  }
+[data-design="futuristic"] .cta .word-accent {
+  color: var(--color-highlight);
 }

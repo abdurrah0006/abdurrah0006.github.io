@@ -1,0 +1,138 @@
+/* Hero letters */
+.split-chars {
+  display: inline-flex;
+}
+
+.split-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.04em 0.02em 0.12em;
+  margin: -0.04em -0.02em -0.12em;
+}
+
+.split-char {
+  display: inline-block;
+  transform: translateY(112%);
+}
+
+html[data-intro="done"] .split-char {
+  animation: char-in 1.05s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 60ms + 120ms);
+}
+
+@keyframes char-in {
+  from {
+    transform: translateY(112%) rotate(6deg);
+  }
+
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+/* Word-mask headings */
+.reveal-heading {
+  display: block;
+}
+
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.06em 0.04em 0.14em;
+  margin: -0.06em -0.04em -0.14em;
+  vertical-align: top;
+}
+
+.word-inner {
+  display: inline-block;
+  transform: translateY(112%);
+  transition: transform 1s var(--ease-out);
+  transition-delay: calc(var(--i) * 55ms);
+}
+
+.reveal-heading.is-in .word-inner {
+  transform: translateY(0);
+}
+
+.word-accent {
+  color: var(--color-highlight);
+  font-family: var(--font-accent);
+  font-style: var(--accent-style, italic);
+  font-weight: var(--accent-weight, 400);
+  letter-spacing: -0.02em;
+}
+
+/* Words that read in with scroll */
+.scroll-word {
+  opacity: var(--wo, 1);
+}
+
+/* Section label + drawn rule */
+.section-index {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-index::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-border);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--ease-out);
+}
+
+.section-index.is-in::after {
+  transform: scaleX(1);
+}
+
+/* Blocks that rise in */
+.rise {
+  opacity: 0;
+  translate: 0 40px;
+  transition:
+    opacity 0.9s var(--ease-out),
+    translate 1s var(--ease-out);
+  transition-delay: var(--rise-delay, 0ms);
+}
+
+.rise.is-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (max-width: 600px) {
+  .section-index-note {
+    display: none;
+  }
+}
+
+html[data-motion="reduced"] .rise {
+  opacity: 1;
+  translate: none;
+  transition: none;
+}
+
+html[data-motion="reduced"] .split-char,
+html[data-motion="reduced"] .word-inner {
+  transform: none;
+  animation: none;
+  transition: none;
+}
+
+html[data-motion="reduced"] .section-index::after {
+  transform: scaleX(1);
+  transition: none;
+}

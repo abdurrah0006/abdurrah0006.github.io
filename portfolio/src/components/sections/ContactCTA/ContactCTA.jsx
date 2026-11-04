@@ -1,63 +1,68 @@
-import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { RevealHeading, RiseIn, SectionIndex } from "../../common/Motion/Motion";
 import contactData from "../../../data/contactData";
+import profileData from "../../../data/profileData";
 import "./ContactCTA.css";
 
+const { contact } = profileData.home.sections;
+
+// "06 / Contact": the closing statement, set on an inverted panel.
 function ContactCTA() {
+  // Highlight the last word of the title in the accent style.
+  const title = contactData.title.replace(/(\S+)$/, "_$1_");
+
   return (
-    <section className="contact-cta section">
-      <div className="container">
-        <motion.div
-          className="contact-cta-card"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="contact-cta-content">
-            <span className="contact-cta-eyebrow">
-              {contactData.eyebrow}
-            </span>
+    <section className="cta" id="contact" data-reveal-skip>
+      <div className="cta-panel">
+        <div className="container">
+          <SectionIndex number="06" label={contact.label} note={contact.note} />
 
-            <h2>{contactData.title}</h2>
+          <div className="cta-grid">
+            <div className="cta-copy">
+              <RevealHeading as="h2" className="cta-title" text={title} />
 
-            <p>{contactData.description}</p>
+              <RiseIn className="cta-body">
+                <p>{contactData.description}</p>
 
-            <Link to="/contact" className="contact-cta-button">
-              Let's Talk
-              <FiArrowUpRight />
-            </Link>
-          </div>
-
-          <div className="contact-cta-side">
-            <span>{contactData.availability}</span>
-
-            <a
-              href={`mailto:${contactData.email}`}
-              className="contact-email"
-            >
-              {contactData.email}
-              <FiArrowUpRight />
-            </a>
-
-            <div className="contact-socials">
-              {contactData.socialLinks.map((social) => (
-                <a
-                  href={social.url}
-                  key={social.id}
-                  target={social.id === "email" ? undefined : "_blank"}
-                  rel={social.id === "email" ? undefined : "noreferrer"}
+                <Link
+                  to="/contact"
+                  state={{ scrollTo: "contact-form" }}
+                  className="cta-button"
                 >
-                  {social.label}
-                </a>
-              ))}
+                  {contact.action}
+                  <FiArrowUpRight />
+                </Link>
+              </RiseIn>
             </div>
-          </div>
 
-          <div className="contact-decoration contact-decoration-one" />
-          <div className="contact-decoration contact-decoration-two" />
-        </motion.div>
+            <RiseIn className="cta-links" delay={140}>
+              <div>
+                <span className="cta-status">{contactData.availability}</span>
+                <a href={`mailto:${contactData.email}`} className="cta-email">
+                  {contactData.email}
+                </a>
+              </div>
+
+              <div>
+                <span className="cta-status">{contact.socialsLabel}</span>
+                <div className="cta-socials">
+                  {contactData.socialLinks.map((social) => (
+                    <a
+                      href={social.url}
+                      key={social.id}
+                      target={social.id === "email" ? undefined : "_blank"}
+                      rel="noreferrer"
+                    >
+                      {social.label}
+                      <FiArrowUpRight />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </RiseIn>
+          </div>
+        </div>
       </div>
     </section>
   );

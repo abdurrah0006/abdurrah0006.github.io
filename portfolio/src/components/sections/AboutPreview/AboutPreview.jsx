@@ -1,59 +1,40 @@
-import { motion } from "framer-motion";
-import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
+import { ScrollWords, SectionIndex } from "../../common/Motion/Motion";
 import profileData from "../../../data/profileData";
-import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import "./AboutPreview.css";
 
+const { about, home } = profileData;
+
+// "01 / About", in three clear tiers: a huge headline that reads in as you
+// scroll, a supporting paragraph, then small tags and a link.
 function AboutPreview() {
-  const { about } = profileData;
-
   return (
-    <section className="about-preview section">
+    <section className="statement" id="statement" data-reveal-skip>
       <div className="container">
-        <div className="about-preview-grid">
-          <motion.div
-            className="about-preview-heading"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-          >
-            <SectionTitle
-              eyebrow={about.eyebrow}
-              title={about.title}
-            />
+        <SectionIndex
+          number="01"
+          label={home.sections.about.label}
+          note={home.sections.about.note}
+        />
 
-            <Link to="/about" className="about-link">
-              Learn More About Me
+        <div className="statement-grid">
+          <ScrollWords className="statement-title" text={about.title} />
+
+          <div className="statement-side">
+            <p className="statement-lead">{about.description}</p>
+
+            <ul className="statement-pills" aria-label="Services">
+              {about.services.map((service) => (
+                <li key={service.title}>{service.title}</li>
+              ))}
+            </ul>
+
+            <Link to="/about" className="statement-link">
+              More about me
               <FiArrowUpRight />
             </Link>
-          </motion.div>
-
-          <motion.div
-            className="about-preview-content"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <p className="about-main-text">{about.description}</p>
-
-            <p className="about-secondary-text">
-              {about.secondaryDescription}
-            </p>
-
-            <div className="about-highlights">
-              {about.highlights.map((highlight) => (
-                <div className="about-highlight" key={highlight}>
-                  <span>
-                    <FiCheck />
-                  </span>
-                  {highlight}
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

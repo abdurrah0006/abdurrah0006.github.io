@@ -7,34 +7,50 @@ import {
   useState
 } from "react";
 import themeData from "../data/themeData";
+import { wake } from "../hooks/scrollEngine";
+import useThemedFavicon from "../hooks/useThemedFavicon";
 
 /*
-  Two independent settings, both stored on <html>:
-    data-accent = purple | blue | rose   (brand colour)
-    data-mode   = light | dark           (surfaces and text)
-  index.html applies the saved values before first paint to avoid a flash.
+  Everything lives on <html> so CSS can react to it:
+    data-design = atelier | voltage | studio   (fonts, shapes, palette)
+    data-mode   = light | dark                 (independent of the design)
+    data-motion = full | reduced               (user toggle or system setting)
+    data-intro  = playing | done               (loading screen state)
+  index.html applies the saved values before first paint.
 */
 
 const ThemeContext = createContext(null);
 
-const ACCENT_KEY = "portfolio-accent";
+const DESIGN_KEY = "portfolio-design";
 const MODE_KEY = "portfolio-mode";
-const accentIds = themeData.map(({ id }) => id);
+const MOTION_KEY = "portfolio-motion";
+const INTRO_KEY = "portfolio-intro-seen";
+const designIds = themeData.map(({ id }) => id);
 
-function readStored(key) {
+function readStored(key, storage = "local") {
   try {
-    return localStorage.getItem(key);
+    return (storage === "session" ? sessionStorage : localStorage).getItem(key);
   } catch {
     return null;
   }
 }
 
-function writeStored(key, value) {
+function writeStored(key, value, storage = "local") {
   try {
-    localStorage.setItem(key, value);
+    (storage === "session" ? sessionStorage : localStorage).setItem(key, value);
   } catch {
-    // Storage can be blocked (private mode); the theme still works for this visit.
+    // Storage can be blocked (private mode); settings still work for this visit.
   }
+}
+
+function loadDesignFonts(id) {
+  const url = themeData.find((item) => item.id === id)?.fonts;
+  if (!url || document.querySelector(`link[href="${url}"]`)) return;
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = url;
+  document.head.appendChild(link);
 }
 
 export function useTheme() {
@@ -44,33 +60,80 @@ export function useTheme() {
 }
 
 function ThemeProvider({ children }) {
-  const [accent, setAccent] = useState(() => {
-    const saved = readStored(ACCENT_KEY);
-    return accentIds.includes(saved) ? saved : accentIds[0];
+  const [design, setDesign] = useState(() => {
+    const saved = readStored(DESIGN_KEY);
+    return designIds.includes(saved) ? saved : designIds[0];
   });
   const [mode, setMode] = useState(() =>
     readStored(MODE_KEY) === "dark" ? "dark" : "light"
   );
+  const [motionPreference, setMotionPreference] = useState(() =>
+    readStored(MOTION_KEY) === "reduced" ? "reduced" : "full"
+  );
+  const [systemReduced, setSystemReduced] = useState(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+  const [introRun, setIntroRun] = useState(0);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setSystemReduced(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  const motionReduced = systemReduced || motionPreference === "reduced";
 
   useEffect(() => {
     const root = document.documentElement;
-    root.dataset.accent = accent;
+    root.dataset.design = design;
     root.dataset.mode = mode;
-    writeStored(ACCENT_KEY, accent);
+    root.dataset.motion = motionReduced ? "reduced" : "full";
+    writeStored(DESIGN_KEY, design);
     writeStored(MODE_KEY, mode);
-  }, [accent, mode]);
+    writeStored(MOTION_KEY, motionPreference);
+    loadDesignFonts(design);
+    wake();
+  }, [design, mode, motionReduced, motionPreference]);
 
-  const changeAccent = useCallback((id) => {
-    if (accentIds.includes(id)) setAccent(id);
+  // Tab icon follows the design: same font as the logo, same colours.
+  useThemedFavicon(design, mode);
+
+  const changeDesign = useCallback((id) => {
+    if (designIds.includes(id)) setDesign(id);
   }, []);
 
   const toggleDarkMode = useCallback(() => {
     setMode((current) => (current === "dark" ? "light" : "dark"));
   }, []);
 
+  const toggleMotion = useCallback(() => {
+    setMotionPreference((current) => (current === "reduced" ? "full" : "reduced"));
+  }, []);
+
+  const replayIntro = useCallback(() => {
+    try {
+      sessionStorage.removeItem(INTRO_KEY);
+    } catch {
+      // ignore
+    }
+    window.scrollTo({ top: 0, behavior: "instant" });
+    document.documentElement.dataset.intro = "playing";
+    setIntroRun((run) => run + 1);
+  }, []);
+
   const value = useMemo(
-    () => ({ mode, accent, changeAccent, toggleDarkMode }),
-    [mode, accent, changeAccent, toggleDarkMode]
+    () => ({
+      design,
+      mode,
+      motionReduced,
+      introRun,
+      changeDesign,
+      toggleDarkMode,
+      toggleMotion,
+      replayIntro
+    }),
+    [design, mode, motionReduced, introRun, changeDesign, toggleDarkMode, toggleMotion, replayIntro]
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;

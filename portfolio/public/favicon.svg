@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fallback tab icon (system serif). The site redraws it in the active design's own font at runtime. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cf4520"/>
+      <stop offset="1" stop-color="#e8a13a"/>
+    </linearGradient>
+  </defs>
+  <text x="50" y="50" dominant-baseline="central" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="30" fill="url(#g)" stroke="url(#g)" stroke-width="2.2" stroke-linejoin="round" paint-order="stroke">&lt;/AR&gt;</text>
+</svg>

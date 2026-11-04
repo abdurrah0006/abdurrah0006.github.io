@@ -1,0 +1,277 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  color: var(--intro-fg);
+  pointer-events: auto;
+}
+
+/* Two halves that split open on exit */
+.preloader-half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.2%;
+  background: var(--intro-bg);
+  transition: transform 1.05s var(--ease-in-out);
+}
+
+.preloader-half-top {
+  top: 0;
+}
+
+.preloader-half-bottom {
+  bottom: 0;
+}
+
+.preloader.is-exit .preloader-half-top {
+  transform: translateY(-101%);
+}
+
+.preloader.is-exit .preloader-half-bottom {
+  transform: translateY(101%);
+}
+
+/* The seam draws from the centre, then fades as the halves part */
+.preloader-seam {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: var(--line);
+  background: var(--intro-accent);
+  transform: scaleX(0);
+  animation: pl-seam 0.9s var(--ease-out) 0.1s forwards;
+  transition: opacity 0.4s ease;
+}
+
+.preloader.is-exit .preloader-seam {
+  opacity: 0;
+}
+
+@keyframes pl-seam {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.preloader-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  transition:
+    opacity 0.45s ease,
+    transform 0.7s var(--ease-in-out);
+}
+
+.preloader.is-exit .preloader-stage {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.preloader-badge {
+  position: relative;
+  width: min(52vw, 280px);
+}
+
+.preloader-mark {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+/* The </AR> letters sit in the middle of the two rings */
+.preloader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--intro-fg);
+  font-size: clamp(1.9rem, 6.6vw, 3.5rem);
+}
+
+.preloader-mark circle,
+.preloader-mark path {
+  fill: none;
+  stroke: var(--intro-fg);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pl-ring {
+  stroke-width: 1.2;
+  opacity: 0.5;
+}
+
+.pl-ring-dashed {
+  stroke-dasharray: 1 5;
+  stroke-width: 1.6;
+  opacity: 0.4;
+  animation: pl-spin 14s linear infinite;
+  transform-origin: 60px 60px;
+}
+
+.pl-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pl-draw 1.3s var(--ease-out) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes pl-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.pl-orbit {
+  transform-origin: 60px 60px;
+  animation: pl-spin 2.4s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.pl-orbit circle {
+  fill: var(--intro-accent);
+  stroke: none;
+}
+
+@keyframes pl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader-name {
+  display: flex;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4.4vw, 2.2rem);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  text-transform: var(--display-case);
+}
+
+.preloader-name span {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: pl-rise 0.8s var(--ease-out) forwards;
+  animation-delay: calc(1.5s + var(--i) * 40ms);
+}
+
+@keyframes pl-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.preloader-status {
+  min-height: 1.2em;
+  color: color-mix(in srgb, var(--intro-fg) 70%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: pl-status 0.5s ease both;
+}
+
+@keyframes pl-status {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.preloader-skip {
+  position: absolute;
+  right: clamp(1.25rem, 3vw, 2.5rem);
+  bottom: clamp(1.25rem, 3vw, 2.5rem);
+  z-index: 2;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--intro-fg) 45%, transparent);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    opacity 0.3s ease;
+}
+
+.preloader-skip:hover {
+  background: var(--intro-fg);
+  color: var(--intro-bg);
+}
+
+.preloader.is-exit .preloader-skip {
+  opacity: 0;
+}
+
+/* Design touches */
+[data-design="futuristic"] .preloader-half {
+  background:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 56px 56px,
+    var(--intro-bg);
+}
+
+[data-design="futuristic"] .preloader-stage::before {
+  content: "";
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--intro-accent), transparent);
+  animation: pl-scan 1.8s ease-in-out 0.6s infinite;
+}
+
+@keyframes pl-scan {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15%,
+  85% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(240px);
+  }
+}
+
+[data-design="retro"] .preloader::after {
+  content: "";
+  position: absolute;
+  inset: clamp(0.75rem, 2vw, 1.5rem);
+  border: 2px dashed color-mix(in srgb, var(--intro-fg) 40%, transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+[data-design="retro"] .preloader.is-exit::after {
+  opacity: 0;
+}
+
+/* Keep the custom cursor visible on the intro screen */
+html[data-intro="playing"] .cc-arrow,
+html[data-intro="playing"] .cc-trail {
+  --cursor-color: var(--intro-fg);
+}
+
+@media (max-width: 600px) {
+  .preloader-skip {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}

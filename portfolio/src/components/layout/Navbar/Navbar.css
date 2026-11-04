@@ -4,7 +4,7 @@
   left: 0;
   z-index: var(--z-navbar);
   width: 100%;
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 .5rem;
   background: transparent;
   transition:
     background var(--transition-normal),
@@ -29,18 +29,32 @@
   gap: var(--space-8);
 }
 
+/* The logo is just the </AR> letters: no box, no background */
 .navbar-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  color: white;
-  background: var(--gradient-primary);
-  font-family: var(--font-display);
-  font-weight: 700;
   flex-shrink: 0;
+  height: 42px;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.navbar-logo-mark {
+  font-size: 1.7rem;
+  transition: transform var(--transition-normal);
+}
+
+.navbar-logo:hover {
+  color: var(--color-highlight);
+}
+
+.navbar-logo:hover .navbar-logo-mark {
+  transform: translateX(2px);
+}
+
+[data-design="futuristic"] .navbar-logo-mark {
+  font-size: 2rem;
+  text-shadow: 0 0 10px color-mix(in srgb, var(--color-highlight) 55%, transparent);
 }
 
 .navbar-links {

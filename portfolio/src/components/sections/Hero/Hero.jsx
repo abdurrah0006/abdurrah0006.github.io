@@ -1,150 +1,91 @@
-import { motion } from "framer-motion";
-import { lazy, Suspense } from "react";
-import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import profileData from "../../../data/profileData";
-import contactData from "../../../data/contactData";
+import { useRef } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 import Button from "../../common/Button/Button";
-import projectsData from "../../../data/projectsData";
-import experienceData from "../../../data/experienceData";
-import { useTheme } from "../../../context/ThemeContext";
+import Emblem from "../../common/Emblem/Emblem";
+import { SplitChars } from "../../common/Motion/Motion";
+import useScrollEngine from "../../../hooks/useScrollEngine";
+import profileData from "../../../data/profileData";
 import "./Hero.css";
 
-const HeroScene = lazy(() => import("../../3d/HeroScene/HeroScene"));
-const socialLinks = Array.isArray(contactData?.socialLinks)
-  ? contactData.socialLinks
-  : [];
-const projectCount = Array.isArray(projectsData) ? projectsData.length : 0;
-const internshipCount = Array.isArray(experienceData?.experience)
-  ? experienceData.experience.length
-  : 0;
-const heroStats = [
-  { value: `${projectCount}`, label: "Projects" },
-  { value: `${internshipCount}`, label: "Internships" },
-  { value: "2", label: "Year of Experience" }
-];
-
-const socialIcons = {
-  github: FiGithub,
-  linkedin: FiLinkedin,
-  email: FiMail,
-  mail: FiMail
-};
-
 function Hero() {
-  const { accent } = useTheme();
+  const nameRef = useRef(null);
+  const emblemRef = useRef(null);
+  const footRef = useRef(null);
+
+  // Parallax: the name sinks, the footer rises, the emblem drifts and fades.
+  useScrollEngine(({ y, vh, motionOff }) => {
+    const name = nameRef.current;
+    const emblem = emblemRef.current;
+    const foot = footRef.current;
+    if (!name || !emblem || !foot) return;
+
+    if (motionOff || y > vh * 1.3) {
+      if (motionOff) {
+        name.style.transform = "";
+        emblem.style.transform = "";
+        emblem.style.opacity = "";
+        foot.style.transform = "";
+      }
+      return;
+    }
+
+    const p = Math.min(y / vh, 1);
+    name.style.transform = `translate3d(0, ${y * 0.16}px, 0)`;
+    foot.style.transform = `translate3d(0, ${-y * 0.1}px, 0)`;
+    emblem.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(${1 - p * 0.14})`;
+    emblem.style.opacity = String(1 - p * 0.85);
+  });
+
+  const scrollToNext = () => {
+    document.getElementById("statement")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <section className="hero">
-      <div className="hero-background" aria-hidden="true">
-        <div className="hero-orb hero-orb-one" />
-        <div className="hero-orb hero-orb-two" />
-        <div className="hero-grid" />
+    <section className="hero" id="home" data-reveal-skip>
+      <div className="hero-top">
+        <span className="hero-status">
+          <i aria-hidden="true" />
+          {profileData.availability}
+        </span>
+        <span>{profileData.location}</span>
+        <span className="hero-year">Portfolio {new Date().getFullYear()}</span>
       </div>
 
-      <div className="container hero-container">
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <div className="hero-availability">
-            <span className="availability-dot" />
-            <span>{profileData.availability}</span>
-          </div>
-
-          <p className="hero-eyebrow">
-            {profileData.heroVisual?.label || "BUILD / DESIGN / CREATE"}
-          </p>
-
-          <p className="hero-greeting">Hello, I'm</p>
-
-          <h1 className="hero-name">
-            {profileData.firstName}
-            <span> {profileData.lastName}</span>
-          </h1>
-
-          <h2 className="hero-title">{profileData.title}</h2>
-
-          <p className="hero-tagline">{profileData.tagline}</p>
-
-          <p className="hero-description">{profileData.description}</p>
-
-          <div className="hero-actions">
-            <Button to="/projects">
-              View My Work
-              <FiArrowUpRight />
-            </Button>
-
-            <Button to="/contact" variant="secondary">
-              Let's Connect
-            </Button>
-          </div>
-
-          
-        </motion.div>
-
-        <motion.div
-          className="hero-visual"
-          initial={{ opacity: 0, scale: 0.9, x: 30 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-        >
-          <div className="hero-visual-label">
-            <span className="hero-visual-label-dot" />
-            {profileData.heroVisual?.label || "DIGITAL EXPERIENCE"}
-          </div>
-
-          <Suspense
-            fallback={
-              <div
-                className="hero-scene hero-scene-loading"
-                aria-label="Loading 3D portfolio visual"
-              />
-            }
-          >
-            <HeroScene
-              accent={accent}
-              technologies={profileData.heroVisual?.technologies || []}
-            />
-          </Suspense>
-        </motion.div>
-      </div>
-
-      <div className="container hero-bottom">
-        {socialLinks.length > 0 && (
-            <div className="hero-socials">
-              {socialLinks.map((social) => {
-                const Icon = socialIcons[social.id] || socialIcons[social.icon];
-
-                return (
-                  <a
-                    key={social.id}
-                    href={social.href || social.url}
-                    target={social.id === "email" ? undefined : "_blank"}
-                    rel={social.id === "email" ? undefined : "noreferrer"}
-                    aria-label={social.label}
-                    className="hero-social"
-                  >
-                    {Icon && <Icon />}
-                  </a>
-                );
-              })}
-            </div>
-          )}
-
-        <div className="hero-stats">
-          {heroStats.map((stat) => (
-            <div className="hero-stat" key={stat.label}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </div>
-          ))}
+      <div className="hero-body">
+        <div className="hero-emblem" ref={emblemRef}>
+          <Emblem />
         </div>
+
+        <h1 className="hero-name" ref={nameRef} aria-label={profileData.name}>
+          <span className="hero-line">
+            <SplitChars text={profileData.firstName} />
+          </span>
+          <span className="hero-line hero-line-last">
+            <SplitChars text={profileData.lastName} offset={profileData.firstName.length} />
+          </span>
+        </h1>
       </div>
 
-      <div className="hero-scroll-indicator">
-        <span>Scroll to explore</span>
-        <div className="hero-scroll-line" />
+      <div className="hero-foot" ref={footRef}>
+        <div className="hero-copy">
+          <p className="hero-role">{profileData.title}</p>
+          <p className="hero-tagline">{profileData.tagline}</p>
+        </div>
+
+        <div className="hero-actions">
+          <Button to="/projects">
+            View My Work
+            <FiArrowUpRight />
+          </Button>
+          <Button to="/contact" variant="secondary">
+            Let's Connect
+          </Button>
+        </div>
+
+        <button type="button" className="hero-cue" onClick={scrollToNext}>
+          <span className="hero-cue-line" aria-hidden="true" />
+          Scroll
+        </button>
       </div>
     </section>
   );
