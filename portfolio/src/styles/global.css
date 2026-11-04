@@ -96,15 +96,17 @@ ol {
 
 :is(
   .button,
-.contact-method,
-.footer-socials a > svg:last-child {
+  .contact-method,
+  .footer-socials a > svg:last-child
+) {
   transition: transform var(--transition-fast);
 }
 
 :is(
   .button,
-.contact-method,
-.footer-socials a:hover > svg:last-child {
+  .contact-method,
+  .footer-socials a:hover > svg:last-child
+) {
   transform: rotate(45deg);
 }
 
