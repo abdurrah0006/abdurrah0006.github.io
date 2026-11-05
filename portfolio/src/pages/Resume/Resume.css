@@ -45,7 +45,7 @@
 }
 
 .resume-link:hover > svg {
-  transform: translate(4px, -4px);
+  transform: rotate(45deg);
 }
 
 .resume-contact {

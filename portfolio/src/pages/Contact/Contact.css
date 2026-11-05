@@ -142,7 +142,7 @@
 
 .contact-method:hover > svg {
   color: var(--color-highlight);
-  transform: translate(2px, -2px);
+  transform: rotate(45deg);
 }
 
 .contact-information .contact-socials {

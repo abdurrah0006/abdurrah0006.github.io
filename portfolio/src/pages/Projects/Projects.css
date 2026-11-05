@@ -158,7 +158,7 @@
 }
 
 .project-card:hover .project-card-title svg {
-  transform: translate(3px, -3px);
+  transform: rotate(45deg);
 }
 
 .project-card-body p {

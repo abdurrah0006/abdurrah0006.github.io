@@ -93,7 +93,7 @@ ol {
   margin-inline: auto;
 }
 
-/* Up-right arrow icons glide up and to the right while the link or button
+/* Up-right arrow icons (↗) turn to point right (→) while the link or button
    they sit in is hovered or focused. They are found by their drawing, so every
    <FiArrowUpRight /> on the site behaves the same without extra classes. */
 svg:has(> polyline[points="7 7 17 7 17 17"]) {
@@ -101,7 +101,7 @@ svg:has(> polyline[points="7 7 17 7 17 17"]) {
 }
 
 :is(a, button):is(:hover, :focus-visible) svg:has(> polyline[points="7 7 17 7 17 17"]) {
-  transform: translate(3px, -3px);
+  transform: rotate(45deg);
 }
 
 @media (max-width: 768px) {

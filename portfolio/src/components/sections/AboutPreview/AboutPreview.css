@@ -92,7 +92,7 @@
 }
 
 .statement-link:hover svg {
-  transform: translate(3px, -3px);
+  transform: rotate(45deg);
 }
 
 .statement-link svg {

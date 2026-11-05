@@ -111,7 +111,7 @@
 }
 
 .feature-row.is-active .feature-meta svg {
-  transform: translate(3px, -3px);
+  transform: rotate(45deg);
   color: var(--color-highlight);
 }
 

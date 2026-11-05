@@ -200,7 +200,7 @@
 }
 
 .footer-socials a:hover svg:last-child {
-  transform: translate(2px, -2px);
+  transform: rotate(45deg);
 }
 
 .footer-email {
