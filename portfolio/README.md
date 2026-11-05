@@ -1,16 +1,30 @@
-# React + Vite
+# Abdur Rahman: Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite portfolio with three switchable designs (Atelier, Futuristic, Retro),
+light and dark modes, and a reduced-motion switch.
 
-Currently, two official plugins are available:
+## Run it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev       # local development
+npm run build     # production build into dist/
+npm run deploy    # builds and publishes dist/ with gh-pages
+```
 
-## React Compiler
+## Editing content
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Everything you read on the site lives in `src/data/`:
 
-## Expanding the ESLint configuration
+| File | What it controls |
+| --- | --- |
+| `profileData.js` | name, title, about, services, hero and home-page content |
+| `pagesData.js` | headings and copy for the inner pages |
+| `projectsData.js` | every project and its case study |
+| `experienceData.js` | internships, education and certifications |
+| `skillsData.js` | skill categories |
+| `contactData.js` | email, socials, contact page and form text |
+| `themeData.js` | the three designs (colours here must match `styles/themes.css`) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`profileData.home.selectedProjects` picks the five headline projects on the home
+page, and `moreProjectsCount` sets how many more appear under "More explorations".

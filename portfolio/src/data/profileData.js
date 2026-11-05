@@ -108,7 +108,7 @@ const profileData = {
       "messenger-chat",
       "blogify"
     ],
-    moreProjectsCount: 8
+    moreProjectsCount: 5
   },
 
   heroVisual: {

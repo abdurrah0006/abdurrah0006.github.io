@@ -158,12 +158,6 @@ const pagesData = {
       accent: "something real.",
       link: "Send me an email"
     },
-    bottom: {
-      eyebrow: "Have an idea?",
-      titleStart: "Let's turn it into",
-      titleAccent: "something real.",
-      link: "Send me an email"
-    },
     draftNote:
       "Your email app should open with a draft. The message is not sent from this website; review and send it in your email app. If it did not open, email me at"
   },

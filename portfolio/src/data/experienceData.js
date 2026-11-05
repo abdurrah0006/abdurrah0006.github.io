@@ -78,8 +78,6 @@ const experienceData = {
       period: "2026 – 2029",
       description:
         "Currently studying for a Bachelor of Computer Science. The program is scheduled to run from 2026 to 2029.",
-      startYear: "2026",
-      endYear: "2029",
       status: "First year"
     },
     {
@@ -89,7 +87,6 @@ const experienceData = {
       period: "2024",
       description:
         "Passed my High school education with a focus on science and Information Technology. ",
-      startYear: "2024",
       status: "Graduated"
     }
   ],

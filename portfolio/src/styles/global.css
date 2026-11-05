@@ -93,13 +93,15 @@ ol {
   margin-inline: auto;
 }
 
-
-:is(
-  .button,
-  .contact-method,
-  .footer-socials a > svg:last-child
-) {
+/* Up-right arrow icons glide up and to the right while the link or button
+   they sit in is hovered or focused. They are found by their drawing, so every
+   <FiArrowUpRight /> on the site behaves the same without extra classes. */
+svg:has(> polyline[points="7 7 17 7 17 17"]) {
   transition: transform var(--transition-fast);
+}
+
+:is(a, button):is(:hover, :focus-visible) svg:has(> polyline[points="7 7 17 7 17 17"]) {
+  transform: translate(3px, -3px);
 }
 
 @media (max-width: 768px) {
@@ -128,12 +130,11 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
-
