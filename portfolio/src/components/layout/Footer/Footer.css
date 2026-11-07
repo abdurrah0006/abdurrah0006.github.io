@@ -138,6 +138,9 @@
 }
 
 .footer-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   padding: 0 0 2px;
   border-bottom: 1px solid var(--color-border);
   background: none;
@@ -280,3 +283,12 @@
   }
 }
 
+.footer-tool svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.footer-tool:hover svg {
+  transform: translateY(-3px);
+}

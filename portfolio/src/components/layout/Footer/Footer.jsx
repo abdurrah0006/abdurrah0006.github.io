@@ -1,7 +1,8 @@
 import {
+  FiArrowUp,
   FiArrowUpRight,
+  FiBriefcase,
   FiCoffee,
-  FiCpu,
   FiFeather,
   FiGithub,
   FiLinkedin,
@@ -17,13 +18,13 @@ import "./Footer.css";
 
 const designIcons = {
   atelier: FiFeather,
-  futuristic: FiCpu,
+  formal: FiBriefcase,
   retro: FiCoffee
 };
 
 function Footer() {
   const currentYear = new Date().getFullYear();
-  const { design, changeDesign, motionReduced, toggleMotion, replayIntro } = useTheme();
+  const { design, changeDesign, motionReduced, replayIntro } = useTheme();
 
   return (
     <footer className="footer">
@@ -146,10 +147,12 @@ function Footer() {
               <button
                 type="button"
                 className="footer-tool"
-                onClick={toggleMotion}
-                aria-pressed={motionReduced}
+                onClick={() =>
+                  window.scrollTo({ top: 0, behavior: motionReduced ? "auto" : "smooth" })
+                }
               >
-                {motionReduced ? "Enable motion" : "Reduce motion"}
+                <FiArrowUp aria-hidden="true" />
+                To the top
               </button>
               <button type="button" className="footer-tool" onClick={replayIntro}>
                 Replay intro

@@ -64,16 +64,8 @@
     -webkit-text-stroke-color 0.3s ease;
 }
 
-/* Futuristic: outlined headings that fill with green on hover */
-[data-design="futuristic"] .feature-title {
-  font-size: clamp(3rem, 10vw, 9rem);
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--color-text);
-}
-
-[data-design="futuristic"] .feature-row.is-active .feature-title {
+[data-design="formal"] .feature-row.is-active .feature-title {
   color: var(--color-highlight);
-  -webkit-text-stroke-color: var(--color-highlight);
 }
 
 [data-design="atelier"] .feature-title {
@@ -312,11 +304,6 @@
   .work-row-category {
     display: none;
   }
-}
-
-[data-design="futuristic"] .work-title {
-  text-transform: var(--display-case);
-  font-size: clamp(2.8rem, 9vw, 8rem);
 }
 
 @media (max-width: 700px) {

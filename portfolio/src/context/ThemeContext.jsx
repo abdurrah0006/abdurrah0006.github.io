@@ -23,7 +23,6 @@ const ThemeContext = createContext(null);
 
 const DESIGN_KEY = "portfolio-design";
 const MODE_KEY = "portfolio-mode";
-const MOTION_KEY = "portfolio-motion";
 const INTRO_KEY = "portfolio-intro-seen";
 const designIds = themeData.map(({ id }) => id);
 
@@ -61,14 +60,12 @@ export function useTheme() {
 
 function ThemeProvider({ children }) {
   const [design, setDesign] = useState(() => {
-    const saved = readStored(DESIGN_KEY);
+    const stored = readStored(DESIGN_KEY);
+    const saved = stored === "futuristic" ? "formal" : stored; // renamed design
     return designIds.includes(saved) ? saved : designIds[0];
   });
   const [mode, setMode] = useState(() =>
     readStored(MODE_KEY) === "dark" ? "dark" : "light"
-  );
-  const [motionPreference, setMotionPreference] = useState(() =>
-    readStored(MOTION_KEY) === "reduced" ? "reduced" : "full"
   );
   const [systemReduced, setSystemReduced] = useState(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -82,7 +79,8 @@ function ThemeProvider({ children }) {
     return () => query.removeEventListener("change", update);
   }, []);
 
-  const motionReduced = systemReduced || motionPreference === "reduced";
+  // Motion follows the visitor's system setting (prefers-reduced-motion).
+  const motionReduced = systemReduced;
 
   useEffect(() => {
     const root = document.documentElement;
@@ -91,10 +89,9 @@ function ThemeProvider({ children }) {
     root.dataset.motion = motionReduced ? "reduced" : "full";
     writeStored(DESIGN_KEY, design);
     writeStored(MODE_KEY, mode);
-    writeStored(MOTION_KEY, motionPreference);
     loadDesignFonts(design);
     wake();
-  }, [design, mode, motionReduced, motionPreference]);
+  }, [design, mode, motionReduced]);
 
   // Tab icon follows the design: same font as the logo, same colours.
   useThemedFavicon(design, mode);
@@ -105,10 +102,6 @@ function ThemeProvider({ children }) {
 
   const toggleDarkMode = useCallback(() => {
     setMode((current) => (current === "dark" ? "light" : "dark"));
-  }, []);
-
-  const toggleMotion = useCallback(() => {
-    setMotionPreference((current) => (current === "reduced" ? "full" : "reduced"));
   }, []);
 
   const replayIntro = useCallback(() => {
@@ -130,10 +123,9 @@ function ThemeProvider({ children }) {
       introRun,
       changeDesign,
       toggleDarkMode,
-      toggleMotion,
       replayIntro
     }),
-    [design, mode, motionReduced, introRun, changeDesign, toggleDarkMode, toggleMotion, replayIntro]
+    [design, mode, motionReduced, introRun, changeDesign, toggleDarkMode, replayIntro]
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;

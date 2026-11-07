@@ -16,8 +16,8 @@
         var FONTS = {
           atelier:
             "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400..700&display=swap",
-          futuristic:
-            "https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap",
+          formal:
+            "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:wght@400..700&display=swap",
           retro:
             "https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400..700&family=Space+Mono:wght@400;700&display=swap"
         };
@@ -27,9 +27,9 @@
         var seen = false;
         try {
           var savedDesign = localStorage.getItem("portfolio-design");
+          if (savedDesign === "futuristic") savedDesign = "formal";
           if (FONTS[savedDesign]) design = savedDesign;
           if (localStorage.getItem("portfolio-mode") === "dark") mode = "dark";
-          if (localStorage.getItem("portfolio-motion") === "reduced") motion = "reduced";
           seen = sessionStorage.getItem("portfolio-intro-seen") === "1";
         } catch (error) {}
         if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {

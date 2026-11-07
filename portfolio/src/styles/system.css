@@ -14,7 +14,6 @@
 /* Page texture (grid / dots). It lives on its own fixed layer: a fixed
    background-attachment is repainted on every scroll frame and made scrolling
    feel heavy. */
-[data-design="futuristic"] body::before,
 [data-design="retro"] body::before {
   content: "";
   position: fixed;
@@ -69,11 +68,6 @@
   line-height: 0.93;
   letter-spacing: var(--display-tracking);
   text-transform: var(--display-case);
-}
-
-[data-design="futuristic"] .ui-hero-title {
-  font-size: clamp(3rem, 12vw, 10.5rem);
-  line-height: 0.88;
 }
 
 .ui-hero-foot {
@@ -210,7 +204,6 @@
   color: var(--color-highlight);
 }
 
-
 .ui-btn {
   display: inline-flex;
   align-items: center;
@@ -236,7 +229,7 @@
 }
 
 [data-design="retro"] .ui-btn,
-[data-design="futuristic"] .ui-btn {
+[data-design="formal"] .ui-btn {
   border-radius: var(--radius-md);
 }
 
@@ -260,7 +253,7 @@
 }
 
 [data-design="retro"] .ui-chips li,
-[data-design="futuristic"] .ui-chips li {
+[data-design="formal"] .ui-chips li {
   border-radius: var(--radius-md);
 }
 

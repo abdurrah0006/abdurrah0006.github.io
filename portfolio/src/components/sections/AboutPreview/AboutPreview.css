@@ -28,11 +28,6 @@
   font-weight: 400;
 }
 
-[data-design="futuristic"] .statement-title {
-  font-size: clamp(3rem, 8.4vw, 7.6rem);
-  line-height: 0.95;
-}
-
 .statement-side {
   display: grid;
   gap: var(--space-8);
@@ -70,7 +65,7 @@
 }
 
 [data-design="retro"] .statement-pills li,
-[data-design="futuristic"] .statement-pills li {
+[data-design="formal"] .statement-pills li {
   border-radius: var(--radius-md);
 }
 

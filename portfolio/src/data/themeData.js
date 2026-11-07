@@ -12,13 +12,13 @@ const themeData = [
       "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400..700&display=swap"
   },
   {
-    id: "futuristic",
-    name: "Futuristic",
-    description: "Green, condensed and clean",
-    primary: "#1fb872",
-    secondary: "#0e9f9a",
+    id: "formal",
+    name: "Formal",
+    description: "Classic serif, flat and professional",
+    primary: "#1e6b4d",
+    secondary: "#3b8f7a",
     fonts:
-      "https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap"
+      "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:wght@400..700&display=swap"
   },
   {
     id: "retro",

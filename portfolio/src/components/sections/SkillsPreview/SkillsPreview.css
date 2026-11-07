@@ -93,8 +93,3 @@
     margin-top: var(--space-10);
   }
 }
-
-[data-design="futuristic"] .toolkit-title {
-  text-transform: var(--display-case);
-  font-size: clamp(2.4rem, 7vw, 6rem);
-}

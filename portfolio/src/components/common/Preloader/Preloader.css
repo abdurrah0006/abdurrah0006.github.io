@@ -213,42 +213,6 @@
   opacity: 0;
 }
 
-/* Design touches */
-[data-design="futuristic"] .preloader-half {
-  background:
-    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 56px 56px,
-    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px) 0 0 / 56px 56px,
-    var(--intro-bg);
-}
-
-[data-design="futuristic"] .preloader-stage::before {
-  content: "";
-  position: absolute;
-  left: -30%;
-  right: -30%;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--intro-accent), transparent);
-  animation: pl-scan 1.8s ease-in-out 0.6s infinite;
-}
-
-@keyframes pl-scan {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-
-  15%,
-  85% {
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(240px);
-  }
-}
-
 [data-design="retro"] .preloader::after {
   content: "";
   position: absolute;

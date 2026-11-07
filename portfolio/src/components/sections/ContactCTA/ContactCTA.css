@@ -136,12 +136,3 @@
     padding-inline: 0;
   }
 }
-
-[data-design="futuristic"] .cta-title {
-  text-transform: var(--display-case);
-  font-size: clamp(3.2rem, 10vw, 9rem);
-}
-
-[data-design="futuristic"] .cta .word-accent {
-  color: var(--color-highlight);
-}

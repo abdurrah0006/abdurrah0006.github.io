@@ -35,7 +35,7 @@
 }
 
 [data-design="retro"] .project-filter,
-[data-design="futuristic"] .project-filter {
+[data-design="formal"] .project-filter {
   border-radius: var(--radius-md);
 }
 
@@ -62,7 +62,7 @@
 }
 
 [data-design="retro"] .projects-search,
-[data-design="futuristic"] .projects-search {
+[data-design="formal"] .projects-search {
   border-radius: var(--radius-md);
 }
 

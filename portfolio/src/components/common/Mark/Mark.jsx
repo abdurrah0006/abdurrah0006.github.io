@@ -3,7 +3,7 @@ import "./Mark.css";
 /*
   The site's mark is the plain tag </AR>, set in the active design's display
   font at a heavy weight with a little extra stroke for a thicker, bolder
-  look (Fraunces for Atelier, Agdasima for Futuristic, Young Serif for Retro).
+  look (Fraunces for Atelier, Playfair Display for Formal, Young Serif for Retro).
   It is real text, so it follows the theme automatically and the favicon is
   redrawn from the same font (see hooks/useThemedFavicon.js).
 

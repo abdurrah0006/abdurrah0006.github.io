@@ -34,10 +34,6 @@
     font-size: clamp(3.4rem, 11.4vw, 9.6rem);
   }
 
-  [data-design="futuristic"] .hero-name {
-    font-size: clamp(4rem, 16vw, 13rem);
-  }
-
   .hero-foot {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-8);

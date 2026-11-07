@@ -52,11 +52,6 @@
   transform: translateX(2px);
 }
 
-[data-design="futuristic"] .navbar-logo-mark {
-  font-size: 2rem;
-  text-shadow: 0 0 10px color-mix(in srgb, var(--color-highlight) 55%, transparent);
-}
-
 .navbar-links {
   display: flex;
   align-items: center;

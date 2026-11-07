@@ -1,6 +1,6 @@
 /*
   Designs and modes are independent layers, both set on <html> by ThemeContext:
-    data-design  atelier | futuristic | retro   -> fonts, shapes, texture
+    data-design  atelier | formal | retro   -> fonts, shapes, texture
     data-mode    light | dark                    -> palette for the chosen design
   Keep the ids in sync with data/themeData.js and index.html.
 
@@ -66,63 +66,61 @@
   --shadow-card: 0 22px 44px -28px rgb(0 0 0 / 0.7);
 }
 
-/* =========================== FUTURISTIC ===========================
-   Condensed Agdasima display, mono labels, hairlines, a faint grid and a
-   a glowing </AR> tag. Green on a cool dark slate. */
-[data-design="futuristic"] {
-  --font-primary: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Agdasima", "Arial Narrow", system-ui, sans-serif;
-  --font-accent: "Agdasima", "Arial Narrow", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --display-weight: 700;
-  --display-tracking: 0.005em;
-  --display-case: uppercase;
-  --accent-style: normal;
-  --accent-weight: 700;
+/* ============================== FORMAL ==============================
+   Classic and restrained: Playfair Display headings with Source Sans 3 text,
+   crisp corners, hairlines, no texture and no glow. Deep forest green on
+   soft white, or on dark green-black. */
+[data-design="formal"] {
+  --font-primary: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Playfair Display", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --font-accent: "Playfair Display", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --font-mono: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
+  --display-weight: 600;
+  --display-tracking: -0.02em;
+  --display-case: none;
+  --accent-style: italic;
+  --accent-weight: 500;
 
-  --radius-md: 4px;
-  --radius-lg: 6px;
-  --radius-xl: 10px;
-  --radius-2xl: 14px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
   --line: 1px;
-  --pattern:
-    linear-gradient(to right, color-mix(in srgb, var(--color-text) 5%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 5%, transparent) 1px, transparent 1px);
-  --pattern-size: 64px 64px;
+  --pattern: none;
 }
 
-[data-design="futuristic"][data-mode="light"] {
-  --color-background: #eef5f1;
-  --color-background-alt: #e2ede6;
-  --color-surface: #f8fcf9;
-  --color-text: #08140e;
-  --color-text-secondary: #2f4a3b;
-  --color-text-muted: #5f7a6b;
-  --color-border: #cbddd2;
-  --color-primary: #13845a;
-  --color-secondary: #0e9f9a;
-  --color-highlight: #0c8a5e;
-  --intro-bg: #08140e;
-  --intro-fg: #e3f4ea;
-  --intro-accent: #39e58c;
-  --shadow-card: 0 0 0 1px var(--color-border), 0 24px 50px -32px rgb(19 132 90 / 0.5);
+[data-design="formal"][data-mode="light"] {
+  --color-background: #f6f7f4;
+  --color-background-alt: #ecefe9;
+  --color-surface: #ffffff;
+  --color-text: #0f1a14;
+  --color-text-secondary: #3a4a40;
+  --color-text-muted: #66756b;
+  --color-border: #d6dcd3;
+  --color-primary: #1e6b4d;
+  --color-secondary: #3b8f7a;
+  --color-highlight: #1e6b4d;
+  --intro-bg: #0f1a14;
+  --intro-fg: #eef2ec;
+  --intro-accent: #8fd1ad;
+  --shadow-card: 0 1px 2px rgb(10 25 18 / 0.06), 0 14px 30px -20px rgb(10 25 18 / 0.28);
 }
 
-[data-design="futuristic"][data-mode="dark"] {
-  --color-background: #060d09;
-  --color-background-alt: #0a130e;
-  --color-surface: #0e1913;
-  --color-text: #e3f4ea;
-  --color-text-secondary: #b1cdbc;
-  --color-text-muted: #6f9080;
-  --color-border: #1a2e22;
-  --color-primary: #1fb872;
-  --color-secondary: #19b3a0;
-  --color-highlight: #39e58c;
-  --intro-bg: #060d09;
-  --intro-fg: #e3f4ea;
-  --intro-accent: #39e58c;
-  --shadow-card: 0 0 0 1px var(--color-border), 0 26px 54px -30px rgb(31 184 114 / 0.55);
+[data-design="formal"][data-mode="dark"] {
+  --color-background: #0c1511;
+  --color-background-alt: #101c16;
+  --color-surface: #152319;
+  --color-text: #e8f0ea;
+  --color-text-secondary: #bccbc1;
+  --color-text-muted: #7f9488;
+  --color-border: #223429;
+  --color-primary: #2a8a64;
+  --color-secondary: #3fae9a;
+  --color-highlight: #6fcf9e;
+  --intro-bg: #0c1511;
+  --intro-fg: #e8f0ea;
+  --intro-accent: #6fcf9e;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 18px 40px -22px rgb(0 0 0 / 0.7);
 }
 
 /* ============================== RETRO ==============================

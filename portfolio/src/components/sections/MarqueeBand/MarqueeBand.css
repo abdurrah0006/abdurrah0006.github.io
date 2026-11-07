@@ -85,11 +85,6 @@
   }
 }
 
-[data-design="futuristic"] .ticker-item,
-[data-design="futuristic"] .lines-text {
-  text-transform: var(--display-case);
-}
-
 [data-design="retro"] .lines-text-outline {
   -webkit-text-stroke-width: 2px;
 }

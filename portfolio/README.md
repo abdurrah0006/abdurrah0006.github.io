@@ -1,7 +1,7 @@
 # Abdur Rahman: Portfolio
 
-A React + Vite portfolio with three switchable designs (Atelier, Futuristic, Retro),
-light and dark modes, and a reduced-motion switch.
+A React + Vite portfolio with three switchable designs (Atelier, Formal, Retro),
+light and dark modes, and it respects the system reduced-motion setting.
 
 ## Run it
 
